@@ -11,11 +11,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/it-at-m/zms-frontend">
+  <a href="https://github.com/it-at-m/eappointment-frontend">
     <img src="images/logo.png" alt="Logo" height="200">
   </a>
 
-<h3 align="center">ZMS Frontend</h3>
+<h3 align="center">E-appoitnment Frontend</h3>
 
 </div>
 
@@ -89,7 +89,7 @@ Run the following commands in your library:
 Make sure you have provided all the necessary dependencies in your vuetify project and add the library vai `file path`:
  
 ```
-"zms-frontend": "file:../zms-frontend-1.0.1.tgz"
+"eappointment-frontend": "file:../eappointment-frontend-1.0.1.tgz"
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -131,14 +131,14 @@ it@m - opensource@muenchendigital.io
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/it-at-m/zms-frontend.svg?style=for-the-badge
-[contributors-url]: https://github.com/it-at-m/zms-frontend/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/it-at-m/zms-frontend.svg?style=for-the-badge
-[forks-url]: https://github.com/it-at-m/zms-frontend/network/members
-[stars-shield]: https://img.shields.io/github/stars/it-at-m/zms-frontend.svg?style=for-the-badge
-[stars-url]: https://github.com/it-at-m/zms-frontend/stargazers
-[issues-shield]: https://img.shields.io/github/issues/it-at-m/zms-frontend.svg?style=for-the-badge
-[issues-url]: https://github.com/it-at-m/zms-frontend/issues
-[license-shield]: https://img.shields.io/github/license/it-at-m/zms-frontend.svg?style=for-the-badge
-[license-url]: https://github.com/it-at-m/zms-frontend/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/it-at-m/eappointment-frontend.svg?style=for-the-badge
+[contributors-url]: https://github.com/it-at-m/eappointment-frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/it-at-m/eappointment-frontend.svg?style=for-the-badge
+[forks-url]: https://github.com/it-at-m/eappointment-frontend/network/members
+[stars-shield]: https://img.shields.io/github/stars/it-at-m/eappointment-frontend.svg?style=for-the-badge
+[stars-url]: https://github.com/it-at-m/eappointment-frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/it-at-m/eappointment-frontend.svg?style=for-the-badge
+[issues-url]: https://github.com/it-at-m/eappointment-frontend/issues
+[license-shield]: https://img.shields.io/github/license/it-at-m/eappointment-frontend.svg?style=for-the-badge
+[license-url]: https://github.com/it-at-m/eappointment-frontend/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
