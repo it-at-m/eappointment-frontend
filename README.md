@@ -15,7 +15,7 @@
     <img src="images/logo.png" alt="Logo" height="200">
   </a>
 
-<h3 align="center">E-appoitnment Frontend</h3>
+<h3 align="center">E-appointment Frontend</h3>
 
 </div>
 
