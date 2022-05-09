@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "theme": {
+      "primary": "#005A9F",
+      "secondary": "#337BB2",
+      "accent": "#FFE400",
+      "success": "#90D19C",
+      "error": "#B71C1C"
+    }
+  }
+}

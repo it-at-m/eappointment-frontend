@@ -1,0 +1,28 @@
+export default {
+  language: "Sprache",
+  next: "Weiter",
+  cancel: "Abbrechen",
+  confirmAppointment: "Termin bestätigen",
+  services: "Dienstleistungen",
+  appointmentIsConfirmed: "Ihr Termin wurde bestätigt",
+  errorTryAgainLater: "Etwas ist schief gelaufen. Bitte versuchen Sie es mit einem anderen Termin",
+  appointmentNotAvailable: "Der von Ihnen gewählte Termin ist leider nicht mehr verfügbar",
+  missingSlotInARow: "Services that you choosed are not available in a row. Please, choose another day or split appointment.",
+  appointment: "Termin",
+  noServiceFound: "Keine Dienstleistung gefunden",
+  contactData: "Kontaktdaten",
+  choseOneAppointment: "Wählen Sie bitte ein Termin am {date}",
+  firstName: "Vorname",
+  pleaseCheckOnceAgain: "Bitte überprüfen Sie noch einmal Ihre Daten und bestätigen Sie den Termin ",
+  lastName: "Nachname",
+  email: "E-Mailadresse",
+  location: "Standort",
+  privacyPolicyAccepted: "<a href=\"https://stadt.muenchen.de/infos/dsgvo-datenschutzgrundverordnung.html\" target='_blank'>Datenschutzweise</a> zur Kenntnis genommen",
+  isRequired: 'wird benötigt',
+  acceptPrivacyPolicy: 'Das Akzeptieren der Datenschutzrichtlinie ist erforderlich',
+  mustBeValidEmail: 'Muss eine gültige E-Mail-Adresse sein',
+  languages: {
+    de: 'Deutsch',
+    en: 'Englisch',
+  }
+}

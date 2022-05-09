@@ -1,0 +1,420 @@
+{
+  "$schema": "https://tvberlind001.srv.muenchen.de/terminvereinbarung/api/2/",
+  "meta": {
+    "$schema": "https://schema.berlin.de/queuemanagement/metaresult.json",
+    "error": false,
+    "generated": "2022-05-05T14:39:32+02:00",
+    "server": "Zmsapi-ENV (2.24.03-8-g4d507bd)"
+  },
+  "data": {
+    "$schema": "https://schema.berlin.de/queuemanagement/calendar.json",
+    "firstDay": {
+      "year": 2022,
+      "month": 3,
+      "day": 3,
+      "status": "notBookable",
+      "freeAppointments": {
+        "public": 0,
+        "intern": 0,
+        "callcenter": 0,
+        "type": "free"
+      },
+      "allAppointments": {
+        "public": 0,
+        "intern": 0,
+        "callcenter": 0,
+        "type": "free"
+      }
+    },
+    "lastDay": {
+      "year": 2022,
+      "month": 6,
+      "day": 3,
+      "status": "notBookable",
+      "freeAppointments": {
+        "public": 0,
+        "intern": 0,
+        "callcenter": 0,
+        "type": "free"
+      },
+      "allAppointments": {
+        "public": 0,
+        "intern": 0,
+        "callcenter": 0,
+        "type": "free"
+      }
+    },
+    "days": [
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "05",
+        "status": "notBookable",
+        "freeAppointments": {
+          "public": "0",
+          "intern": "52",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "06",
+        "status": "notBookable",
+        "freeAppointments": {
+          "public": "0",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "09",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "10",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "11",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "12",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "13",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "16",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "17",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "18",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "19",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "20",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "23",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "24",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "25",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "26",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "27",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "30",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "05",
+        "day": "31",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "06",
+        "day": "01",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "06",
+        "day": "02",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "130",
+          "intern": "130",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      },
+      {
+        "year": "2022",
+        "month": "06",
+        "day": "03",
+        "status": "bookable",
+        "freeAppointments": {
+          "public": "9",
+          "intern": "9",
+          "callcenter": "0",
+          "type": "sum"
+        }
+      }
+    ],
+    "scopes": [
+      {
+        "id": "1304",
+        "source": "dldb",
+        "contact": {
+          "name": "Termin Wartebereich BB Riesenfelderstr",
+          "street": "Riesenfelderstr. xx",
+          "email": "",
+          "country": "Germany"
+        },
+        "provider": {
+          "id": "4000",
+          "source": "dldb",
+          "contact": {
+            "city": "Muenchen",
+            "country": "Germany",
+            "name": "Termin Wartebereich BB Riesenfelderstr",
+            "postalCode": "80000",
+            "region": "Muenchen",
+            "street": "Riesenfelderstr.",
+            "streetNumber": "xx"
+          },
+          "link": "https://service.berlin.de/standort/4000/",
+          "name": "Termin Wartebereich BB Riesenfelderstr",
+          "data": {
+            "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r"
+          }
+        },
+        "hint": "",
+        "lastChange": 1651702682,
+        "shortName": "termin"
+      }
+    ],
+    "requests": [
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb"
+      }
+    ],
+    "bookableEnd": 1656885600
+  }
+}

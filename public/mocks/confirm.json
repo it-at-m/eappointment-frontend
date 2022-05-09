@@ -1,0 +1,346 @@
+{
+  "$schema": "https://tvberlind001.srv.muenchen.de/terminvereinbarung/api/2/",
+  "meta": {
+    "$schema": "https://schema.berlin.de/queuemanagement/metaresult.json",
+    "error": false,
+    "generated": "2022-03-25T15:53:22+01:00",
+    "server": "Zmsapi-ENV (2.24.03-8-g4d507bd)"
+  },
+  "data": {
+    "$schema": "https://schema.berlin.de/queuemanagement/process.json",
+    "amendment": "",
+    "appointments": [
+      {
+        "date": 1648708200,
+        "scope": {
+          "id": "1311",
+          "source": "dldb"
+        },
+        "availability": {
+          "id": "249667",
+          "weekday": {
+            "sunday": "0",
+            "monday": "2",
+            "tuesday": "4",
+            "wednesday": "8",
+            "thursday": "16",
+            "friday": "0",
+            "saturday": "0"
+          },
+          "repeat": {
+            "afterWeeks": "1",
+            "weekOfMonth": "0"
+          },
+          "bookable": {
+            "startInDays": "2",
+            "endInDays": "60"
+          },
+          "workstationCount": {
+            "public": "4",
+            "callcenter": "0",
+            "intern": "4"
+          },
+          "lastChange": 1647266694,
+          "multipleSlotsAllowed": "1",
+          "slotTimeInMinutes": "10",
+          "startDate": 1647212400,
+          "endDate": 1678748400,
+          "startTime": "07:00:00",
+          "endTime": "20:00:00",
+          "type": "appointment",
+          "scope": {
+            "id": "1311"
+          },
+          "description": "Neue Öffnungszeit"
+        },
+        "slotCount": "1"
+      }
+    ],
+    "apiclient": {
+      "shortname": "default"
+    },
+    "authKey": "e75e",
+    "clients": [
+      {
+        "familyName": "",
+        "email": "",
+        "emailSendCount": "0",
+        "notificationsSendCount": "0",
+        "telephone": ""
+      }
+    ],
+    "createIP": "",
+    "createTimestamp": "1648218735",
+    "id": "100159",
+    "archiveId": 0,
+    "queue": {
+      "$schema": "https://schema.berlin.de/queuemanagement/queue.json",
+      "arrivalTime": 1648708200,
+      "callCount": "0",
+      "callTime": 0,
+      "number": "100159",
+      "waitingTimeEstimate": 0,
+      "waitingTimeOptimistic": 0,
+      "waitingTime": null,
+      "status": "confirmed",
+      "lastCallTime": 0,
+      "destination": null,
+      "destinationHint": null,
+      "withAppointment": "1"
+    },
+    "reminderTimestamp": "0",
+    "scope": {
+      "id": "1311",
+      "source": "dldb",
+      "contact": {
+        "name": "Termin Wartebereich BB Pasing",
+        "street": "Landsbergerstr.4xx. 55",
+        "email": "",
+        "country": "Germany"
+      },
+      "provider": {
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich BB Pasing",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Landsbergerstr.",
+          "streetNumber": "4xx"
+        },
+        "id": "1000",
+        "link": "https://service.berlin.de/standort/1000/",
+        "name": "Termin Wartebereich BB Pasing",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/1000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "1000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "4xx",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Landsbergerstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "post.kfz-zulassung@labo.berlin.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "1000",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich BB Pasing",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        }
+      },
+      "hint": "",
+      "lastChange": 1648192806,
+      "preferences": {
+        "appointment": {
+          "deallocationDuration": "15",
+          "endInDaysDefault": "60",
+          "multipleSlotsEnabled": "1",
+          "reservationDuration": "15",
+          "startInDaysDefault": "2",
+          "notificationConfirmationEnabled": "0",
+          "notificationHeadsUpEnabled": "0"
+        },
+        "client": {
+          "alternateAppointmentUrl": "",
+          "amendmentActivated": "0",
+          "amendmentLabel": "",
+          "emailFrom": "",
+          "emailRequired": 0,
+          "telephoneActivated": "0",
+          "telephoneRequired": 0
+        },
+        "notifications": {
+          "confirmationContent": "",
+          "headsUpContent": "",
+          "headsUpTime": "10"
+        },
+        "pickup": {
+          "alternateName": "Ausgabe",
+          "isDefault": "0"
+        },
+        "queue": {
+          "callCountMax": "0",
+          "callDisplayText": "Herzlich Willkommen",
+          "firstNumber": "1",
+          "lastNumber": "999",
+          "maxNumberContingent": "999",
+          "processingTimeAverage": "12",
+          "publishWaitingTimeEnabled": "0",
+          "statisticsEnabled": "0"
+        },
+        "survey": {
+          "emailContent": "",
+          "enabled": "0",
+          "label": ""
+        },
+        "ticketprinter": {
+          "buttonName": "Termin Wartebereich BB Pasing",
+          "confirmationEnabled": "0",
+          "deactivatedText": "",
+          "notificationsAmendmentEnabled": "0",
+          "notificationsEnabled": "0",
+          "notificationsDelay": "0"
+        },
+        "workstation": {
+          "emergencyEnabled": "0",
+          "emergencyRefreshInterval": "5"
+        }
+      },
+      "shortName": "001",
+      "status": {
+        "emergency": {
+          "activated": "0"
+        },
+        "queue": {
+          "ghostWorkstationCount": "-1",
+          "givenNumberCount": "1",
+          "lastGivenNumber": "1",
+          "lastGivenNumberTimestamp": 1647298800
+        },
+        "ticketprinter": {
+          "deactivated": "0"
+        }
+      }
+    },
+    "status": "confirmed",
+    "lastChange": 1648220002
+  }
+}

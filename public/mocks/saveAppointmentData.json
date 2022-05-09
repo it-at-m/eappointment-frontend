@@ -1,0 +1,89 @@
+{
+  "$schema": "https://tvberlind001.srv.muenchen.de/terminvereinbarung/api/2/",
+  "meta": {
+    "$schema": "https://schema.berlin.de/queuemanagement/metaresult.json",
+    "error": false,
+    "generated": "2022-03-29T13:47:52+02:00",
+    "server": "Zmsapi-ENV (2.24.03-8-g4d507bd)"
+  },
+  "data": {
+    "$schema": "https://schema.berlin.de/queuemanagement/process.json",
+    "amendment": "",
+    "appointments": [
+      {
+        "date": 0,
+        "scope": {
+          "id": "0",
+          "source": "dldb"
+        },
+        "availability": {
+          "lastChange": 1648554472,
+          "startDate": 1648554472,
+          "endDate": 1648554472,
+          "type": "openinghours"
+        },
+        "slotCount": "1"
+      }
+    ],
+    "apiclient": {
+      "shortname": "default"
+    },
+    "authKey": "08de",
+    "clients": [
+      {
+        "familyName": "Manjencic",
+        "email": "ext.dl.manjencic@muenchen.de",
+        "emailSendCount": "0",
+        "notificationsSendCount": "0",
+        "telephone": ""
+      }
+    ],
+    "createIP": "",
+    "createTimestamp": "1648544689",
+    "id": "100182",
+    "archiveId": 0,
+    "queue": {
+      "$schema": "https://schema.berlin.de/queuemanagement/queue.json",
+      "arrivalTime": 0,
+      "callCount": "0",
+      "callTime": 0,
+      "number": "100182",
+      "waitingTimeEstimate": 0,
+      "waitingTimeOptimistic": 0,
+      "waitingTime": null,
+      "status": "blocked",
+      "lastCallTime": 0,
+      "destination": null,
+      "destinationHint": null,
+      "withAppointment": "1"
+    },
+    "reminderTimestamp": "0",
+    "scope": {
+      "contact": {
+        "country": "Germany"
+      },
+      "provider": {
+        "contact": {
+          "country": "Germany"
+        }
+      },
+      "lastChange": 1648554472,
+      "preferences": {
+        "client": {
+          "emailRequired": 0,
+          "telephoneRequired": 0
+        },
+        "workstation": {
+          "emergencyRefreshInterval": "5"
+        }
+      },
+      "status": {
+        "queue": {
+          "lastGivenNumberTimestamp": false
+        }
+      }
+    },
+    "status": "blocked",
+    "lastChange": 1648554472
+  }
+}

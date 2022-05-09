@@ -1,0 +1,4889 @@
+{
+  "$schema": "https://tvberlind001.srv.muenchen.de/terminvereinbarung/api/2/",
+  "meta": {
+    "$schema": "https://schema.berlin.de/queuemanagement/metaresult.json",
+    "error": false,
+    "generated": "2022-05-05T14:37:53+02:00",
+    "server": "Zmsapi-ENV (2.24.03-8-g4d507bd)"
+  },
+  "data": {
+    "$schema": "https://schema.berlin.de/queuemanagement/source.json",
+    "source": "dldb",
+    "contact": {
+      "name": "Landesredaktion",
+      "email": "l-zms@muenchen.de"
+    },
+    "providers": [
+      {
+        "id": "1000",
+        "link": "https://service.berlin.de/standort/1000/",
+        "name": "Termin Wartebereich BB Pasing",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/1000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "1000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10005",
+                "slots": "2",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10006",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10006",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "4xx",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Landsbergerstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "1000",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich BB Pasing",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich BB Pasing",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Landsbergerstr.",
+          "streetNumber": "4xx"
+        }
+      },
+      {
+        "id": "1500",
+        "link": "https://service.berlin.de/standort/1500/",
+        "name": "Termin Wartebereich KFZ BB Pasing",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/1500/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "1500"
+          },
+          "services": [
+            {
+              "service": "15001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/1500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1500&anliegen[]=15001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Landsbergerstr.4xx.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "1500",
+          "geo": {
+            "lat": "52.53981500",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich KFZ BB Pasing",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich KFZ BB Pasing",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Landsbergerstr.4xx.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "2000",
+        "link": "https://service.berlin.de/standort/2000/",
+        "name": "Termin Wartebereich BB Leonrod",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/2000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Leonrod, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "2000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10006",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10006",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Leonrod.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "2000",
+          "geo": {
+            "lat": "52.53982000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich BB Leonrod",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich BB Leonrod",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Leonrod.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "2500",
+        "link": "https://service.berlin.de/standort/2500/",
+        "name": "Termin Wartebereich KFZ BB Leonrod",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/2500/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Leonrod, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "2500"
+          },
+          "services": [
+            {
+              "service": "15001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/2500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2500&anliegen[]=15001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Leonrod.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "2500",
+          "geo": {
+            "lat": "52.53982500",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich KFZ BB Leonrod",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich KFZ BB Leonrod",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Leonrod.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "3000",
+        "link": "https://service.berlin.de/standort/3000/",
+        "name": "Termin Wartebereich BB Forstenrieder Allee",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/3000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Forstenrieder Allee, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "3000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Forstenrieder Allee.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "3000",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich BB Forstenrieder Allee",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich BB Forstenrieder Allee",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Forstenrieder Allee.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "3333",
+        "link": "https://service.berlin.de/standort/3333/",
+        "name": "Bürgerbüro Pasing T3.2",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/3333/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro 1",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "3333"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "19",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Ruppertstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "3333",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Bürgerbüro Pasing T3.2",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Bürgerbüro Pasing T3.2",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Ruppertstr.",
+          "streetNumber": "19"
+        }
+      },
+      {
+        "id": "3500",
+        "link": "https://service.berlin.de/standort/3500/",
+        "name": "Termin Wartebereich KFZ BB Forstenrieder Str",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/3500/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Forstenrieder Str, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "3500"
+          },
+          "services": [
+            {
+              "service": "15001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/3500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3500&anliegen[]=15001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Forstenrieder Str.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "3500",
+          "geo": {
+            "lat": "52.53981500",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich KFZ BB Forstenrieder Str",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich KFZ BB Forstenrieder Str",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Forstenrieder Str.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "4000",
+        "link": "https://service.berlin.de/standort/4000/",
+        "name": "Termin Wartebereich BB Riesenfelderstr",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/4000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Riesenfelderstr, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "4000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "xx",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Riesenfelderstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "4000",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich BB Riesenfelderstr",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich BB Riesenfelderstr",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Riesenfelderstr.",
+          "streetNumber": "xx"
+        }
+      },
+      {
+        "id": "4444",
+        "link": "https://service.berlin.de/standort/4444/",
+        "name": "Bürgerbüro Pasing T2",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/4444/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro 1",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "4444"
+          },
+          "services": [
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "19",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Ruppertstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "4444",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Bürgerbüro Pasing T2",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Bürgerbüro Pasing T2",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Ruppertstr.",
+          "streetNumber": "19"
+        }
+      },
+      {
+        "id": "4500",
+        "link": "https://service.berlin.de/standort/4500/",
+        "name": "Termin Wartebereich KFZ BB Riesenfelderstr",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/4500/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Riesenfelderstr, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "4500"
+          },
+          "services": [
+            {
+              "service": "15001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/4500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4500&anliegen[]=15001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Landsbergerstr.4xx.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "4500",
+          "geo": {
+            "lat": "52.53981500",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich KFZ BB Riesenfelderstr",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich KFZ BB Riesenfelderstr",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Landsbergerstr.4xx.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "5000",
+        "link": "https://service.berlin.de/standort/5000/",
+        "name": "Termin Wartebereich BB Orleansstr",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/5000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Orleansstr, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "5000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Orleansstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "5000",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich BB Orleansstr",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich BB Orleansstr",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Orleansstr.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "5500",
+        "link": "https://service.berlin.de/standort/5500/",
+        "name": "Termin Wartebereich KFZ BB Orleansstr",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/1500/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Orleansstr, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "5500"
+          },
+          "services": [
+            {
+              "service": "15001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/5500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5500&anliegen[]=15001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "55",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Orleansstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "5500",
+          "geo": {
+            "lat": "52.53981500",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich KFZ BB Orleansstr",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich KFZ BB Orleansstr",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Orleansstr.",
+          "streetNumber": "55"
+        }
+      },
+      {
+        "id": "6000",
+        "link": "https://service.berlin.de/standort/6000/",
+        "name": "Termin Wartebereich 03 BB Ruppertstr",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/6000/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Ruppertstr, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "6000"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "19",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Ruppertstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "6000",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich 03 BB Ruppertstr",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich 03 BB Ruppertstr",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Ruppertstr.",
+          "streetNumber": "19"
+        }
+      },
+      {
+        "id": "6100",
+        "link": "https://service.berlin.de/standort/6100/",
+        "name": "Termin Wartebereich 04 BB Ruppertstr",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/6100/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Ruppertstr, Bürgerbüro",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "6100"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "19",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Ruppertstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "6100",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Termin Wartebereich 04 BB Ruppertstr",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Termin Wartebereich 04 BB Ruppertstr",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Ruppertstr.",
+          "streetNumber": "19"
+        }
+      },
+      {
+        "id": "7777",
+        "link": "https://service.berlin.de/standort/7777/",
+        "name": "Bürgerbüro Pasing T1",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/7777/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro 2",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "7777"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "19",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Ruppertstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "7777",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Bürgerbüro Pasing T1",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Bürgerbüro Pasing T1",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Ruppertstr.",
+          "streetNumber": "19"
+        }
+      },
+      {
+        "id": "8888",
+        "link": "https://service.berlin.de/standort/8888/",
+        "name": "Bürgerbüro Pasing T2",
+        "source": "dldb",
+        "data": {
+          "meta": {
+            "url": "https://service.berlin.de/standort/8888/",
+            "lastupdate": "2021-10-06T08:08:37+02:00",
+            "locale": "de",
+            "keywords": "Pasing, Bürgerbüro 1",
+            "translated": true,
+            "hash": "30444b3ec0cea773302598421322e7a8",
+            "id": "8888"
+          },
+          "services": [
+            {
+              "service": "10001",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10002",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10002",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10003",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10003",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10004",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10004",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            },
+            {
+              "service": "10005",
+              "hint": false,
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10005",
+                "slots": "1",
+                "external": false,
+                "allowed": true
+              },
+              "onlineprocessing": {
+                "link": "https://service.berlin.de/dienstleistung/329033/"
+              }
+            }
+          ],
+          "transit": {
+            "bus": false,
+            "sbahn": false,
+            "tram": "Plauener Str./ Rhinstr.: M17, 27\r\nSchalkauer Str.: M6, 16",
+            "ubahn": false,
+            "vbb": {
+              "api": false,
+              "distance": 2000,
+              "limit": 10
+            }
+          },
+          "address": {
+            "house_number": "19",
+            "city": "Muenchen",
+            "postal_code": "80000",
+            "street": "Ruppertstr.",
+            "hint": false
+          },
+          "note": "<a href=\"http://www.berlin.de/labo/wir-ueber-uns/artikel.259002.php\" >Hinweise zur elektronischen Zugangseröffnung</a>",
+          "accessibility": {
+            "elevator": "3",
+            "access": "rollstuhlgerecht",
+            "parking": "1",
+            "wc": "3",
+            "note": false
+          },
+          "authority": {
+            "id": "12760",
+            "name": "Landesamt für Bürger- und Ordnungsangelegenheiten (LABO)"
+          },
+          "office": "kfz-zulassungsstelle",
+          "category": {
+            "name": "KFZ-Zulassungsstellen",
+            "identifier": "kfz-zulassungsstelle"
+          },
+          "contact": {
+            "email": "l-zms@muenchen.de",
+            "fax": "(030) 90269-3696",
+            "signed_mail": "0",
+            "signed_maillink": "",
+            "phone": "(030) 90269-3300",
+            "webinfo": "",
+            "competence": ""
+          },
+          "payment": "Am Standort kann bar und mit girocard (mit PIN) (ehemals EC-Karte) bezahlt werden.\r",
+          "paymentcode": "0",
+          "appointment": {
+            "note": false,
+            "multiple": "0"
+          },
+          "id": "8888",
+          "geo": {
+            "lat": "52.53981000",
+            "lon": "13.51049000"
+          },
+          "urgent": {
+            "note": "Bitte beachten Sie unsere Hinweise zu Einschränkungen und Sonderschließzeiten auf unserer Webseite <a href=\"https://www.berlin.de/labo/aktuelles/einschraenkung-des-dienstbetriebes-906965.php\" >Einschränkungen des Dienstbetriebes im LABO</a>.",
+            "enddate": ""
+          },
+          "name": "Bürgerbüro Pasing T2",
+          "opening_times": {
+            "tuesday": "10:00-18:00 Uhr (für Terminkunden)<br />\n10:00-16:00 Uhr (für Kurzzeitkennzeichen)<br />\n(Fällt ein Spätsprechtag vor einen gesetzlichen Feiertag in Berlin, gilt die Öffnungszeit wie an einem Montag.)",
+            "thursday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "friday": "07:30-13:30 Uhr (für Terminkunden)<br />\n07:30-11:30 Uhr (für Kurzzeitkennzeichen)",
+            "wednesday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "monday": "07:30-15:00 Uhr (für Terminkunden)<br />\n07:30-13:00 Uhr (für Kurzzeitkennzeichen)",
+            "saturday": false,
+            "sunday": false,
+            "special": false
+          }
+        },
+        "contact": {
+          "city": "Muenchen",
+          "country": "Germany",
+          "name": "Bürgerbüro Pasing T2",
+          "postalCode": "80000",
+          "region": "Muenchen",
+          "street": "Ruppertstr.",
+          "streetNumber": "19"
+        }
+      }
+    ],
+    "requests": [
+      {
+        "id": "10001",
+        "link": "https://service.berlin.de/dienstleistung/10001/",
+        "name": "An- oder Ummeldung - Einzelperson",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1000",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2000",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3000",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4000",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5000",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6000",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "7777",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "8888",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6100",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/10001/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "10001"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "An- oder Ummeldung - Einzelperson",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "10001",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "An- oder Ummeldung - Einzelperson",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/10001/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      },
+      {
+        "id": "10002",
+        "link": "https://service.berlin.de/dienstleistung/10002/",
+        "name": "An- oder Ummeldung - Einzelperson mit eigenen Fahrzeugen",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1000",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2000",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3000",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4000",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5000",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6000",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "7777",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "8888",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6100",
+              "url": "https://service.berlin.de/dienstleistung/10002/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10002",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/10002/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "10002"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "Wohnsitz anmelden oder ummelden",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "10002",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "An- oder Ummeldung - Einzelperson mit eigenen Fahrzeugen",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/10002/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      },
+      {
+        "id": "10003",
+        "link": "https://service.berlin.de/dienstleistung/10003/",
+        "name": "An- oder Ummeldung - Familie",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1000",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2000",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3000",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4000",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5000",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6000",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "7777",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "8888",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4444",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6100",
+              "url": "https://service.berlin.de/dienstleistung/10003/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10003",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/10003/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "10003"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "An- oder Ummeldung - Familie",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "10003",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "An- oder Ummeldung - Familie",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/10003/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      },
+      {
+        "id": "10004",
+        "link": "https://service.berlin.de/dienstleistung/10004/",
+        "name": "An- oder Ummeldung - Familie mit eigenen Fahrzeugen",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1000",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2000",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3000",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4000",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5000",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6000",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "7777",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "8888",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4444",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6100",
+              "url": "https://service.berlin.de/dienstleistung/10004/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10004",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/10004/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "10004"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "An- oder Ummeldung - Familie mit eigenen Fahrzeugen",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "10004",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "An- oder Ummeldung - Familie mit eigenen Fahrzeugen",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/10004/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      },
+      {
+        "id": "10005",
+        "link": "https://service.berlin.de/dienstleistung/10005/",
+        "name": "Meldebescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1000",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2000",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3000",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4000",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5000",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6000",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "7777",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "8888",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4444",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6100",
+              "url": "https://service.berlin.de/dienstleistung/10005/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10005",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/10005/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "10005"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "Meldebescheinigung",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "10005",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "Meldebescheinigung",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/10005/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      },
+      {
+        "id": "10006",
+        "link": "https://service.berlin.de/dienstleistung/10006/",
+        "name": "Haushaltsbescheinigung",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1000",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/1000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1000&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2000",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/2000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2000&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3000",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/3000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3000&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4000",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/4000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4000&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5000",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/5000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5000&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6000",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "7777",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "8888",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4444",
+              "url": "https://service.berlin.de/dienstleistung/10001/standort/6000/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6000&anliegen[]=10001",
+                "slots": "1",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6100",
+              "url": "https://service.berlin.de/dienstleistung/10006/standort/6100/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6100&anliegen[]=10006",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/10006/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "10006"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "Haushaltsbescheinigung",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "10006",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "Haushaltsbescheinigung",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/10006/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      },
+      {
+        "id": "15001",
+        "link": "https://service.berlin.de/dienstleistung/15001/",
+        "name": "Fahrzeug wieder anmelden",
+        "group": "Meldewesen und Ordnung",
+        "source": "dldb",
+        "data": {
+          "authorities": [
+            {
+              "id": "12667",
+              "name": "Bezirksamt Charlottenburg - Wilmersdorf",
+              "webinfo": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/"
+            },
+            {
+              "id": "12668",
+              "name": "Bezirksamt Friedrichshain - Kreuzberg",
+              "webinfo": "https://www.berlin.de/ba-friedrichshain-kreuzberg/"
+            },
+            {
+              "id": "12669",
+              "name": "Bezirksamt Lichtenberg",
+              "webinfo": "https://www.berlin.de/ba-lichtenberg/"
+            },
+            {
+              "id": "12670",
+              "name": "Bezirksamt Marzahn - Hellersdorf",
+              "webinfo": "https://www.berlin.de/ba-marzahn-hellersdorf/"
+            },
+            {
+              "id": "12671",
+              "name": "Bezirksamt Mitte",
+              "webinfo": "https://www.berlin.de/ba-mitte/"
+            },
+            {
+              "id": "12672",
+              "name": "Bezirksamt Neukölln",
+              "webinfo": "https://www.berlin.de/ba-neukoelln/"
+            },
+            {
+              "id": "12673",
+              "name": "Bezirksamt Pankow",
+              "webinfo": "http://www.berlin.de/ba-pankow/"
+            },
+            {
+              "id": "12674",
+              "name": "Bezirksamt Reinickendorf",
+              "webinfo": "https://www.berlin.de/ba-reinickendorf/"
+            },
+            {
+              "id": "12675",
+              "name": "Bezirksamt Spandau",
+              "webinfo": "https://www.berlin.de/ba-spandau/"
+            },
+            {
+              "id": "12676",
+              "name": "Bezirksamt Steglitz-Zehlendorf",
+              "webinfo": "https://www.berlin.de/ba-steglitz-zehlendorf/"
+            },
+            {
+              "id": "12677",
+              "name": "Bezirksamt Tempelhof-Schöneberg",
+              "webinfo": "https://www.berlin.de/ba-tempelhof-schoeneberg/"
+            },
+            {
+              "id": "12678",
+              "name": "Bezirksamt Treptow-Köpenick",
+              "webinfo": "https://www.berlin.de/ba-treptow-koepenick/"
+            }
+          ],
+          "locations": [
+            {
+              "location": "1500",
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/1500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=1500&anliegen[]=15001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "2500",
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/2500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=2500&anliegen[]=15001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "3500",
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/3500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=3500&anliegen[]=15001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "4500",
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/4500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=4500&anliegen[]=15001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "5500",
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/5500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=5500&anliegen[]=15001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            },
+            {
+              "location": "6500",
+              "url": "https://service.berlin.de/dienstleistung/15001/standort/6500/",
+              "appointment": {
+                "link": "https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=6500&anliegen[]=15001",
+                "slots": "0",
+                "external": false,
+                "multiple": "1",
+                "allowed": true
+              },
+              "hint": false
+            }
+          ],
+          "meta": {
+            "lastupdate": "2020-08-02T22:02:56+02:00",
+            "url": "https://service.berlin.de/dienstleistung/15001/",
+            "locale": "de",
+            "keywords": "Abmeldung, Wohnungsabmeldung, Wegzug, abmelden, Wohnsitz, Wohnung abmelden, Wohnungswechsel, Umzug, Adressänderung, ummelden",
+            "translated": true,
+            "hash": "86b66547a8cb45a2f255b5325ab2e707",
+            "id": "15001"
+          },
+          "process_time": "Bei persönlicher Vorsprache in einem Bürgeramt wird die Abmeldung abschließend bearbeitet.",
+          "requirements": [
+            {
+              "description": "<strong>Bitte schriftlich erledigen.</strong><br />\nDie Abmeldung kann auch auf dem Postweg erfolgen. Wenn Sie die Wohnung schriftlich abmelden, schicken Sie bitte das Formular &quot;Abmeldung bei der Meldebehörde&quot; (unter &quot;Formulare&quot;) ausgefüllt an ein Berliner Bürgeramt (siehe zuständige Behörden).<br />\n<ul class=\"list\"><li>Bitte legen Sie eine Kopie von Ihrem Personalausweis oder Reisepass bei.</li><li>Bei mehr als 3 abzumeldenden Personen benutzen Sie bitte weitere Meldescheine.</li></ul>",
+              "name": "Abmeldung bei der Meldebehörde",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "responsibility": "Diese Dienstleistung erhalten Sie in allen Berliner Bürgerämtern (oder Sie melden sich schriftlich ab).",
+          "forms": [
+            {
+              "description": false,
+              "name": "Wohnsitz anmelden oder ummelden",
+              "link": "https://www.berlin.de/formularverzeichnis/?formular=/labo/zentrale-einwohnerangelegenheiten/_assets/mdb-f402609-20151120_abmeldung.pdf"
+            }
+          ],
+          "fees": "keine",
+          "prerequisites": [
+            {
+              "description": false,
+              "name": "keine",
+              "link": ""
+            }
+          ],
+          "id": "15001",
+          "description": "<ul class=\"list\"><li>Sie geben eine Berliner Wohnung auf, weil Sie in das Ausland verziehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Wohnungen in Deutschland auf, für die Sie angemeldet sind <strong>und</strong> die Berliner Wohnung bleibt bestehen</li></ul><strong>oder</strong><br />\n<ul class=\"list\"><li>Sie geben eine von mehreren Berliner Wohnungen auf, für die Sie angemeldet sind</li><br />\n</ul>Sie müssen sich bei der Meldebehörde in Berlin nur bei einem Wegzug ins Ausland abmelden oder bei der Aufgabe einer Haupt- oder Nebenwohnung, ohne dass Sie in eine andere Wohnung im Inland einziehen.<br />\n<br />\nBeim Wegzug in das Ausland gilt, dass Sie aus dieser Wohnung ausziehen und dort zukünftig nicht wieder wohnen werden - befristete Auslandsaufenthalte, z.B. zu Studienzwecken bedingen keine Abmeldung.<br />\n<br />\nDie Abmeldung kann im Zeitraum von 7 Tagen vor, muss aber bis 14 Tage nach dem Auszug vorgenommen werden. Sie erhalten eine Abmeldebestätigung.<br />\n<br />\n<strong>Hinweis:</strong><br />\nWenn Sie jedoch innerhalb Deutschlands nur umziehen wollen, brauchen Sie sich lediglich bei der Meldebehörde Ihrer neuen Wohnung anmelden.",
+          "leika": "99115005070000",
+          "links": [
+            {
+              "description": false,
+              "name": "Informationen zum Bundesmeldegesetz",
+              "link": "https://www.bmi.bund.de/DE/themen/moderne-verwaltung/verwaltungsrecht/meldewesen/meldewesen-node.html"
+            }
+          ],
+          "responsibility_all": true,
+          "name": "Fahrzeug wieder anmelden",
+          "onlineprocessing": {
+            "description": false,
+            "link": ""
+          },
+          "legal": [
+            {
+              "description": false,
+              "name": "Bundesmeldegesetz (BMG)",
+              "link": "https://www.gesetze-im-internet.de/bmg/"
+            }
+          ],
+          "representation": "0",
+          "residence": "0",
+          "relation": {
+            "root_topic": "324835"
+          },
+          "appointment": {
+            "link": "https://service.berlin.de/dienstleistung/15001/terminall/"
+          },
+          "group": "Meldewesen und Ordnung"
+        }
+      }
+    ],
+    "requestrelation": [
+      {
+        "provider": {
+          "id": "1000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "2000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3333",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "5000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6100",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "7777",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "8888",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10001",
+          "$ref": "/request/dldb/10001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "1000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "2000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3333",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "5000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6100",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "7777",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "8888",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10002",
+          "$ref": "/request/dldb/10002/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "1000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "2000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3333",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4444",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "5000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6100",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "7777",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "8888",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10003",
+          "$ref": "/request/dldb/10003/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "1000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "2000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3333",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4444",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "5000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6100",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "7777",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "8888",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10004",
+          "$ref": "/request/dldb/10004/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "1000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "2"
+      },
+      {
+        "provider": {
+          "id": "2000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3333",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4444",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "5000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "6100",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "7777",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "8888",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10005",
+          "$ref": "/request/dldb/10005/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "1000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10006",
+          "$ref": "/request/dldb/10006/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "2000",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "10006",
+          "$ref": "/request/dldb/10006/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "1500",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "15001",
+          "$ref": "/request/dldb/15001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "2500",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "15001",
+          "$ref": "/request/dldb/15001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "3500",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "15001",
+          "$ref": "/request/dldb/15001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "4500",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "15001",
+          "$ref": "/request/dldb/15001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      },
+      {
+        "provider": {
+          "id": "5500",
+          "source": "dldb"
+        },
+        "request": {
+          "id": "15001",
+          "$ref": "/request/dldb/15001/"
+        },
+        "source": "dldb",
+        "slots": "1"
+      }
+    ],
+    "label": "Dienstleistungsdatenbank",
+    "editable": "0",
+    "lastChange": 1650959497
+  },
+  "profiler": []
+}

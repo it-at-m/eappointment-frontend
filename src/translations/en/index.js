@@ -1,0 +1,28 @@
+export default {
+  language: "Language",
+  services: "Services",
+  next: "Next",
+  cancel: "Cancel",
+  confirmAppointment: "Confirm appointment",
+  appointmentIsConfirmed: "Your appointment has been confirmed",
+  errorTryAgainLater: "Something went wrong. Please, try with another appointment",
+  appointmentNotAvailable: "Appointment that you chose is not available anymore",
+  missingSlotInARow: "Appointment that you chose",
+  appointment: "Appointment",
+  noServiceFound: "No service found",
+  contactData: "Contact data",
+  choseOneAppointment: "Please choose one Appointment on {date}",
+  firstName: "First name",
+  pleaseCheckOnceAgain: "Please check your data once again and confirm appointment",
+  lastName: "Last name",
+  email: "E-mail",
+  location: "Location",
+  isRequired: 'is required',
+  privacyPolicyAccepted: "<a href=\"https://stadt.muenchen.de/infos/dsgvo-datenschutzgrundverordnung.html\" target='_blank'>Privacy policy</a> accepted",
+  acceptPrivacyPolicy: 'Accepting the privacy policy is required',
+  mustBeValidEmail: 'Must be valid e-mail',
+  languages: {
+    de: 'German',
+    en: 'English',
+  }
+}
