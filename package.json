@@ -1,12 +1,12 @@
 {
-  "name": "@muenchen/zms-frontend",
+  "name": "@muenchen/eappointment-frontend",
   "version": "0.0.1",
   "description": "Frontend client for Appointments system",
   "license": "MIT",
-  "main": "dist/zms-frontend.ssr.js",
-  "browser": "dist/zms-frontend.esm.js",
-  "module": "dist/zms-frontend.esm.js",
-  "unpkg": "dist/zms-frontend.min.js",
+  "main": "dist/eappointment-frontend.ssr.js",
+  "browser": "dist/eappointment-frontend.esm.js",
+  "module": "dist/eappointment-frontend.esm.js",
+  "unpkg": "dist/eappointment-frontend.min.js",
   "types": "dist/types/src/entry.esm.d.ts",
   "files": [
     "dist/*",
@@ -82,7 +82,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/it-at-m/zms-frontend"
+    "url": "https://github.com/it-at-m/eappointment-frontend"
   },
   "keywords": [
     "starter",
