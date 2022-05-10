@@ -1,13 +1,9 @@
-import _Vue, { PluginFunction } from 'vue';
-
 // Import vue components
-// @ts-ignore
 import * as components from './components/index.js';
 
 // install function executed by Vue.use()
-const install: PluginFunction<any> = function installDigiwfFormRenderer(Vue: typeof _Vue) {
+const install = function installDigiwfFormRenderer(Vue) {
   Object.entries(components).forEach(([componentName, component]) => {
-    // @ts-ignore
     Vue.component(componentName, component);
   });
 };
@@ -17,5 +13,4 @@ export default install;
 
 // To allow individual component use, export components
 // each can be registered via Vue.component()
-// @ts-ignore
 export * from './components/index.js';

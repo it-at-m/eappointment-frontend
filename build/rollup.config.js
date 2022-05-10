@@ -91,7 +91,7 @@ const buildFormats = [];
 if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
-    input: 'src/entry.esm.ts',
+    input: 'src/entry.esm.js',
     external,
     output: {
       file: 'dist/eappointment-frontend.esm.js',
