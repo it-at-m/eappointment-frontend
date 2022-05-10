@@ -94,7 +94,7 @@ if (!argv.format || argv.format === 'es') {
     input: 'src/entry.esm.ts',
     external,
     output: {
-      file: 'dist/zms-frontend.esm.js',
+      file: 'dist/eappointment-frontend.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -133,7 +133,7 @@ if (!argv.format || argv.format === 'cjs') {
     external,
     output: {
       compact: true,
-      file: 'dist/zms-frontend.ssr.js',
+      file: 'dist/eappointment-frontend.ssr.js',
       format: 'cjs',
       name: 'DigiwfFormRenderer',
       exports: 'auto',
@@ -162,7 +162,7 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/zms-frontend.min.js',
+      file: 'dist/eappointment-frontend.min.js',
       format: 'iife',
       name: 'DigiwfFormRenderer',
       exports: 'auto',
