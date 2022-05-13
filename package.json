@@ -1,6 +1,6 @@
 {
   "name": "@muenchen/eappointment-frontend",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Frontend client for Appointments system",
   "license": "MIT",
   "main": "dist/eappointment-frontend.ssr.js",
@@ -10,7 +10,9 @@
   "types": "dist/types/src/entry.esm.d.ts",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/components/*",
+    "src/store/*",
+    "src/translations/*"
   ],
   "sideEffects": false,
   "scripts": {
