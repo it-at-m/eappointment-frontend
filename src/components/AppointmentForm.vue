@@ -152,10 +152,10 @@
 </template>
 
 <script>
-import SwitchLanguage from '@/components/SwitchLanguage.vue'
-import ServiceFinder from '@/components/ServiceFinder.vue'
-import Calendar from '@/components/Calnedar.vue'
-import CustomerInfo from '@/components/CustomerInfo.vue'
+import SwitchLanguage from './SwitchLanguage.vue'
+import ServiceFinder from './ServiceFinder.vue'
+import Calendar from './Calnedar.vue'
+import CustomerInfo from './CustomerInfo.vue'
 
 export default {
   name: 'AppointmentForm',
