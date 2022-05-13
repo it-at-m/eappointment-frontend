@@ -185,7 +185,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .button-next {
   margin-top: 4rem;
 }

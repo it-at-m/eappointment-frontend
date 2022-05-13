@@ -14,7 +14,6 @@
     "src/store/*",
     "src/translations/*"
   ],
-  "sideEffects": false,
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "prebuild": "rimraf ./dist",

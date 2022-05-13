@@ -241,7 +241,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .calendar-container {
 }
 .v-btn--rounded {
