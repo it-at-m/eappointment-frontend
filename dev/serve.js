@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './serve.vue'
+import App from '@/components/AppointmentForm'
 import Vuetify from 'vuetify'
 import VueI18n from 'vue-i18n'
 import translations from './../src/translations'

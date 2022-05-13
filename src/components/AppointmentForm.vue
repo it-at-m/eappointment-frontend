@@ -158,7 +158,7 @@ import Calendar from '@/components/Calnedar.vue'
 import CustomerInfo from '@/components/CustomerInfo.vue'
 
 export default {
-  name: 'App',
+  name: 'AppointmentForm',
   components: {
     SwitchLanguage,
     ServiceFinder,
