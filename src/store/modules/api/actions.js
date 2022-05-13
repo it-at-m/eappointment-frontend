@@ -47,7 +47,7 @@ export default {
     },
     getSettings() {
         return new Promise((resolve, reject) => {
-            fetch('/mocks/settings.json')
+            fetch(process.env.VUE_APP_SETTINGS_ENDPOINT)
                 .then((response) => {
                     return response.json();
                 })
