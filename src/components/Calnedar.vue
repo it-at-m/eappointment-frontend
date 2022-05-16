@@ -241,19 +241,19 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
 .calendar-container {
 }
 .v-btn--rounded {
-  border-radius: 0.25rem !important;
+  border-radius: 0.25rem;
   width: 100% !important;
 }
 .v-date-picker-table tbody .v-btn {
-  background: #32a852 !important;
-  color: #fff !important;
+  background: #32a852;
+  color: #fff;
 }
 .v-date-picker-table tbody .v-btn.v-btn--disabled  {
-  background: #cccccc !important;
+  background: #cccccc;
 }
 .v-card {
   text-align: center;
