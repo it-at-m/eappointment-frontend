@@ -218,5 +218,27 @@ export default {
                     reject(error.response.data.meta)
                 })
         })
+    },
+    deleteAppointment(store, appointment) {
+        return new Promise((resolve, reject) => {
+            const requestOptions = {
+                method: "DELETE",
+                body: JSON.stringify(appointment)
+            };
+
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
+                .replace('{appointmentId}', appointment.id)
+                .replace('{authKey}', appointment.authKey),
+                requestOptions
+            )
+                .then((response) => {
+                    return response.json();
+                })
+                .then(data => {
+                    resolve(data.data)
+                }, error => {
+                    reject(error.response.data.meta)
+                })
+        })
     }
 }

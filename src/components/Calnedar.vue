@@ -206,6 +206,11 @@ export default {
     },
     chooseAppointment: function(appointment) {
       this.timeSlotError = false
+
+      if (typeof this.$store.state.data.appointment?.data !== 'undefined') {
+        this.$store.dispatch('API/deleteAppointment', this.$store.state.data.appointment.data)
+      }
+
       this.$store.dispatch('API/reserveAppointment', { appointment, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id })
           .then(data => {
             appointment.data = data
