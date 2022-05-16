@@ -245,15 +245,15 @@ export default {
 .calendar-container {
 }
 .v-btn--rounded {
-  border-radius: 0.25rem;
+  border-radius: 0.25rem !important;
   width: 100% !important;
 }
 .v-date-picker-table tbody .v-btn {
-  background: #32a852;
-  color: #fff;
+  background: #32a852 !important;
+  color: #fff !important;
 }
 .v-date-picker-table tbody .v-btn.v-btn--disabled  {
-  background: #cccccc;
+  background: #cccccc !important;
 }
 .v-card {
   text-align: center;
