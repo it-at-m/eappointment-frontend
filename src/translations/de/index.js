@@ -7,7 +7,7 @@ export default {
   appointmentIsConfirmed: "Ihr Termin wurde bestätigt",
   errorTryAgainLater: "Etwas ist schief gelaufen. Bitte versuchen Sie es mit einem anderen Termin",
   appointmentNotAvailable: "Der von Ihnen gewählte Termin ist leider nicht mehr verfügbar",
-  missingSlotInARow: "Services that you choosed are not available in a row. Please, choose another day or split appointment.",
+  missingSlotInARow: "Für die von Ihnen gewählte Dienstleistungszahl ist an diesem Tag kein zusammenhängender Termin mehr verfügbar. Versuchen es an einem anderen Tag oder teilen Sie ihren Termin auf.",
   appointment: "Termin",
   noServiceFound: "Keine Dienstleistung gefunden",
   contactData: "Kontaktdaten",

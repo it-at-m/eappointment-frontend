@@ -7,7 +7,7 @@ export default {
   appointmentIsConfirmed: "Your appointment has been confirmed",
   errorTryAgainLater: "Something went wrong. Please, try with another appointment",
   appointmentNotAvailable: "Appointment that you chose is not available anymore",
-  missingSlotInARow: "Appointment that you chose",
+  missingSlotInARow: "Services that you choosed are not available in a row. Please, choose another day or split appointment.",
   appointment: "Appointment",
   noServiceFound: "No service found",
   contactData: "Contact data",

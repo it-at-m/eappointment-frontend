@@ -173,14 +173,16 @@ export default {
             })
 
             if (this.timeSlots.length === 0) {
-              this.dateError = true
               this.selectableDates = this.selectableDates.filter(selectableDate => {
                 return selectableDate !== date
               })
 
               if (missingSlotsInARow) {
                 this.timeSlotError = this.$t('missingSlotInARow')
+                return
               }
+
+              this.dateError = true
 
               return
             }
