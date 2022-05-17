@@ -1,6 +1,6 @@
 {
   "name": "@muenchen/eappointment-frontend",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Frontend client for Appointments system",
   "license": "MIT",
   "main": "dist/eappointment-frontend.ssr.js",
