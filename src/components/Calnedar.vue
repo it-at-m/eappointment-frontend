@@ -179,6 +179,7 @@ export default {
 
               if (missingSlotsInARow) {
                 this.timeSlotError = this.$t('missingSlotInARow')
+                this.timeDialog = true
                 return
               }
 
