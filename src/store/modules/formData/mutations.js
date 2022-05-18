@@ -38,7 +38,7 @@ export default {
         }
 
         service.subServices.forEach((service) => {
-            state.appointmentCounts[service.id] = 0
+                state.appointmentCounts[service.id] = 1
         })
 
         state.service = service
