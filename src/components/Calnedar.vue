@@ -128,7 +128,7 @@ export default {
           && this.selectableDates.includes(currentDate.format('YYYY-MM-DD'))
     },
     shouldShowProvider: function(provider) {
-      if (typeof this.$store.state.preselectedProvider === 'undefined') {
+      if (!this.$store.state.preselectedProvider) {
         return true
       }
 
@@ -253,7 +253,7 @@ export default {
     }
   },
   mounted: function() {
-    if (typeof this.$store.state.preselectedProvider !== 'undefined') {
+    if (this.$store.state.preselectedProvider) {
       this.show(this.$store.state.preselectedProvider)
 
       return
