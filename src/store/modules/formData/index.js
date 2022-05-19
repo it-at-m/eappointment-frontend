@@ -6,7 +6,7 @@ const state = {
     providers: [],
     appointment: null,
     appointmentCounts: {},
-    appointmentCount: 0
+    appointmentCount: 1
 }
 
 export default {

@@ -19,7 +19,8 @@ Vue.config.productionTip = false
 
 const router = new VueRouter({
   routes: [
-    { path: '/services/:id', component: App},
+    { path: '/services/:serviceId/locations/:locationId', component: App},
+    { path: '/services/:serviceId', component: App},
   ]
 });
 
@@ -35,13 +36,15 @@ new Vue({
     }
   }),
   mounted () {
-
     this.$store.dispatch('API/getSettings')
       .then(data => {
         this.$store.commit('setSettings', data.settings)
         this.$vuetify.theme.themes.light = data.settings.theme
       })
 
-      this.$store.dispatch('setUpServicesAndProviders', this.$route.params.id)
+      this.$store.dispatch('setUpServicesAndProviders', {
+        preselectedService: this.$route.params.serviceId,
+        preselectedProvider: this.$route.params.locationId
+      })
   }
 }).$mount('#app')

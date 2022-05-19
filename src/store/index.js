@@ -10,6 +10,7 @@ const store = new Vuex.Store({
         services: [],
         locale: 'de',
         step: 1,
+        preselectedProvider: null,
         settings: {
             theme: {
                 primary: '#ff9900',
@@ -33,7 +34,7 @@ const store = new Vuex.Store({
                     store.commit('data/setAppointment', appointment)
                 })
         },
-        setUpServicesAndProviders(store, preselectedService) {
+        setUpServicesAndProviders(store, { preselectedService, preselectedProvider }) {
             store.dispatch('API/fetchServicesAndProviders')
                 .then(data => {
                     store.commit('setProviders', data.providers)
@@ -62,6 +63,8 @@ const store = new Vuex.Store({
                         store.commit('data/reset')
                         store.commit('selectServiceWithId', preselectedService)
                     }
+
+                    store.commit('selectProviderWithId', preselectedProvider)
                 })
         }
     },
@@ -85,6 +88,13 @@ const store = new Vuex.Store({
             state.services.forEach((service) => {
                 if (service.id === id) {
                     store.commit('data/setService', service)
+                }
+            })
+        },
+        selectProviderWithId (state, id) {
+            state.providers.forEach((provider) => {
+                if (provider.id === id) {
+                    state.preselectedProvider = provider;
                 }
             })
         }

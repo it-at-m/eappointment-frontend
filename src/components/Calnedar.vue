@@ -18,6 +18,7 @@
           >
             <v-tab
                 v-for="provider in $store.state.data.service.providers"
+                v-if="shouldShowProvider(provider)"
                 :key="provider.id + provider.name"
                 @change="showForProvider(provider)"
             >
@@ -125,6 +126,13 @@ export default {
           && currentDate.day() !== 6
           && currentDate < moment().add(3, 'M')
           && this.selectableDates.includes(currentDate.format('YYYY-MM-DD'))
+    },
+    shouldShowProvider: function(provider) {
+      if (typeof this.$store.state.preselectedProvider === 'undefined') {
+        return true
+      }
+
+      return provider.id === this.$store.state.preselectedProvider.id
     },
     getAppointmentsOfDay: function(date) {
       this.timeSlotError = false
@@ -245,6 +253,12 @@ export default {
     }
   },
   mounted: function() {
+    if (typeof this.$store.state.preselectedProvider !== 'undefined') {
+      this.show(this.$store.state.preselectedProvider)
+
+      return
+    }
+
     this.show(this.$store.state.data.service.providers[0])
   }
 }

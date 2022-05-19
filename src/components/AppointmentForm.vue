@@ -218,7 +218,7 @@ export default {
   },
   watch: {
     $route(to) {
-      this.preselectService(to.params.id)
+      this.preselectService(to.params.serviceId)
     }
   }
 }

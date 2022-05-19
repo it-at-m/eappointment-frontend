@@ -17,7 +17,7 @@ export default {
             service: null,
             appointment: null,
             appointmentCounts: {},
-            appointmentCount: 0
+            appointmentCount: 1
         }
     },
     setService (state, service) {
@@ -26,7 +26,7 @@ export default {
         }
 
         state.appointmentCounts = {}
-        state.appointmentCount = 0
+        state.appointmentCount = 1
 
         if (! service.subServices) {
             service.subServices = [
