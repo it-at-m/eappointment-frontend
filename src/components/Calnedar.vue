@@ -111,7 +111,8 @@ export default {
     timeSlots: [],
     timeSlotError: false,
     dateError: false,
-    provider: null
+    provider: null,
+    missingSlotsInARow: false
   }),
   methods: {
     showForProvider: function(provider) {
@@ -134,58 +135,73 @@ export default {
 
       return provider.id === this.$store.state.preselectedProvider.id
     },
+    filterTimeSlots: function(timeSlots) {
+      const now = moment().unix()
+      const slots = this.provider.slots
+      const appointmentCount = this.$store.state.data.appointmentCount
+      let times = []
+
+      timeSlots = timeSlots.filter((date) => {
+        if (times.includes(parseInt(date.appointments[0].date))
+            || moment.unix(date.appointments[0].date) < now) {
+          return false
+        }
+
+        times.push(parseInt(date.appointments[0].date))
+
+        return true
+      })
+          .map((date) => {
+            return {
+              dateFrom: moment.unix(date.appointments[0].date),
+              locationId: date.scope.provider.id,
+              scopeId: date.scope.id,
+              location: date.scope.provider.name
+            }
+          })
+
+      const minDuration = this.timeSlotDuration(times)
+
+      return timeSlots.filter((timeSlot) => {
+        for (let timeDiff = timeSlot.dateFrom.unix(); timeDiff < timeSlot.dateFrom.unix() + appointmentCount * slots * minDuration; timeDiff = timeDiff + minDuration) {
+          if (! times.includes(timeDiff)) {
+            this.missingSlotsInARow = true
+            return false
+          }
+        }
+
+        return true
+      })
+    },
     getAppointmentsOfDay: function(date) {
       this.timeSlotError = false
       this.dateError = false
       this.timeSlots = []
       const momentDate = moment(date, 'YYYY-MM-DD')
-      const now = moment().unix()
-      const slots = this.provider.slots
 
       this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, serviceId: this.$store.state.data.service.id })
           .then(timeSlots => {
-            const appointmentCount = this.$store.state.data.appointmentCount
+            const groupedTimeSlots = {}
+            this.missingSlotsInARow = false
 
-            let times = []
-            this.timeSlots = timeSlots.filter((date) => {
-              if (times.includes(parseInt(date.appointments[0].date))
-                || moment.unix(date.appointments[0].date) < now) {
-                return false
+            timeSlots.forEach(timeSlot => {
+              if (typeof groupedTimeSlots[timeSlot.scope.id] === 'undefined') {
+                groupedTimeSlots[timeSlot.scope.id] = []
               }
 
-              times.push(parseInt(date.appointments[0].date))
-
-              return true
-            })
-            .map((date) => {
-              return {
-                dateFrom: moment.unix(date.appointments[0].date),
-                locationId: date.scope.provider.id,
-                scopeId: date.scope.id,
-                location: date.scope.provider.name
-              }
+              groupedTimeSlots[timeSlot.scope.id].push(timeSlot)
             })
 
-            const minDuration = this.timeSlotDuration(times)
-            let missingSlotsInARow = false
-
-            this.timeSlots = this.timeSlots.filter((timeSlot) => {
-              for (let timeDiff = timeSlot.dateFrom.unix(); timeDiff < timeSlot.dateFrom.unix() + appointmentCount * slots * minDuration; timeDiff = timeDiff + minDuration) {
-                if (! times.includes(timeDiff)) {
-                  missingSlotsInARow = true
-                  return false
-                }
-              }
-
-              return true
-            })
+            for (const [key, value] of Object.entries(groupedTimeSlots)) {
+              this.timeSlots = this.timeSlots.concat(this.filterTimeSlots(groupedTimeSlots[key]))
+            }
 
             if (this.timeSlots.length === 0) {
               this.selectableDates = this.selectableDates.filter(selectableDate => {
                 return selectableDate !== date
               })
 
-              if (missingSlotsInARow) {
+              if (this.missingSlotsInARow) {
                 this.timeSlotError = this.$t('missingSlotInARow')
                 this.timeDialog = true
                 return
