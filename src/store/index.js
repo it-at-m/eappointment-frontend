@@ -47,7 +47,9 @@ const store = new Vuex.Store({
                                     return provider.id === relation.provider.id
                                 })[0]
 
-                                relation.provider.name = foundProvider.data.displayName ?? foundProvider.name
+                                relation.provider.name = foundProvider.data.displayName
+                                    ? foundProvider.data.displayName
+                                    : foundProvider.name
                                 relation.provider.slots = relation.slots
 
                                 request.providers.push(relation.provider)
