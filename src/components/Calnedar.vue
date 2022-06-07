@@ -162,8 +162,13 @@ export default {
 
       const minDuration = this.timeSlotDuration(times)
 
+      let slotOffset = 0
+      if (slots > 1) {
+        slotOffset = appointmentCount - 1
+      }
+
       return timeSlots.filter((timeSlot) => {
-        for (let timeDiff = timeSlot.dateFrom.unix(); timeDiff < timeSlot.dateFrom.unix() + appointmentCount * slots * minDuration; timeDiff = timeDiff + minDuration) {
+        for (let timeDiff = timeSlot.dateFrom.unix(); timeDiff < timeSlot.dateFrom.unix() + (appointmentCount + slotOffset) * minDuration; timeDiff = timeDiff + minDuration) {
           if (! times.includes(timeDiff)) {
             this.missingSlotsInARow = true
             return false
