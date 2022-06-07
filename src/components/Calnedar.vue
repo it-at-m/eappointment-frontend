@@ -72,10 +72,10 @@
 
           <div
               class="select-appointment"
-              v-for="(timeSlot) in timeSlots" :key="timeSlot.dateFrom.unix() + timeSlot.locationId"
-              @click="chooseAppointment(timeSlot)"
+              v-for="([slotTime, slots]) in Object.entries(timeSlots)" :key="slots[0].dateFrom.unix() + slots[0].locationId"
+              @click="chooseAppointment(slots[0])"
           >
-            {{ timeSlot.dateFrom.format('H:mm') }}
+            {{ slots[0].dateFrom.format('H:mm') }}
           </div>
         </v-card-text>
 
@@ -218,6 +218,11 @@ export default {
             }
 
             this.timeSlots.sort((a,b) => (a.dateFrom > b.dateFrom) ? 1 : ((b.dateFrom > a.dateFrom) ? -1 : 0))
+            this.timeSlots = this.timeSlots.reduce(function (r, a) {
+              r[a.dateFrom] = r[a.dateFrom] || [];
+              r[a.dateFrom].push(a);
+              return r;
+            }, Object.create(null));
 
             this.timeDialog = true
           })
