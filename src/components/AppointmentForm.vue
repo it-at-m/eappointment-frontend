@@ -207,7 +207,17 @@ export default {
         return ''
       }
 
-      return appointment.dateFrom.format('DD.MM.YYYY H:mm') + ' ' + appointment.location
+      return appointment.dateFrom.format('DD.MM.YYYY H:mm') + ' ' + this.getProviderName(appointment.locationId)
+    },
+    getProviderName (id) {
+      let providerName = ''
+      this.$store.state.providers.forEach((provider) => {
+        if (provider.id === id) {
+          providerName = provider.name
+        }
+      })
+
+      return providerName
     },
     preselectService (id) {
       this.$store.commit('data/reset')
