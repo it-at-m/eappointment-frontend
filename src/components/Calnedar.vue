@@ -267,7 +267,7 @@ export default {
           .then(data => {
             let days = data.days.filter((day) => {
               return day.status === 'bookable'
-                  && parseInt(day.freeAppointments.public) >= this.$store.state.data.appointmentCount
+                  && parseInt(day.freeAppointments.public) >= this.$store.state.data.appointmentCount * provider.slots
             })
             this.$store.commit('setAvailableDays', days)
             this.selectableDates = days.map((date) => {
