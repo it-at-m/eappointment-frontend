@@ -2,6 +2,7 @@ import Vuex from 'vuex'
 import Vue from "vue";
 import FormData from "./modules/formData/index.js"
 import Api from "./modules/api/index.js"
+import moment from "moment";
 
 Vue.use(Vuex)
 
@@ -10,7 +11,11 @@ const store = new Vuex.Store({
         services: [],
         locale: 'de',
         step: 1,
+        openedPanel: 0,
+        confirmedAppointment: null,
         preselectedProvider: null,
+        preselectedAppointment: null,
+        error: null,
         settings: {
             theme: {
                 primary: '#ff9900',
@@ -71,6 +76,50 @@ const store = new Vuex.Store({
 
                     store.commit('selectProviderWithId', preselectedProvider)
                 })
+        },
+        setUpAppointment(store, { appointmentHash }) {
+            let appointmentData = null
+
+            try {
+                appointmentData = JSON.parse(window.atob(appointmentHash))
+
+                if (typeof appointmentData.id === undefined || typeof appointmentData.authKey === undefined) {
+                    store.state.error = 'appointmentDoesntExist'
+                    return
+                }
+            } catch (error) {
+                store.state.error = 'appointmentDoesntExist'
+                return
+            }
+
+            store.dispatch('API/fetchAppointment', { processId: appointmentData.id, authKey: appointmentData.authKey })
+                .then(data => {
+                    if (!data) {
+                        store.state.error = 'appointmentDoesntExist'
+                        return
+                    }
+
+                    store.commit('selectServiceWithId', data.requests[0].id)
+                    store.commit('selectProviderWithId', data.scope.provider.id)
+
+                    const appointment = {
+                        dateFrom: moment.unix(data.appointments[0].date),
+                        locationId: data.scope.provider.id,
+                        scopeId: data.scope.id,
+                        location: data.scope.provider.name
+                    }
+
+                    const customer = {
+                        firstName: data.clients[0].familyName.split(' ')[0],
+                        lastName: data.clients[0].familyName.split(' ')[1],
+                        email: data.clients[0].email,
+                        dataProtection: true
+                    }
+
+                    store.commit('data/setCustomerData', customer)
+                    store.commit('preselectAppointment', appointment)
+                    store.commit('data/setAppointment', appointment)
+                })
         }
     },
     mutations: {
@@ -102,6 +151,10 @@ const store = new Vuex.Store({
                     state.preselectedProvider = provider;
                 }
             })
+        },
+        preselectAppointment(state, preselectedAppointment) {
+            state.preselectedAppointment = preselectedAppointment
+            state.confirmedAppointment = true
         }
     },
     modules: {

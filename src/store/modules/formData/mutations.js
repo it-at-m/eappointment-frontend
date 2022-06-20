@@ -45,5 +45,11 @@ export default {
     },
     setAppointment (state, appointment) {
         state.appointment = appointment
+    },
+    setCustomerData (state, customer) {
+        state.customer.firstName = customer.firstName
+        state.customer.lastName = customer.lastName
+        state.customer.email = customer.email
+        state.customer.dataProtection = customer.dataProtection
     }
 }

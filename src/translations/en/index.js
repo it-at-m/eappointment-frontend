@@ -1,8 +1,10 @@
 export default {
+  appointmentDoesntExist: "Appointment doesn't exist",
   language: "Language",
   services: "Services",
   next: "Next",
   cancel: "Cancel",
+  cancelAppointment: "Cancel appointment",
   confirmAppointment: "Confirm appointment",
   appointmentIsConfirmed: "Your appointment has been confirmed",
   errorTryAgainLater: "Something went wrong. Please, try with another appointment",

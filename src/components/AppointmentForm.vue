@@ -10,12 +10,22 @@
 
         <v-row class="content">
           <v-col cols="12">
+
+            <v-alert
+                v-if="$store.state.error"
+                border="right"
+                color="red"
+                dark
+            >
+              {{ $t($store.state.error) }}
+            </v-alert>
+
             <v-expansion-panels
-                v-model="openedPanel"
+                v-model="$store.state.openedPanel"
                 accordion
             >
               <v-expansion-panel
-                  :disabled="this.confirmedAppointment"
+                  :disabled="confirmedAppointment"
               >
                 <v-expansion-panel-header>
                   <template v-slot:default="{ open }">
@@ -99,8 +109,8 @@
                               v-if="! open"
                               key="1"
                           >
-                            <span v-if="$store.state.data.appointment && $store.state.data.appointment.client">
-                              {{ $store.state.data.appointment.client.firstName }} {{ $store.state.data.appointment.client.lastName }} ({{ $store.state.data.appointment.client.email }})
+                            <span v-if="$store.state.data.customer.firstName">
+                              {{ $store.state.data.customer.firstName }} {{ $store.state.data.customer.lastName }} ({{ $store.state.data.customer.email }})
                             </span>
                           </span>
                         </v-fade-transition>
@@ -136,11 +146,20 @@
               </div>
 
               <v-alert
-                  v-if="confirmedAppointment !== null"
+                  v-if="confirmedAppointment !== null && $store.state.preselectedAppointment === null"
                   :color="confirmedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
                 {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
               </v-alert>
+
+              <div v-if="$store.state.preselectedAppointment !== null">
+                <v-btn
+                    class="button-submit"
+                    elevation="2"
+                    depressed
+                    color="primary"
+                >{{ $t('cancelAppointment') }}</v-btn>
+              </div>
             </div>
 
           </v-col>
@@ -166,31 +185,38 @@ export default {
     CustomerInfo
   },
   data: () => ({
-    openedPanel: 0,
-    confirmedAppointment: null
   }),
   computed: {
     appointmentCanBeConfirmed() {
-      return this.$store.state.step === 4 && this.confirmedAppointment === null
+      return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
+    },
+    confirmedAppointment() {
+      return this.$store.state.confirmedAppointment
     }
   },
   methods: {
     submit() {
+      this.desabled = true
       this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment.data })
           .then(() => {
-            this.confirmedAppointment = true
+            this.$store.state.confirmedAppointment = true
             this.$store.dispatch('API/sendConfirmationEmail', { appointmentData: this.$store.state.data.appointment.data })
           })
           .catch(() => {
-            this.confirmedAppointment = false
+            this.desabled = false
+            this.$store.state.confirmedAppointment = false
           })
     },
     openPanel (step) {
       this.$store.commit('goToStep', step)
-      this.openedPanel = step - 1
+      this.$store.state.openedPanel = step - 1
     },
     getSelectedServices() {
       let services = []
+
+      if (! this.$store.state.data.service) {
+        return ''
+      }
 
       this.$store.state.data.service.subServices.forEach((subService) => {
         if (this.$store.state.data.appointmentCounts[subService.id]) {
@@ -223,12 +249,24 @@ export default {
       this.$store.commit('data/reset')
       this.$store.commit('selectServiceWithId', id)
       this.openPanel(1)
-      this.confirmedAppointment = null
+      this.$store.state.confirmedAppointment = null
+    },
+    preselectAppointment (appointmentHash) {
+      this.$store.commit('data/reset')
+      this.$store.commit('setUpAppointment', { appointmentHash: appointmentHash })
+      this.openPanel(3)
+      this.$store.state.confirmedAppointment = true
     }
   },
   watch: {
     $route(to) {
-      this.preselectService(to.params.serviceId)
+      if (to.params.serviceId) {
+        this.preselectService(to.params.serviceId)
+      }
+
+      if (to.params.appointmentHash) {
+        this.preselectAppointment(to.params.appointmentHash)
+      }
     }
   }
 }
@@ -248,5 +286,9 @@ export default {
 
 .confirm-action {
   margin-top: 2rem;
+}
+
+.v-alert {
+  margin: 0 0 20px 0;
 }
 </style>

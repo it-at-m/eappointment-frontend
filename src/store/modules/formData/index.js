@@ -6,7 +6,13 @@ const state = {
     providers: [],
     appointment: null,
     appointmentCounts: {},
-    appointmentCount: 1
+    appointmentCount: 1,
+    customer: {
+        firstName: null,
+        lastName: null,
+        email: null,
+        dataProtection: null
+    }
 }
 
 export default {

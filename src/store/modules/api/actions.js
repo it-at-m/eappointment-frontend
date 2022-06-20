@@ -114,6 +114,22 @@ export default {
                 })
         })
     },
+    fetchAppointment(state, { processId, authKey }) {
+        return new Promise((resolve, reject) => {
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
+                .replace('{appointmentId}', processId)
+                .replace('{authKey}', authKey)
+            )
+                .then((response) => {
+                    return response.json();
+                })
+                .then(data => {
+                    resolve(data.data)
+                }, error => {
+                    reject(error)
+                })
+        })
+    },
     fetchAvailableTimeSlots(store, { date, provider, serviceId }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {

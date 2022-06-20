@@ -73,15 +73,39 @@ export default {
     email: { required, email },
     dataProtection: { required }
   },
-  data: function () {
-    return {
-      firstName: '',
-      lastName: '',
-      email: '',
-      dataProtection: false
-    }
-  },
   computed: {
+    firstName: {
+      get() {
+        return this.$store.state.data.customer.firstName
+      },
+      set(newValue) {
+        return this.$store.state.data.customer.firstName = newValue
+      }
+    },
+    lastName: {
+      get() {
+        return this.$store.state.data.customer.lastName
+      },
+      set(newValue) {
+        return this.$store.state.data.customer.lastName = newValue
+      }
+    },
+    email: {
+      get() {
+        return this.$store.state.data.customer.email
+      },
+      set(newValue) {
+        return this.$store.state.data.customer.email = newValue
+      }
+    },
+    dataProtection: {
+      get() {
+        return this.$store.state.data.customer.dataProtection
+      },
+      set(newValue) {
+        return this.$store.state.data.customer.dataProtection = newValue
+      }
+    },
     firstNameErrors() {
       const errors = [];
       if (!this.$v.firstName.$dirty) return errors;

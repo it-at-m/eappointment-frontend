@@ -1,7 +1,9 @@
 export default {
+  appointmentDoesntExist: "Termin wurde nicht gefunden",
   language: "Sprache",
   next: "Weiter",
   cancel: "Abbrechen",
+  cancelAppointment: "Termin absagen",
   confirmAppointment: "Termin bestätigen",
   services: "Dienstleistungen",
   appointmentIsConfirmed: "Ihr Termin wurde bestätigt",

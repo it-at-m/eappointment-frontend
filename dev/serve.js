@@ -21,6 +21,7 @@ const router = new VueRouter({
   routes: [
     { path: '/services/:serviceId/locations/:locationId', component: App},
     { path: '/services/:serviceId', component: App},
+    { path: '/appointment/:appointmentHash', component: App},
   ]
 });
 
@@ -46,5 +47,13 @@ new Vue({
         preselectedService: this.$route.params.serviceId,
         preselectedProvider: this.$route.params.locationId
       })
+
+      if (this.$route.params.appointmentHash) {
+        this.$store.state.openedPanel = 3
+        this.$store.dispatch('setUpAppointment', {
+          appointmentHash: this.$route.params.appointmentHash
+        })
+      }
+
   }
 }).$mount('#app')
