@@ -46,14 +46,13 @@ new Vue({
       this.$store.dispatch('setUpServicesAndProviders', {
         preselectedService: this.$route.params.serviceId,
         preselectedProvider: this.$route.params.locationId
+      }).then(() => {
+        if (this.$route.params.appointmentHash) {
+          this.$store.state.openedPanel = 3
+          this.$store.dispatch('setUpAppointment', {
+            appointmentHash: this.$route.params.appointmentHash
+          })
+        }
       })
-
-      if (this.$route.params.appointmentHash) {
-        this.$store.state.openedPanel = 3
-        this.$store.dispatch('setUpAppointment', {
-          appointmentHash: this.$route.params.appointmentHash
-        })
-      }
-
   }
 }).$mount('#app')

@@ -22,6 +22,31 @@ export default {
                 })
         })
     },
+    cancelAppointment(store, { appointmentData }) {
+        return new Promise((resolve, reject) => {
+            const requestOptions = {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+            };
+
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
+                .replace('{appointmentId}', appointmentData.id)
+                .replace('{authKey}', appointmentData.authKey)
+                , requestOptions
+            )
+                .then(data => {
+                    if (! data.ok) {
+                        reject('Can not be cancelled')
+
+                        return
+                    }
+
+                    resolve(data)
+                }, error => {
+                    reject(error)
+                })
+        })
+    },
     sendConfirmationEmail(store, { appointmentData }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {

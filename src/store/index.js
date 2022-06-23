@@ -106,7 +106,9 @@ const store = new Vuex.Store({
                         dateFrom: moment.unix(data.appointments[0].date),
                         locationId: data.scope.provider.id,
                         scopeId: data.scope.id,
-                        location: data.scope.provider.name
+                        location: data.scope.provider.name,
+                        id: appointmentData.id,
+                        authKey: appointmentData.authKey
                     }
 
                     const customer = {
@@ -119,6 +121,10 @@ const store = new Vuex.Store({
                     store.commit('data/setCustomerData', customer)
                     store.commit('preselectAppointment', appointment)
                     store.commit('data/setAppointment', appointment)
+
+                    if (data.appointments[0].date < moment().unix()) {
+                        store.state.error = 'appointmentCanNotBeCanceled'
+                    }
                 })
         }
     },

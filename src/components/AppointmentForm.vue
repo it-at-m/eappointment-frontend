@@ -11,6 +11,9 @@
         <v-row class="content">
           <v-col cols="12">
 
+            <div class="appointment-number" v-if="$store.state.preselectedAppointment">
+              {{ $t('yourAppointmentNumber') }}: <b>{{ $store.state.preselectedAppointment.id }}</b>
+            </div>
             <v-alert
                 v-if="$store.state.error"
                 border="right"
@@ -43,7 +46,7 @@
                               v-if="! open"
                               key="1"
                           >
-                            {{ getSelectedServices() }}
+                            <b>{{ getSelectedServices() }}</b>
                           </span>
                         </v-fade-transition>
                       </v-col>
@@ -76,7 +79,7 @@
                               v-if="! open"
                               key="1"
                           >
-                            {{ getSelectedAppointment() }}
+                            <b>{{ getSelectedAppointment() }}</b>
                           </span>
                         </v-fade-transition>
                       </v-col>
@@ -110,7 +113,7 @@
                               key="1"
                           >
                             <span v-if="$store.state.data.customer.firstName">
-                              {{ $store.state.data.customer.firstName }} {{ $store.state.data.customer.lastName }} ({{ $store.state.data.customer.email }})
+                              <b>{{ $store.state.data.customer.firstName }} {{ $store.state.data.customer.lastName }} ({{ $store.state.data.customer.email }})</b>
                             </span>
                           </span>
                         </v-fade-transition>
@@ -146,19 +149,61 @@
               </div>
 
               <v-alert
+                  class="appointment-confirmation"
                   v-if="confirmedAppointment !== null && $store.state.preselectedAppointment === null"
                   :color="confirmedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
                 {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
               </v-alert>
 
-              <div v-if="$store.state.preselectedAppointment !== null">
-                <v-btn
-                    class="button-submit"
-                    elevation="2"
-                    depressed
-                    color="primary"
-                >{{ $t('cancelAppointment') }}</v-btn>
+              <v-alert
+                  class="appointment-cancel"
+                  v-if="appointmentCancelled !== null"
+                  :color="appointmentCancelled ? $store.state.settings.theme.success : $store.state.settings.theme.error"
+              >
+                {{ appointmentCancelled ? $t('appointmentCanceled') : $t('appointmentCanNotBeCanceled') }}
+              </v-alert>
+
+              <div v-if="$store.state.preselectedAppointment !== null && $store.state.error === null">
+                <v-dialog
+                    v-model="cancelDialog"
+                    persistent
+                    max-width="290"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                        v-if="appointmentCancelled === null"
+                        class="button-submit"
+                        elevation="2"
+                        depressed
+                        color="primary"
+                        v-bind="attrs"
+                        v-on="on"
+                    >{{ $t('cancelAppointment') }}</v-btn>
+                  </template>
+                  <v-card>
+                    <div class="popup-content">
+                      {{ $t('wantToCancelAppointment') }}
+                    </div>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                          color="green"
+                          text
+                          @click="cancelDialog = false"
+                      >
+                        {{ $t('no') }}
+                      </v-btn>
+                      <v-btn
+                          color="primary"
+                          text
+                          @click="cancelAppointment"
+                      >
+                        {{ $t('yes') }}
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
               </div>
             </div>
 
@@ -185,6 +230,8 @@ export default {
     CustomerInfo
   },
   data: () => ({
+    cancelDialog: false,
+    appointmentCancelled: null
   }),
   computed: {
     appointmentCanBeConfirmed() {
@@ -195,6 +242,17 @@ export default {
     }
   },
   methods: {
+    cancelAppointment() {
+      this.cancelDialog = false;
+
+      this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
+          .then(() => {
+            this.appointmentCancelled = true
+          })
+          .catch(() => {
+            this.appointmentCancelled = false
+          })
+    },
     submit() {
       this.desabled = true
       this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment.data })
@@ -290,5 +348,15 @@ export default {
 
 .v-alert {
   margin: 0 0 20px 0;
+}
+
+.appointment-number {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.popup-content {
+  font-size: 18px;
+  padding: 20px;
 }
 </style>
