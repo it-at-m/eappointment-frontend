@@ -34,8 +34,14 @@ export default {
                 .replace('{authKey}', appointmentData.authKey)
                 , requestOptions
             )
+                .then(response =>
+                    response.json().then(data => ({
+                        data: data.data,
+                        status: response.status
+                    })
+                ))
                 .then(data => {
-                    if (! data.ok) {
+                    if (data.status !== 200) {
                         reject('Can not be cancelled')
 
                         return
