@@ -41,7 +41,7 @@ export default {
                         return
                     }
 
-                    resolve(data)
+                    resolve(data.data)
                 }, error => {
                     reject(error)
                 })
@@ -56,6 +56,29 @@ export default {
             };
 
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_SEND_CONFIRMATION_MAIL_ENDPOINT
+                .replace('{appointmentId}', appointmentData.id)
+                .replace('{authKey}', appointmentData.authKey)
+                , requestOptions
+            )
+                .then((response) => {
+                    return response.json();
+                })
+                .then(data => {
+                    resolve(data.data)
+                }, error => {
+                    reject(error)
+                })
+        })
+    },
+    sendCancellationEmail(store, { appointmentData }) {
+        return new Promise((resolve, reject) => {
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(appointmentData)
+            };
+
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_SEND_CANCELLATION_MAIL_ENDPOINT
                 .replace('{appointmentId}', appointmentData.id)
                 .replace('{authKey}', appointmentData.authKey)
                 , requestOptions

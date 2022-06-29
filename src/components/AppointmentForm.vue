@@ -248,6 +248,7 @@ export default {
       this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
           .then(() => {
             this.appointmentCancelled = true
+            this.$store.dispatch('API/sendCancellationEmail', { appointmentData: this.$store.state.preselectedAppointment })
           })
           .catch(() => {
             this.appointmentCancelled = false
