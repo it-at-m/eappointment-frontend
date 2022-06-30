@@ -1,6 +1,6 @@
 export default {
   appointmentDoesntExist: "Appointment doesn't exist",
-  appointmentCanNotBeCanceled: "Appointment can't be canceled",
+  appointmentCanNotBeCanceled: "The Appointment can't be canceled because the appointment time is in the past",
   appointmentCanceled: "Appointment has been canceled",
   language: "Language",
   services: "Services",

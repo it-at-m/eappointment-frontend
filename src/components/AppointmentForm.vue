@@ -188,18 +188,18 @@
                     <v-card-actions>
                       <v-spacer></v-spacer>
                       <v-btn
-                          color="green"
-                          text
-                          @click="cancelDialog = false"
-                      >
-                        {{ $t('no') }}
-                      </v-btn>
-                      <v-btn
                           color="primary"
                           text
                           @click="cancelAppointment"
                       >
                         {{ $t('yes') }}
+                      </v-btn>
+                      <v-btn
+                          color="green"
+                          text
+                          @click="cancelDialog = false"
+                      >
+                        {{ $t('no') }}
                       </v-btn>
                     </v-card-actions>
                   </v-card>
