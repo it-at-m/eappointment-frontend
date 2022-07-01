@@ -322,10 +322,6 @@ export default {
       if (to.params.serviceId) {
         this.preselectService(to.params.serviceId)
       }
-
-      if (to.params.appointmentHash) {
-        this.preselectAppointment(to.params.appointmentHash)
-      }
     }
   }
 }
