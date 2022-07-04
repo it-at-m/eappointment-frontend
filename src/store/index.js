@@ -77,12 +77,9 @@ const store = new Vuex.Store({
                         }
 
                         store.commit('selectProviderWithId', preselectedProvider)
+
+                        resolve()
                     })
-                .then(() => {
-                    resolve()
-                }, error => {
-                    reject(error)
-                })
             })
         },
         setUpAppointment(store, { appointmentHash }) {
