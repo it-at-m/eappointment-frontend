@@ -15,6 +15,7 @@ const store = new Vuex.Store({
         confirmedAppointment: null,
         preselectedProvider: null,
         preselectedAppointment: null,
+        providers: [],
         error: null,
         settings: {
             theme: {
