@@ -150,7 +150,7 @@
 
               <v-alert
                   class="appointment-confirmation"
-                  v-if="confirmedAppointment !== null && $store.state.preselectedAppointment === null"
+                  v-if="confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
                   :color="confirmedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
                 {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
@@ -309,12 +309,6 @@ export default {
       this.$store.commit('selectServiceWithId', id)
       this.openPanel(1)
       this.$store.state.confirmedAppointment = null
-    },
-    preselectAppointment (appointmentHash) {
-      this.$store.commit('data/reset')
-      this.$store.commit('setUpAppointment', { appointmentHash: appointmentHash })
-      this.openPanel(3)
-      this.$store.state.confirmedAppointment = true
     }
   },
   watch: {

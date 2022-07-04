@@ -41,42 +41,49 @@ const store = new Vuex.Store({
                 })
         },
         setUpServicesAndProviders(store, { preselectedService, preselectedProvider }) {
-            store.dispatch('API/fetchServicesAndProviders')
-                .then(data => {
-                    store.commit('setProviders', data.providers)
+            return new Promise((resolve, reject) => {
+                store.dispatch('API/fetchServicesAndProviders')
+                    .then(data => {
+                        store.commit('setProviders', data.providers)
 
-                    let requests = data.requests.map(request => {
-                        request.providers = []
-                        data.requestrelation.forEach(relation => {
-                            if (relation.request.id === request.id) {
-                                const foundProvider = data.providers.filter(provider => {
-                                    return provider.id === relation.provider.id
-                                })[0]
+                        let requests = data.requests.map(request => {
+                            request.providers = []
+                            data.requestrelation.forEach(relation => {
+                                if (relation.request.id === request.id) {
+                                    const foundProvider = data.providers.filter(provider => {
+                                        return provider.id === relation.provider.id
+                                    })[0]
 
-                                foundProvider.name = foundProvider.data.displayName
-                                    ? foundProvider.data.displayName
-                                    : foundProvider.name
-                                relation.provider.name = foundProvider.name
-                                relation.provider.slots = relation.slots
+                                    foundProvider.name = foundProvider.data.displayName
+                                        ? foundProvider.data.displayName
+                                        : foundProvider.name
+                                    relation.provider.name = foundProvider.name
+                                    relation.provider.slots = relation.slots
 
-                                request.providers.push(relation.provider)
-                            }
+                                    request.providers.push(relation.provider)
+                                }
+                            })
+
+                            request.maxQuantity = request.data.maxQuantity ? request.data.maxQuantity : 1
+                            delete request.data
+
+                            return request
                         })
+                        store.commit('setServices', requests)
 
-                        request.maxQuantity = request.data.maxQuantity ? request.data.maxQuantity : 1
-                        delete request.data
+                        if (typeof preselectedService !== undefined) {
+                            store.commit('data/reset')
+                            store.commit('selectServiceWithId', preselectedService)
+                        }
 
-                        return request
+                        store.commit('selectProviderWithId', preselectedProvider)
                     })
-                    store.commit('setServices', requests)
-
-                    if (typeof preselectedService !== undefined) {
-                        store.commit('data/reset')
-                        store.commit('selectServiceWithId', preselectedService)
-                    }
-
-                    store.commit('selectProviderWithId', preselectedProvider)
+                .then(() => {
+                    resolve()
+                }, error => {
+                    reject(error)
                 })
+            })
         },
         setUpAppointment(store, { appointmentHash }) {
             let appointmentData = null
