@@ -114,21 +114,21 @@ export default {
     },
     fetchAvailableDays(state, { provider, serviceId }) {
         return new Promise((resolve, reject) => {
-            const dateIn3Months = moment().add(3, 'M')
+            const dateIn6Months = moment().add(6, 'M')
 
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     "firstDay": {
-                        "year": moment().year(),
-                        "month": moment().month(),
-                        "day": moment().day()
+                        "year": moment().format('YYYY'),
+                        "month": moment().format('M'),
+                        "day": moment().format('D')
                     },
                     "lastDay": {
-                        "year": dateIn3Months.year(),
-                        "month": dateIn3Months.month(),
-                        "day": dateIn3Months.day()
+                        "year": dateIn6Months.format('YYYY'),
+                        "month": dateIn6Months.format('M'),
+                        "day": dateIn6Months.format('D')
                     },
                     "requests": [
                         {
