@@ -13,6 +13,7 @@ const store = new Vuex.Store({
         step: 1,
         openedPanel: 0,
         confirmedAppointment: null,
+        isRebooking: false,
         preselectedProvider: null,
         preselectedAppointment: null,
         providers: [],
@@ -134,6 +135,13 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
+        startRebooking (state) {
+            state.isRebooking = true
+            state.preselectedProvider = null
+            state.step = 1
+            state.openedPanel = 0
+            state.confirmedAppointment = null
+        },
         setServices (state, services) {
             state.services = services
         },

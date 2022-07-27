@@ -9,6 +9,7 @@ export default {
   yes: "Yes",
   no: "No",
   cancelAppointment: "Cancel appointment",
+  rebookAppointment: "Change appointment",
   confirmAppointment: "Confirm appointment",
   appointmentIsConfirmed: "Your appointment has been confirmed",
   errorTryAgainLater: "Something went wrong. Please, try with another appointment",

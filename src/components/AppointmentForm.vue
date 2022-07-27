@@ -145,7 +145,7 @@
                     depressed
                     color="primary"
                     @click="submit"
-                >{{ $t('confirmAppointment') }}</v-btn>
+                >{{ $store.state.isRebooking ? $t('rebookAppointment') : $t('confirmAppointment') }}</v-btn>
               </div>
 
               <v-alert
@@ -164,7 +164,15 @@
                 {{ appointmentCancelled ? $t('appointmentCanceled') : $t('appointmentCanNotBeCanceled') }}
               </v-alert>
 
-              <div v-if="$store.state.preselectedAppointment !== null && $store.state.error === null">
+              <div v-if="$store.state.preselectedAppointment !== null && $store.state.error === null && !$store.state.isRebooking">
+                <v-btn
+                    v-if="appointmentCancelled === null"
+                    class="button-submit"
+                    elevation="2"
+                    depressed
+                    color="primary"
+                    @click="startRebooking"
+                >{{ $t('rebookAppointment') }}</v-btn>
                 <v-dialog
                     v-model="cancelDialog"
                     persistent
@@ -247,16 +255,27 @@ export default {
 
       this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
           .then((data) => {
-            this.appointmentCancelled = true
+            this.$store.commit('preselectAppointment', null)
+            this.appointmentCancelled = this.$store.state.isRebooking ? null : true
+            console.log(this.$store.state.isRebooking)
+            console.log(this.appointmentCancelled)
             this.$store.dispatch('API/sendCancellationEmail', { appointmentData: data })
           })
           .catch(() => {
             this.appointmentCancelled = false
           })
     },
+    startRebooking() {
+      this.$store.commit('startRebooking')
+    },
     submit() {
       this.desabled = true
       this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment.data })
+          .then(() => {
+            if (this.$store.state.isRebooking) {
+              this.cancelAppointment()
+            }
+          })
           .then(() => {
             this.$store.state.confirmedAppointment = true
             this.$store.dispatch('API/sendConfirmationEmail', { appointmentData: this.$store.state.data.appointment.data })
@@ -327,6 +346,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.button-submit {
+  margin-right: 1rem;
 }
 
 .content {

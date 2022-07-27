@@ -8,6 +8,7 @@ export default {
   yes: "Ja",
   no: "Nein",
   cancelAppointment: "Termin absagen",
+  rebookAppointment: "Termin umbuchen",
   confirmAppointment: "Termin bestätigen",
   services: "Dienstleistungen",
   appointmentIsConfirmed: "Ihr Termin wurde bestätigt",
