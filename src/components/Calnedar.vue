@@ -104,7 +104,7 @@ export default {
   data: () => ({
     date: moment().format("YYYY-MM-DD"),
     currentDate: moment().format("YYYY-MM-DD"),
-    maxDate: moment().add(3, 'M'),
+    maxDate: moment().add(6, 'M'),
     selectableDates: [],
     calendarSvg: mdiCalendarClock,
     timeDialog: false,
