@@ -108,20 +108,22 @@ const store = new Vuex.Store({
                     store.commit('selectServiceWithId', data.requests[0].id)
                     store.commit('selectProviderWithId', data.scope.provider.id)
 
+                    const customer = {
+                        firstName: data.clients[0].familyName.split(' ')[0],
+                        lastName: data.clients[0].familyName.split(' ')[1],
+                        email: data.clients[0].email,
+                        dataProtection: true
+                    }
+
                     const appointment = {
                         dateFrom: moment.unix(data.appointments[0].date),
                         locationId: data.scope.provider.id,
                         scopeId: data.scope.id,
                         location: data.scope.provider.name,
                         id: appointmentData.id,
-                        authKey: appointmentData.authKey
-                    }
-
-                    const customer = {
-                        firstName: data.clients[0].familyName.split(' ')[0],
-                        lastName: data.clients[0].familyName.split(' ')[1],
-                        email: data.clients[0].email,
-                        dataProtection: true
+                        authKey: appointmentData.authKey,
+                        serviceId: data.requests[0].id,
+                        customer: customer
                     }
 
                     store.commit('data/setCustomerData', customer)
@@ -132,16 +134,26 @@ const store = new Vuex.Store({
                         store.state.error = 'appointmentCanNotBeCanceled'
                     }
                 })
-        }
+        },
+        startRebooking (store) {
+            store.state.isRebooking = true
+            store.state.preselectedProvider = null
+            store.state.step = 2
+            store.state.openedPanel = 1
+            store.state.confirmedAppointment = null
+        },
+        stopRebooking (store) {
+            store.state.isRebooking = false
+            store.state.step = 3
+            store.state.openedPanel = 3
+            store.state.confirmedAppointment = true
+
+            store.commit('selectProviderWithId', store.state.preselectedAppointment.providerId)
+            store.commit('data/setCustomerData', store.state.preselectedAppointment.customer)
+            store.commit('data/setAppointment', store.state.preselectedAppointment)
+        },
     },
     mutations: {
-        startRebooking (state) {
-            state.isRebooking = true
-            state.preselectedProvider = null
-            state.step = 1
-            state.openedPanel = 0
-            state.confirmedAppointment = null
-        },
         setServices (state, services) {
             state.services = services
         },

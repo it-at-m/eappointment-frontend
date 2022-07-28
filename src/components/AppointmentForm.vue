@@ -28,7 +28,7 @@
                 accordion
             >
               <v-expansion-panel
-                  :disabled="confirmedAppointment"
+                  :disabled="confirmedAppointment || $store.state.isRebooking"
               >
                 <v-expansion-panel-header>
                   <template v-slot:default="{ open }">
@@ -164,15 +164,56 @@
                 {{ appointmentCancelled ? $t('appointmentCanceled') : $t('appointmentCanNotBeCanceled') }}
               </v-alert>
 
+              <v-btn
+                  v-if="$store.state.isRebooking"
+                  class="button-submit"
+                  elevation="2"
+                  depressed
+                  color="primary"
+                  @click="stopRebooking"
+              >{{ $t('cancel') }}</v-btn>
+
               <div v-if="$store.state.preselectedAppointment !== null && $store.state.error === null && !$store.state.isRebooking">
-                <v-btn
-                    v-if="appointmentCancelled === null"
-                    class="button-submit"
-                    elevation="2"
-                    depressed
-                    color="primary"
-                    @click="startRebooking"
-                >{{ $t('rebookAppointment') }}</v-btn>
+                <v-dialog
+                    v-model="rebookDialog"
+                    persistent
+                    max-width="290"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                        v-if="appointmentCancelled === null"
+                        class="button-submit"
+                        elevation="2"
+                        depressed
+                        color="primary"
+                        v-bind="attrs"
+                        v-on="on"
+                    >{{ $t('rebookAppointment') }}</v-btn>
+                  </template>
+                  <v-card>
+                    <div class="popup-content">
+                      {{ $t('wantToRebookAppointment') }}
+                    </div>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                          color="primary"
+                          text
+                          @click="startRebooking"
+                      >
+                        {{ $t('yes') }}
+                      </v-btn>
+                      <v-btn
+                          color="green"
+                          text
+                          @click="rebookDialog = false"
+                      >
+                        {{ $t('no') }}
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
+
                 <v-dialog
                     v-model="cancelDialog"
                     persistent
@@ -228,6 +269,7 @@ import SwitchLanguage from './SwitchLanguage.vue'
 import ServiceFinder from './ServiceFinder.vue'
 import Calendar from './Calnedar.vue'
 import CustomerInfo from './CustomerInfo.vue'
+import moment from "moment";
 
 export default {
   name: 'AppointmentForm',
@@ -238,6 +280,7 @@ export default {
     CustomerInfo
   },
   data: () => ({
+    rebookDialog: false,
     cancelDialog: false,
     appointmentCancelled: null
   }),
@@ -250,30 +293,42 @@ export default {
     }
   },
   methods: {
-    cancelAppointment() {
+    cancelAppointment(byRebooking = false) {
       this.cancelDialog = false;
 
       this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
           .then((data) => {
             this.$store.commit('preselectAppointment', null)
-            this.appointmentCancelled = this.$store.state.isRebooking ? null : true
-            console.log(this.$store.state.isRebooking)
-            console.log(this.appointmentCancelled)
+            this.appointmentCancelled = byRebooking ? null : true
             this.$store.dispatch('API/sendCancellationEmail', { appointmentData: data })
+
+            if (byRebooking) {
+              this.$store.state.isRebooking = false
+            }
           })
           .catch(() => {
             this.appointmentCancelled = false
           })
     },
     startRebooking() {
-      this.$store.commit('startRebooking')
+      this.rebookDialog = false
+
+      if (this.$store.state.preselectedAppointment.dateFrom < moment().unix()) {
+        this.$store.state.error = 'appointmentCanNotBeCanceled'
+        return
+      }
+
+      this.$store.dispatch('startRebooking')
+    },
+    stopRebooking() {
+      this.$store.dispatch('stopRebooking')
     },
     submit() {
       this.desabled = true
       this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment.data })
           .then(() => {
             if (this.$store.state.isRebooking) {
-              this.cancelAppointment()
+              this.cancelAppointment(true)
             }
           })
           .then(() => {
@@ -350,6 +405,7 @@ export default {
 
 .button-submit {
   margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .content {
