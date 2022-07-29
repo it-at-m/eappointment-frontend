@@ -294,6 +294,11 @@ export default {
   },
   methods: {
     cancelAppointment(byRebooking = false) {
+      if (this.$store.state.preselectedAppointment.dateFrom.unix() < moment().unix()) {
+        this.$store.state.error = 'appointmentCanNotBeCanceled'
+        return
+      }
+
       this.cancelDialog = false;
 
       this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
@@ -313,7 +318,7 @@ export default {
     startRebooking() {
       this.rebookDialog = false
 
-      if (this.$store.state.preselectedAppointment.dateFrom < moment().unix()) {
+      if (this.$store.state.preselectedAppointment.dateFrom.unix() < moment().unix()) {
         this.$store.state.error = 'appointmentCanNotBeCanceled'
         return
       }
