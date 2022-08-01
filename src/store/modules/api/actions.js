@@ -283,9 +283,11 @@ export default {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.data)
-                }, error => {
-                    reject(error.response.data.meta)
+                    if (data.meta.error) {
+                        reject(data.meta)
+                    } else {
+                        resolve(data.data)
+                    }
                 })
         })
     },
