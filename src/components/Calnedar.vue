@@ -11,7 +11,7 @@
             class="col-sm-12 col-lg-10 p-0"
         >
           <v-tabs
-              v-if="$store.state.data.service.providers.length > 1"
+              v-if="$store.state.data.service.providers.length > 0"
               color="primary"
               :show-arrows="true"
               ref="locationTabs"
