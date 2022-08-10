@@ -148,15 +148,45 @@
                 >{{ $store.state.isRebooking ? $t('rebookAppointment') : $t('confirmAppointment') }}</v-btn>
               </span>
 
-              <span>
-                <v-btn
-                    v-if="appointmentCanBeStartedOver"
-                    class="button-submit"
-                    elevation="2"
-                    depressed
-                    color="primary"
-                    @click="startOver"
-                >{{ $t('cancel') }}</v-btn>
+              <span v-if="appointmentCanBeStartedOver">
+                <v-dialog
+                    v-model="starOverDialog"
+                    persistent
+                    max-width="290"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                        class="button-submit"
+                        elevation="2"
+                        depressed
+                        color="primary"
+                        v-bind="attrs"
+                        v-on="on"
+                    >{{ $t('cancel') }}</v-btn>
+                  </template>
+                  <v-card>
+                    <div class="popup-content">
+                      {{ $t('wantToStartOverAppointment') }}
+                    </div>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                          color="primary"
+                          text
+                          @click="startOver"
+                      >
+                        {{ $t('yes') }}
+                      </v-btn>
+                      <v-btn
+                          color="green"
+                          text
+                          @click="starOverDialog = false"
+                      >
+                        {{ $t('no') }}
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-dialog>
               </span>
 
               <v-alert
@@ -293,6 +323,7 @@ export default {
   data: () => ({
     rebookDialog: false,
     cancelDialog: false,
+    starOverDialog: false,
     appointmentCancelled: null
   }),
   computed: {
@@ -300,7 +331,7 @@ export default {
       return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
     },
     appointmentCanBeStartedOver() {
-      return this.$store.state.step > 1 && this.$store.state.confirmedAppointment === null
+      return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
     },
     confirmedAppointment() {
       return this.$store.state.confirmedAppointment
