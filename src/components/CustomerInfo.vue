@@ -157,6 +157,7 @@ export default {
 
       this.$store.dispatch('updateAppointmentData', appointment)
       this.$emit('next')
+      this.$v.$reset()
     }
   }
 }

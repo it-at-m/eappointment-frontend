@@ -11,7 +11,7 @@
             class="col-sm-12 col-lg-10 p-0"
         >
           <v-tabs
-              v-if="$store.state.data.service.providers.length > 0"
+              v-if="$store.state.data.service && $store.state.data.service.providers.length > 0"
               color="primary"
               :show-arrows="true"
               ref="locationTabs"
@@ -285,7 +285,9 @@ export default {
       return
     }
 
-    this.show(this.$store.state.data.service.providers[0])
+    if (this.$store.state.data.service) {
+      this.show(this.$store.state.data.service.providers[0])
+    }
   }
 }
 </script>

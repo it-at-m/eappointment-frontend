@@ -130,7 +130,7 @@
             </v-expansion-panels>
 
             <div class="confirm-action">
-              <div v-if="appointmentCanBeConfirmed">
+              <span v-if="appointmentCanBeConfirmed">
                 <v-alert
                     border="right"
                     color="blue-grey"
@@ -146,7 +146,18 @@
                     color="primary"
                     @click="submit"
                 >{{ $store.state.isRebooking ? $t('rebookAppointment') : $t('confirmAppointment') }}</v-btn>
-              </div>
+              </span>
+
+              <span>
+                <v-btn
+                    v-if="appointmentCanBeStartedOver"
+                    class="button-submit"
+                    elevation="2"
+                    depressed
+                    color="primary"
+                    @click="startOver"
+                >{{ $t('cancel') }}</v-btn>
+              </span>
 
               <v-alert
                   class="appointment-confirmation"
@@ -288,6 +299,9 @@ export default {
     appointmentCanBeConfirmed() {
       return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
     },
+    appointmentCanBeStartedOver() {
+      return this.$store.state.step > 1 && this.$store.state.confirmedAppointment === null
+    },
     confirmedAppointment() {
       return this.$store.state.confirmedAppointment
     }
@@ -327,6 +341,15 @@ export default {
     },
     stopRebooking() {
       this.$store.dispatch('stopRebooking')
+    },
+    startOver() {
+      this.$store.commit('data/setCustomerData', {})
+      this.$store.commit('preselectAppointment', null)
+      this.$store.commit('data/setAppointment', null)
+      this.$store.commit('data/setService', null)
+      this.$store.state.confirmedAppointment = null
+
+      this.openPanel(1)
     },
     submit() {
       this.desabled = true

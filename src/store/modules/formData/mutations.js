@@ -21,12 +21,13 @@ export default {
         }
     },
     setService (state, service) {
-        if (! service) {
-            return
-        }
-
         state.appointmentCounts = {}
         state.appointmentCount = 1
+
+        if (! service) {
+            state.service = service
+            return
+        }
 
         if (! service.subServices) {
             service.subServices = [
@@ -47,9 +48,9 @@ export default {
         state.appointment = appointment
     },
     setCustomerData (state, customer) {
-        state.customer.firstName = customer.firstName
-        state.customer.lastName = customer.lastName
-        state.customer.email = customer.email
-        state.customer.dataProtection = customer.dataProtection
+        state.customer.firstName = customer ? customer.firstName : null
+        state.customer.lastName = customer ? customer.lastName : null
+        state.customer.email = customer ? customer.email : null
+        state.customer.dataProtection = customer ? customer.dataProtection : null
     }
 }
