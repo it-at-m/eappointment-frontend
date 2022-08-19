@@ -156,6 +156,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn
+                        v-if="!$store.state.isRebooking"
                         class="button-submit"
                         elevation="2"
                         depressed
