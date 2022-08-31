@@ -192,7 +192,7 @@
 
               <v-alert
                   class="appointment-confirmation"
-                  v-if="confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
+                  v-if="!appointmentCancelled && confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
                   :color="confirmedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
                 {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
@@ -350,8 +350,11 @@ export default {
       this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
           .then((data) => {
             this.$store.commit('preselectAppointment', null)
-            this.appointmentCancelled = byRebooking ? null : true
+            this.appointmentCancelled = byRebooking === true ? null : true
             this.$store.dispatch('API/sendCancellationEmail', { appointmentData: data })
+
+            console.log('appointmentCancelled')
+            console.log(this.appointmentCancelled)
 
             if (byRebooking) {
               this.$store.state.isRebooking = false
@@ -389,6 +392,8 @@ export default {
       this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment.data })
           .then(() => {
             if (this.$store.state.isRebooking) {
+              console.log('is rebooking')
+              console.log(this.$store.state.isRebooking)
               this.cancelAppointment(true)
             }
           })
