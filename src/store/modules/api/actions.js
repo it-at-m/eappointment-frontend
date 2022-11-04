@@ -184,7 +184,7 @@ export default {
                 })
         })
     },
-    fetchAvailableTimeSlots(store, { date, provider, serviceId }) {
+    fetchAvailableTimeSlots(store, { date, provider, count, serviceId }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
@@ -200,12 +200,10 @@ export default {
                         "month": date.format('MM'),
                         "day": date.format('DD'),
                     },
-                    "requests": [
-                        {
-                            "id": serviceId,
-                            "source": DB_SOURCE
-                        }
-                    ],
+                    "requests": Array(count).fill({
+                        "id": serviceId,
+                        "source": DB_SOURCE
+                    }),
                     "providers": [ provider ]
                 })
             };

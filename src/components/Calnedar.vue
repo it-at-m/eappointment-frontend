@@ -137,11 +137,9 @@ export default {
     },
     filterTimeSlots: function(timeSlots) {
       const now = moment().unix()
-      const slots = this.provider.slots
-      const appointmentCount = this.$store.state.data.appointmentCount
       let times = []
 
-      timeSlots = timeSlots.filter((date) => {
+      return timeSlots.filter((date) => {
         if (times.includes(parseInt(date.appointments[0].date))
             || moment.unix(date.appointments[0].date) < now) {
           return false
@@ -159,24 +157,6 @@ export default {
               location: date.scope.provider.name
             }
           })
-
-      const minDuration = this.timeSlotDuration(times)
-
-      let slotOffset = 0
-      if (slots > 1) {
-        slotOffset = appointmentCount - 1
-      }
-
-      return timeSlots.filter((timeSlot) => {
-        for (let timeDiff = timeSlot.dateFrom.unix(); timeDiff < timeSlot.dateFrom.unix() + (appointmentCount + slotOffset) * minDuration; timeDiff = timeDiff + minDuration) {
-          if (! times.includes(timeDiff)) {
-            this.missingSlotsInARow = true
-            return false
-          }
-        }
-
-        return true
-      })
     },
     getAppointmentsOfDay: function(date) {
       this.timeSlotError = false
@@ -184,7 +164,7 @@ export default {
       this.timeSlots = []
       const momentDate = moment(date, 'YYYY-MM-DD')
 
-      this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, serviceId: this.$store.state.data.service.id })
+      this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id })
           .then(timeSlots => {
             const groupedTimeSlots = {}
             this.missingSlotsInARow = false
@@ -226,20 +206,6 @@ export default {
 
             this.timeDialog = true
           })
-    },
-    timeSlotDuration: function(times) {
-      let minDuration = 10000000
-      let lastTimeSlot = null
-
-      times.forEach((time) => {
-        if (lastTimeSlot !== null) {
-          minDuration = Math.min(minDuration, time - lastTimeSlot)
-        }
-
-        lastTimeSlot = time
-      })
-
-      return minDuration
     },
     chooseAppointment: function(appointment) {
       this.timeSlotError = false
