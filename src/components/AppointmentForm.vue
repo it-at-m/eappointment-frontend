@@ -389,7 +389,7 @@ export default {
     },
     submit() {
       this.desabled = true
-      this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment.data })
+      this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment })
           .then(() => {
             if (this.$store.state.isRebooking) {
               console.log('is rebooking')
@@ -399,7 +399,6 @@ export default {
           })
           .then(() => {
             this.$store.state.confirmedAppointment = true
-            this.$store.dispatch('API/sendConfirmationEmail', { appointmentData: this.$store.state.data.appointment.data })
           })
           .catch(() => {
             this.desabled = false
@@ -432,7 +431,7 @@ export default {
         return ''
       }
 
-      return appointment.dateFrom.format('DD.MM.YYYY H:mm') + ' ' + this.getProviderName(appointment.locationId)
+      return moment.unix(appointment.timestamp).format('DD.MM.YYYY H:mm') + ' ' + this.getProviderName(appointment.officeId)
     },
     getProviderName (id) {
       let providerName = ''

@@ -30,10 +30,10 @@ const store = new Vuex.Store({
     },
     actions: {
         updateAppointmentData(store, appointment) {
-            let storedAppointment = store.state.data.appointment.data
+            let storedAppointment = store.state.data.appointment
 
-            storedAppointment.clients[0].familyName = appointment.client.firstName + ' ' + appointment.client.lastName
-            storedAppointment.clients[0].email = appointment.client.email
+            storedAppointment.familyName = appointment.client.firstName + ' ' + appointment.client.lastName
+            storedAppointment.email = appointment.client.email
 
             store.dispatch('API/updateAppointmentData', storedAppointment)
                 .then((data) => {
@@ -45,30 +45,21 @@ const store = new Vuex.Store({
             return new Promise((resolve, reject) => {
                 store.dispatch('API/fetchServicesAndProviders')
                     .then(data => {
-                        store.commit('setProviders', data.providers)
+                        store.commit('setProviders', data.offices)
 
-                        let requests = data.requests.map(request => {
-                            request.providers = []
-                            data.requestrelation.forEach(relation => {
-                                if (relation.request.id === request.id) {
-                                    const foundProvider = data.providers.filter(provider => {
-                                        return provider.id === relation.provider.id
+                        let requests = data.services.map(service => {
+                            service.providers = []
+                            data.relations.forEach(relation => {
+                                if (relation.serviceId === service.id) {
+                                    const foundProvider = data.offices.filter(office => {
+                                        return office.id === relation.officeId
                                     })[0]
 
-                                    foundProvider.name = foundProvider.data.displayName
-                                        ? foundProvider.data.displayName
-                                        : foundProvider.name
-                                    relation.provider.name = foundProvider.name
-                                    relation.provider.slots = relation.slots
-
-                                    request.providers.push(relation.provider)
+                                    service.providers.push(foundProvider)
                                 }
                             })
 
-                            request.maxQuantity = request.data.maxQuantity ? request.data.maxQuantity : 1
-                            delete request.data
-
-                            return request
+                            return service
                         })
                         store.commit('setServices', requests)
 

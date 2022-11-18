@@ -1,14 +1,15 @@
 import moment from "moment";
 
-const DB_SOURCE = 'dldb';
-
 export default {
     confirmReservation(store, { appointmentData }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(appointmentData)
+                body: JSON.stringify({
+                    "processId": appointmentData.processId,
+                    "authKey": appointmentData.authKey
+                })
             };
 
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT, requestOptions)
@@ -16,7 +17,7 @@ export default {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.data)
+                    resolve(data)
                 }, error => {
                     reject(error)
                 })
@@ -25,15 +26,15 @@ export default {
     cancelAppointment(store, { appointmentData }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
-                method: "DELETE",
+                method: "POST",
                 headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "processId": appointmentData.processId,
+                    "authKey": appointmentData.authKey
+                })
             };
 
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
-                .replace('{appointmentId}', appointmentData.id)
-                .replace('{authKey}', appointmentData.authKey)
-                , requestOptions
-            )
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CANCEL_APPOINTMENT_ENDPOINT, requestOptions)
                 .then(response =>
                     response.json().then(data => ({
                         data: data.data,
@@ -41,59 +42,7 @@ export default {
                     })
                 ))
                 .then(data => {
-                    if (data.status !== 200) {
-                        reject('Can not be cancelled')
-
-                        return
-                    }
-
-                    resolve(data.data)
-                }, error => {
-                    reject(error)
-                })
-        })
-    },
-    sendConfirmationEmail(store, { appointmentData }) {
-        return new Promise((resolve, reject) => {
-            const requestOptions = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(appointmentData)
-            };
-
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_SEND_CONFIRMATION_MAIL_ENDPOINT
-                .replace('{appointmentId}', appointmentData.id)
-                .replace('{authKey}', appointmentData.authKey)
-                , requestOptions
-            )
-                .then((response) => {
-                    return response.json();
-                })
-                .then(data => {
-                    resolve(data.data)
-                }, error => {
-                    reject(error)
-                })
-        })
-    },
-    sendCancellationEmail(store, { appointmentData }) {
-        return new Promise((resolve, reject) => {
-            const requestOptions = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(appointmentData)
-            };
-
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_SEND_CANCELLATION_MAIL_ENDPOINT
-                .replace('{appointmentId}', appointmentData.id)
-                .replace('{authKey}', appointmentData.authKey)
-                , requestOptions
-            )
-                .then((response) => {
-                    return response.json();
-                })
-                .then(data => {
-                    resolve(data.data)
+                    resolve(data)
                 }, error => {
                     reject(error)
                 })
@@ -108,46 +57,27 @@ export default {
                 .then(data => {
                     resolve(data)
                 }, error => {
-                    reject(error.response.data.meta)
+                    reject(error)
                 })
         })
     },
     fetchAvailableDays(state, { provider, serviceId }) {
         return new Promise((resolve, reject) => {
             const dateIn6Months = moment().add(6, 'M')
+            const params = {
+                'startDate': moment().format('YYYY-M-D'),
+                'endDate': dateIn6Months.format('YYYY-M-D'),
+                'officeId': provider.id,
+                'serviceId': serviceId,
+            }
 
-            const requestOptions = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    "firstDay": {
-                        "year": moment().format('YYYY'),
-                        "month": moment().format('M'),
-                        "day": moment().format('D')
-                    },
-                    "lastDay": {
-                        "year": dateIn6Months.format('YYYY'),
-                        "month": dateIn6Months.format('M'),
-                        "day": dateIn6Months.format('D')
-                    },
-                    "requests": [
-                        {
-                            "id": serviceId,
-                            "source": DB_SOURCE
-                        }
-                    ],
-                    "providers": [
-                        provider
-                    ]
-                })
-            };
-
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CALENDAR_ENDPOINT, requestOptions)
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
+                + '?' + new URLSearchParams(params).toString())
                 .then((response) => {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.data)
+                    resolve(data.availableDays)
                 }, error => {
                     reject(error)
                 })
@@ -156,13 +86,13 @@ export default {
     fetchServicesAndProviders() {
         return new Promise((resolve, reject) => {
             fetch(process.env.VUE_APP_ZMS_API_BASE
-                + process.env.VUE_APP_ZMS_API_PROVIDERS_AND_SERVICES_ENDPOINT.replace('{dbSource}', DB_SOURCE)
+                + process.env.VUE_APP_ZMS_API_PROVIDERS_AND_SERVICES_ENDPOINT
             )
                 .then((response) => {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.data)
+                    resolve(data)
                 }, error => {
                     reject(error)
                 })
@@ -178,7 +108,7 @@ export default {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.data)
+                    resolve(data)
                 }, error => {
                     reject(error)
                 })
@@ -186,34 +116,20 @@ export default {
     },
     fetchAvailableTimeSlots(store, { date, provider, count, serviceId }) {
         return new Promise((resolve, reject) => {
-            const requestOptions = {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    "firstDay": {
-                        "year": date.format('YYYY'),
-                        "month": date.format('MM'),
-                        "day": date.format('DD'),
-                    },
-                    "lastDay": {
-                        "year": date.format('YYYY'),
-                        "month": date.format('MM'),
-                        "day": date.format('DD'),
-                    },
-                    "requests": Array(count).fill({
-                        "id": serviceId,
-                        "source": DB_SOURCE
-                    }),
-                    "providers": [ provider ]
-                })
-            };
+            const params = {
+                'date': moment(date).format('YYYY-M-D'),
+                'officeId': provider.id,
+                'serviceId': serviceId,
+                'count': count
+            }
 
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT, requestOptions)
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT
+                + '?' + new URLSearchParams(params).toString())
                 .then((response) => {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.data)
+                    resolve(data.appointmentTimestamps)
                 }, error => {
                     reject(error)
                 })
@@ -224,11 +140,16 @@ export default {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(appointment)
+                body: JSON.stringify({
+                    "processId": appointment.processId,
+                    "authKey": appointment.authKey,
+                    "familyName": appointment.familyName,
+                    "email": appointment.email
+                })
             };
 
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
-                .replace('{appointmentId}', appointment.id)
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_UPDATE_APPOINTMENT_ENDPOINT
+                .replace('{appointmentId}', appointment.processId)
                 .replace('{authKey}', appointment.authKey),
                 requestOptions
             )
@@ -236,43 +157,22 @@ export default {
                 return response.json();
             })
             .then(data => {
-                resolve(data.data)
+                resolve(data)
             }, error => {
-                reject(error.response.data.meta)
+                reject(error)
             })
         })
     },
-    reserveAppointment(store, { appointment, count, serviceId }) {
-        let requests = new Array(count)
-            .fill({
-                "id": serviceId,
-                "source": DB_SOURCE
-            });
-
+    reserveAppointment(store, { timeSlot, count, serviceId, providerId }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "appointments": [
-                        {
-                            "date": appointment.dateFrom.unix(),
-                            "slotCount": count,
-                            "scope": {
-                                "id": appointment.scopeId,
-                                "source": DB_SOURCE
-                            }
-                        }
-                    ],
-                    "requests": requests,
-                    "scope": {
-                        "id": appointment.scopeId,
-                        "source": DB_SOURCE,
-                        "provider": {
-                            "id": appointment.locationId,
-                            "source": DB_SOURCE
-                        }
-                    }
+                    "timestamp": timeSlot.unix(),
+                    "count": count,
+                    "officeId": providerId,
+                    "serviceId": serviceId
                 })
             };
 
@@ -281,33 +181,9 @@ export default {
                     return response.json();
                 })
                 .then(data => {
-                    if (data.meta.error) {
-                        reject(data.meta)
-                    } else {
-                        resolve(data.data)
-                    }
-                })
-        })
-    },
-    deleteAppointment(store, appointment) {
-        return new Promise((resolve, reject) => {
-            const requestOptions = {
-                method: "DELETE",
-                body: JSON.stringify(appointment)
-            };
-
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
-                .replace('{appointmentId}', appointment.id)
-                .replace('{authKey}', appointment.authKey),
-                requestOptions
-            )
-                .then((response) => {
-                    return response.json();
-                })
-                .then(data => {
-                    resolve(data.data)
+                    resolve(data)
                 }, error => {
-                    reject(error.response.data.meta)
+                    reject(error)
                 })
         })
     }

@@ -72,10 +72,10 @@
 
           <div
               class="select-appointment"
-              v-for="([slotTime, slots]) in Object.entries(timeSlots)" :key="slots[0].dateFrom.unix() + slots[0].locationId"
-              @click="chooseAppointment(slots[0])"
+              v-for="timeSlot in timeSlots" :key="timeSlot.unix()"
+              @click="chooseAppointment(timeSlot)"
           >
-            {{ slots[0].dateFrom.format('H:mm') }}
+            {{ timeSlot.format('H:mm') }}
           </div>
         </v-card-text>
 
@@ -135,29 +135,6 @@ export default {
 
       return provider.id === this.$store.state.preselectedProvider.id
     },
-    filterTimeSlots: function(timeSlots) {
-      const now = moment().unix()
-      let times = []
-
-      return timeSlots.filter((date) => {
-        if (times.includes(parseInt(date.appointments[0].date))
-            || moment.unix(date.appointments[0].date) < now) {
-          return false
-        }
-
-        times.push(parseInt(date.appointments[0].date))
-
-        return true
-      })
-          .map((date) => {
-            return {
-              dateFrom: moment.unix(date.appointments[0].date),
-              locationId: date.scope.provider.id,
-              scopeId: date.scope.id,
-              location: date.scope.provider.name
-            }
-          })
-    },
     getAppointmentsOfDay: function(date) {
       this.timeSlotError = false
       this.dateError = false
@@ -166,57 +143,36 @@ export default {
 
       this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id })
           .then(timeSlots => {
-            const groupedTimeSlots = {}
-            this.missingSlotsInARow = false
-
-            timeSlots.forEach(timeSlot => {
-              if (typeof groupedTimeSlots[timeSlot.scope.id] === 'undefined') {
-                groupedTimeSlots[timeSlot.scope.id] = []
-              }
-
-              groupedTimeSlots[timeSlot.scope.id].push(timeSlot)
-            })
-
-            for (const [key, value] of Object.entries(groupedTimeSlots)) {
-              this.timeSlots = this.timeSlots.concat(this.filterTimeSlots(groupedTimeSlots[key]))
-            }
+            this.timeSlots = timeSlots
 
             if (this.timeSlots.length === 0) {
               this.selectableDates = this.selectableDates.filter(selectableDate => {
                 return selectableDate !== date
               })
 
-              if (this.missingSlotsInARow) {
-                this.timeSlotError = this.$t('missingSlotInARow')
-                this.timeDialog = true
-                return
-              }
-
               this.dateError = true
 
               return
             }
 
-            this.timeSlots.sort((a,b) => (a.dateFrom > b.dateFrom) ? 1 : ((b.dateFrom > a.dateFrom) ? -1 : 0))
-            this.timeSlots = this.timeSlots.reduce(function (r, a) {
-              r[a.dateFrom] = r[a.dateFrom] || [];
-              r[a.dateFrom].push(a);
-              return r;
-            }, Object.create(null));
+            this.timeSlots = this.timeSlots.map((time) => moment.unix(time))
+
+            console.log(this.timeSlots)
 
             this.timeDialog = true
           })
     },
-    chooseAppointment: function(appointment) {
+    chooseAppointment: function(timeSlot) {
       this.timeSlotError = false
 
-      if (typeof this.$store.state.data.appointment?.data !== 'undefined') {
-        this.$store.dispatch('API/deleteAppointment', this.$store.state.data.appointment.data)
+      if (this.$store.state.data.appointment) {
+        this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.data.appointment })
       }
 
-      this.$store.dispatch('API/reserveAppointment', { appointment, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id })
+      this.$store.dispatch('API/reserveAppointment', { timeSlot, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id, providerId: this.provider.id })
           .then(data => {
-            appointment.data = data
+            const appointment = data
+            appointment.provider = this.provider
 
             this.$store.commit('data/setAppointment', appointment)
             this.timeDialog = false
@@ -230,15 +186,9 @@ export default {
     show: function(provider) {
       this.provider = provider
       this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceId: this.$store.state.data.service.id })
-          .then(data => {
-            let days = data.days.filter((day) => {
-              return day.status === 'bookable'
-                  && parseInt(day.freeAppointments.public) >= this.$store.state.data.appointmentCount * provider.slots
-            })
-            this.$store.commit('setAvailableDays', days)
-            this.selectableDates = days.map((date) => {
-              return date.year + '-' + date.month + '-' + date.day
-            })
+          .then(dates => {
+            this.$store.commit('setAvailableDays', dates)
+            this.selectableDates = dates
 
             this.timeSlotError = false
           })
