@@ -72,7 +72,7 @@ export default {
             }
 
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
-                + '?' + new URLSearchParams(params).toString())
+                + '?' + new URLSearchParams(params).toString(), {cache: 'no-cache'})
                 .then((response) => {
                     return response.json();
                 })
