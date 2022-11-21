@@ -99,11 +99,14 @@ export default {
         })
     },
     fetchAppointment(state, { processId, authKey }) {
+        const params = {
+            'processId': processId,
+            'authKey': authKey
+        }
+
         return new Promise((resolve, reject) => {
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
-                .replace('{appointmentId}', processId)
-                .replace('{authKey}', authKey)
-            )
+                + '?' + new URLSearchParams(params).toString())
                 .then((response) => {
                     return response.json();
                 })
