@@ -71,8 +71,13 @@ export default {
                 'serviceId': serviceId,
             }
 
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
-                + '?' + new URLSearchParams(params).toString(), {cache: 'no-cache'})
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(params)
+            };
+
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CALENDAR_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
                 })
@@ -123,8 +128,13 @@ export default {
                 'count': count
             }
 
-            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT
-                + '?' + new URLSearchParams(params).toString())
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(params)
+            };
+
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
                 })
