@@ -96,32 +96,31 @@ const store = new Vuex.Store({
                         return
                     }
 
-                    store.commit('selectServiceWithId', data.requests[0].id)
-                    store.commit('selectProviderWithId', data.scope.provider.id)
+                    store.commit('selectServiceWithId', data.serviceId)
+                    store.commit('selectProviderWithId', data.officeId)
 
                     const customer = {
-                        firstName: data.clients[0].familyName.split(' ')[0],
-                        lastName: data.clients[0].familyName.split(' ')[1],
-                        email: data.clients[0].email,
+                        firstName: data.familyName.split(' ')[0],
+                        lastName: data.familyName.split(' ')[1],
+                        email: data.email,
                         dataProtection: true
                     }
 
                     const appointment = {
-                        dateFrom: moment.unix(data.appointments[0].date),
-                        locationId: data.scope.provider.id,
-                        scopeId: data.scope.id,
-                        location: data.scope.provider.name,
-                        id: appointmentData.id,
-                        authKey: appointmentData.authKey,
-                        serviceId: data.requests[0].id,
-                        customer: customer
+                        dateFrom: moment.unix(data.timestamp),
+                        locationId: data.officeId,
+                        location: data.officeName,
+                        id: data.processId,
+                        authKey: data.authKey,
+                        serviceId: data.serviceId,
+                        ...customer
                     }
 
                     store.commit('data/setCustomerData', customer)
                     store.commit('preselectAppointment', appointment)
                     store.commit('data/setAppointment', appointment)
 
-                    if (data.appointments[0].date < moment().unix()) {
+                    if (data.timestamp < moment().unix()) {
                         store.state.error = 'appointmentCanNotBeCanceled'
                     }
                 })
