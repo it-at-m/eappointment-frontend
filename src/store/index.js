@@ -107,7 +107,8 @@ const store = new Vuex.Store({
                     }
 
                     const appointment = {
-                        dateFrom: data.timestamp,
+                        timestamp: data.timestamp,
+                        dateFrom: moment.unix(data.timestamp),
                         locationId: data.officeId,
                         location: data.officeName,
                         id: data.processId,
