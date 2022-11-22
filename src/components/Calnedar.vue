@@ -165,7 +165,7 @@ export default {
     chooseAppointment: function(timeSlot) {
       this.timeSlotError = false
 
-      if (this.$store.state.data.appointment) {
+      if (this.$store.state.data.appointment && ! this.$store.state.isRebooking) {
         this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.data.appointment })
       }
 
