@@ -351,7 +351,6 @@ export default {
           .then((data) => {
             this.$store.commit('preselectAppointment', null)
             this.appointmentCancelled = byRebooking === true ? null : true
-            this.$store.dispatch('API/sendCancellationEmail', { appointmentData: data })
 
             console.log('appointmentCancelled')
             console.log(this.appointmentCancelled)
