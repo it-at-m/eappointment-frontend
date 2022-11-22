@@ -91,7 +91,7 @@ const store = new Vuex.Store({
 
             store.dispatch('API/fetchAppointment', { processId: appointmentData.id, authKey: appointmentData.authKey })
                 .then(data => {
-                    if (!data.id) {
+                    if (!data.processId) {
                         store.state.error = 'appointmentDoesntExist'
                         return
                     }
