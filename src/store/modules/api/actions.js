@@ -29,7 +29,7 @@ export default {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "processId": appointmentData.processId,
+                    "processId": appointmentData.id,
                     "authKey": appointmentData.authKey
                 })
             };
