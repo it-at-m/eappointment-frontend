@@ -186,7 +186,7 @@ export default {
     },
     show: function(provider) {
       this.provider = provider
-      this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceId: this.$store.state.data.service.id })
+      this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceId: this.$store.state.data.service.id, count: this.$store.state.data.appointmentCount })
           .then(dates => {
             this.$store.commit('setAvailableDays', dates)
             this.selectableDates = dates

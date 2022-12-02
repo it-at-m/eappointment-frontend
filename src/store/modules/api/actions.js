@@ -61,7 +61,7 @@ export default {
                 })
         })
     },
-    fetchAvailableDays(state, { provider, serviceId }) {
+    fetchAvailableDays(state, { provider, serviceId, count }) {
         return new Promise((resolve, reject) => {
             const dateIn6Months = moment().add(6, 'M')
             const params = {
@@ -69,6 +69,7 @@ export default {
                 'endDate': dateIn6Months.format('YYYY-M-D'),
                 'officeId': provider.id,
                 'serviceId': serviceId,
+                'serviceCount': count,
             }
 
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
@@ -123,7 +124,7 @@ export default {
                 'date': moment(date).format('YYYY-M-D'),
                 'officeId': provider.id,
                 'serviceId': serviceId,
-                'count': count
+                'serviceCount': count
             }
 
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT
