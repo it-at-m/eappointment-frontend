@@ -174,7 +174,7 @@ export default {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     "timestamp": timeSlot.unix(),
-                    "count": count,
+                    "serviceCount": count,
                     "officeId": providerId,
                     "serviceId": serviceId
                 })
