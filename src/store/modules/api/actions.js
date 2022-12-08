@@ -78,7 +78,7 @@ export default {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.availableDays)
+                    resolve(data)
                 }, error => {
                     reject(error)
                 })
@@ -133,7 +133,7 @@ export default {
                     return response.json();
                 })
                 .then(data => {
-                    resolve(data.appointmentTimestamps)
+                    resolve(data)
                 }, error => {
                     reject(error)
                 })

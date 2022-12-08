@@ -50,7 +50,7 @@
         v-if="dateError"
         :color="$store.state.settings.theme.error"
     >
-      {{ $t('appointmentNotAvailable') }}
+      {{ dateError }}
     </v-alert>
 
     <v-dialog
@@ -142,17 +142,19 @@ export default {
       const momentDate = moment(date, 'YYYY-MM-DD')
 
       this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id })
-          .then(timeSlots => {
-            this.timeSlots = timeSlots
-
-            if (this.timeSlots.length === 0) {
+          .then(data => {
+            if (data.errorMessage) {
               this.selectableDates = this.selectableDates.filter(selectableDate => {
                 return selectableDate !== date
               })
 
-              this.dateError = true
+              this.dateError = data.errorMessage
 
               return
+            }
+
+            if (data.appointmentTimestamps) {
+              this.timeSlots = data.appointmentTimestamps
             }
 
             this.timeSlots = this.timeSlots.map((time) => moment.unix(time))
@@ -171,6 +173,11 @@ export default {
 
       this.$store.dispatch('API/reserveAppointment', { timeSlot, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id, providerId: this.provider.id })
           .then(data => {
+            if (data.errorMessage) {
+              this.timeSlotError = data.errorMessage
+              return
+            }
+
             const appointment = data
             appointment.provider = this.provider
             appointment.officeName = this.provider.name
@@ -179,19 +186,22 @@ export default {
             this.timeDialog = false
             this.$emit('next')
           }, error => {
-            if (error.exception.includes('ProcessReserveFailed')) {
-              this.timeSlotError = this.$t('appointmentNotAvailable')
-            }
+            this.timeSlotError = this.$t('appointmentNotAvailable')
           })
     },
     show: function(provider) {
+      this.dateError = false
+      this.timeSlotError = false
       this.provider = provider
       this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceId: this.$store.state.data.service.id, count: this.$store.state.data.appointmentCount })
-          .then(dates => {
-            this.$store.commit('setAvailableDays', dates)
-            this.selectableDates = dates
+          .then(data => {
+            let availableDays = data.availableDays ?? []
+            if (data.errorMessage) {
+              this.dateError = data.errorMessage
+            }
 
-            this.timeSlotError = false
+            this.$store.commit('setAvailableDays', availableDays)
+            this.selectableDates = availableDays
           })
     }
   },

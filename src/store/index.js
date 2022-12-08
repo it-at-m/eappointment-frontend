@@ -18,6 +18,7 @@ const store = new Vuex.Store({
         preselectedAppointment: null,
         providers: [],
         error: null,
+        errorMessage: null,
         settings: {
             theme: {
                 primary: '#ff9900',
@@ -81,18 +82,19 @@ const store = new Vuex.Store({
                 appointmentData = JSON.parse(window.atob(appointmentHash))
 
                 if (typeof appointmentData.id === undefined || typeof appointmentData.authKey === undefined) {
-                    store.state.error = 'appointmentDoesntExist'
+                    store.state.errorCode = 'appointmentDoesntExist'
                     return
                 }
             } catch (error) {
-                store.state.error = 'appointmentDoesntExist'
+                store.state.errorCode = 'appointmentDoesntExist'
                 return
             }
 
             store.dispatch('API/fetchAppointment', { processId: appointmentData.id, authKey: appointmentData.authKey })
                 .then(data => {
-                    if (!data.processId) {
-                        store.state.error = 'appointmentDoesntExist'
+                    if (data.errorMessage) {
+                        store.state.errorMessage = data.errorMessage
+
                         return
                     }
 
@@ -122,7 +124,7 @@ const store = new Vuex.Store({
                     store.commit('data/setAppointment', appointment)
 
                     if (data.timestamp < moment().unix()) {
-                        store.state.error = 'appointmentCanNotBeCanceled'
+                        store.state.errorCode = 'appointmentCanNotBeCanceled'
                     }
                 })
         },

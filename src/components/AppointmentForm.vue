@@ -15,12 +15,12 @@
               {{ $t('yourAppointmentNumber') }}: <b>{{ $store.state.preselectedAppointment.id }}</b>
             </div>
             <v-alert
-                v-if="$store.state.error"
+                v-if="$store.state.errorCode || $store.state.errorMessage"
                 border="right"
                 color="red"
                 dark
             >
-              {{ $t($store.state.error) }}
+              {{ $store.state.errorMessage ? $store.state.errorMessage : $t($store.state.errorCode) }}
             </v-alert>
 
             <v-expansion-panels
@@ -215,7 +215,7 @@
                   @click="stopRebooking"
               >{{ $t('cancel') }}</v-btn>
 
-              <div v-if="$store.state.preselectedAppointment !== null && $store.state.error === null && !$store.state.isRebooking">
+              <div v-if="$store.state.preselectedAppointment !== null && $store.state.errorCode === null && !$store.state.isRebooking">
                 <v-dialog
                     v-model="rebookDialog"
                     persistent
@@ -341,7 +341,7 @@ export default {
   methods: {
     cancelAppointment(byRebooking = false) {
       if (this.$store.state.preselectedAppointment.dateFrom.unix() < moment().unix()) {
-        this.$store.state.error = 'appointmentCanNotBeCanceled'
+        this.$store.state.errorCode = 'appointmentCanNotBeCanceled'
         return
       }
 
@@ -367,7 +367,7 @@ export default {
       this.rebookDialog = false
 
       if (this.$store.state.preselectedAppointment.dateFrom.unix() < moment().unix()) {
-        this.$store.state.error = 'appointmentCanNotBeCanceled'
+        this.$store.state.errorCode = 'appointmentCanNotBeCanceled'
         return
       }
 
