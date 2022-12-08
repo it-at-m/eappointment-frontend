@@ -215,7 +215,7 @@
                   @click="stopRebooking"
               >{{ $t('cancel') }}</v-btn>
 
-              <div v-if="$store.state.preselectedAppointment !== null && $store.state.errorCode === null && !$store.state.isRebooking">
+              <div v-if="$store.state.preselectedAppointment !== null && $store.state.errorMessage === null && !$store.state.isRebooking">
                 <v-dialog
                     v-model="rebookDialog"
                     persistent
