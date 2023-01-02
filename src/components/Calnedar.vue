@@ -181,6 +181,7 @@ export default {
             const appointment = data
             appointment.provider = this.provider
             appointment.officeName = this.provider.name
+            appointment.locationId = appointment.officeId
 
             this.$store.commit('data/setAppointment', appointment)
             this.timeDialog = false
