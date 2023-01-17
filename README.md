@@ -71,7 +71,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## Contact
 
-it@m - opensource@muenchendigital.io
+it@M - opensource@muenchen.de
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/it-at-m/eappointment-frontend.svg?style=for-the-badge
