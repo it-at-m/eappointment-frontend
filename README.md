@@ -8,7 +8,7 @@
 
 # E-appointment Frontend
 
-__E-appointment Frontend__ is frontend client for Appointment system (Zeit Managemenet System - ZMS). It provides various functionalities that would otherwise have to be created by the user:
+__E-appointment Frontend__ is frontend client for Appointment system [Zeit Managemenet System - ZMS](https://gitlab.com/eappointment/eappointment). It provides various functionalities that would otherwise have to be created by the user:
 
 - Detailed configuration of the rollup-config
 - Preconfigured build and release pipeline
