@@ -6,9 +6,9 @@
 [![MIT License][license-shield]][license-url]
 
 
-## About The Project
+# E-appointment Frontend
 
-This project is frontend client for Appointment system (Zeit Managemenet System - ZMS). It provides various functionalities that would otherwise have to be created by the user:
+__E-appointment Frontend__ is frontend client for Appointment system (Zeit Managemenet System - ZMS). It provides various functionalities that would otherwise have to be created by the user:
 
 - Detailed configuration of the rollup-config
 - Preconfigured build and release pipeline
