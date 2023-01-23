@@ -1,5 +1,3 @@
-<div id="top"></div>
-
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -8,50 +6,14 @@
 [![MIT License][license-shield]][license-url]
 
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/it-at-m/eappointment-frontend">
-    <img src="images/logo.png" alt="Logo" height="200">
-  </a>
+# E-appointment Frontend
 
-<h3 align="center">E-appointment Frontend</h3>
-
-</div>
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
-This project is frontend client for Appointment system (Zeit Managemenet System - ZMS). It provides various functionalities that would otherwise have to be created by the user:
+__E-appointment Frontend__ is frontend client for Appointment system [Zeit Managemenet System - ZMS](https://gitlab.com/eappointment/eappointment). It provides various functionalities that would otherwise have to be created by the user:
 
 - Detailed configuration of the rollup-config
 - Preconfigured build and release pipeline
 - Dev server for local development
 - Instructions to use the package locally with `npm pack`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### Built With
@@ -63,10 +25,6 @@ This project is built with:
 * [Rollup](https://github.com/rollup/rollup)
 * [vue-sfc-rollup](https://github.com/team-innovation/vue-sfc-rollup)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
 _Below is an example of how you can installing and setup up your service_
@@ -92,10 +50,7 @@ Make sure you have provided all the necessary dependencies in your vuetify proje
 "eappointment-frontend": "file:../eappointment-frontend-1.0.1.tgz"
 ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -109,28 +64,16 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 
-
-<!-- CONTACT -->
 ## Contact
 
-it@m - opensource@muenchendigital.io
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+it@M - opensource@muenchen.de
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/it-at-m/eappointment-frontend.svg?style=for-the-badge
 [contributors-url]: https://github.com/it-at-m/eappointment-frontend/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/it-at-m/eappointment-frontend.svg?style=for-the-badge
