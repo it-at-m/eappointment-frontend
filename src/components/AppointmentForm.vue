@@ -12,7 +12,7 @@
           <v-col cols="12">
 
             <div class="appointment-number" v-if="$store.state.preselectedAppointment">
-              {{ $t('yourAppointmentNumber') }}: <b>{{ $store.state.preselectedAppointment.id }}</b>
+              {{ $t('yourAppointmentNumber') }}: <b>{{ $store.state.preselectedAppointment.processId }}</b>
             </div>
             <v-alert
                 v-if="$store.state.errorCode || $store.state.errorMessage"
