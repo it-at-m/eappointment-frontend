@@ -23,7 +23,7 @@ export default {
   lastName: "Nachname",
   email: "E-Mailadresse",
   location: "Standort",
-  yourAppointmentNumber: "Ihr Terminnummer",
+  yourAppointmentNumber: "Ihre Terminnummer",
   wantToCancelAppointment: "Wollen Sie diesen Termin absagen?",
   wantToStartOverAppointment: "Wollen Sie Terminbuchung neu anfangen? Der jetztige Termin wird nicht gebucht werden.",
   wantToRebookAppointment: "Wollen Sie diesen Termin umbuchen?",
