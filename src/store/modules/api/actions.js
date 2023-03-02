@@ -11,8 +11,30 @@ export default {
                     "authKey": appointmentData.authKey
                 })
             };
-
+            console.log("actions confirmReservation");
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT, requestOptions)
+                .then((response) => {
+                    return response.json();
+                })
+                .then(data => {
+                    resolve(data)
+                }, error => {
+                    reject(error)
+                })
+        })
+    },
+    preconfirmReservation(store, { appointmentData }) {
+        return new Promise((resolve, reject) => {
+            const requestOptions = {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "processId": appointmentData.processId,
+                    "authKey": appointmentData.authKey
+                })
+            };
+
+            fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_PRECONFIRM_RESERVATION_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
                 })

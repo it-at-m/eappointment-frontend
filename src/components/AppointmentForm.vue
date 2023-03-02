@@ -388,7 +388,7 @@ export default {
     },
     submit() {
       this.desabled = true
-      this.$store.dispatch('API/confirmReservation', { appointmentData: this.$store.state.data.appointment })
+      this.$store.dispatch('API/preconfirmReservation', { appointmentData: this.$store.state.data.appointment })
           .then(() => {
             if (this.$store.state.isRebooking) {
               console.log('is rebooking')

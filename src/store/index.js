@@ -75,6 +75,39 @@ const store = new Vuex.Store({
                     })
             })
         },
+        activateAppointment(store, { preselectedService, preselectedProvider }) {
+            return new Promise((resolve, reject) => {
+                store.dispatch('API/fetchServicesAndProviders')
+                    .then(data => {
+                        store.commit('setProviders', data.offices)
+
+                        let requests = data.services.map(service => {
+                            service.providers = []
+                            data.relations.forEach(relation => {
+                                if (relation.serviceId === service.id) {
+                                    const foundProvider = data.offices.filter(office => {
+                                        return office.id === relation.officeId
+                                    })[0]
+
+                                    service.providers.push(foundProvider)
+                                }
+                            })
+
+                            return service
+                        })
+                        store.commit('setServices', requests)
+
+                        if (typeof preselectedService !== undefined) {
+                            store.commit('data/reset')
+                            store.commit('selectServiceWithId', preselectedService)
+                        }
+
+                        store.commit('selectProviderWithId', preselectedProvider)
+
+                        resolve()
+                    })
+            })
+        },
         setUpAppointment(store, { appointmentHash }) {
             let appointmentData = null
 
