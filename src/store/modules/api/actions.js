@@ -11,7 +11,7 @@ export default {
                     "authKey": appointmentData.authKey
                 })
             };
-            console.log("actions confirmReservation");
+
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
