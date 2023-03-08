@@ -444,7 +444,7 @@ export default {
     },
     preselectService (id) {
       this.$store.commit('data/reset')
-      this.$store.commit('selectServiceWithId', id)
+      this.$store.commit('selectServiceWithId', { id: id })
       this.openPanel(1)
       this.$store.state.confirmedAppointment = null
     }

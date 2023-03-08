@@ -66,7 +66,7 @@ const store = new Vuex.Store({
 
                         if (typeof preselectedService !== undefined) {
                             store.commit('data/reset')
-                            store.commit('selectServiceWithId', preselectedService)
+                            store.commit('selectServiceWithId', { id: preselectedService })
                         }
 
                         store.commit('selectProviderWithId', preselectedProvider)
@@ -108,7 +108,7 @@ const store = new Vuex.Store({
 
                         if (typeof preselectedService !== undefined) {
                             store.commit('data/reset')
-                            store.commit('selectServiceWithId', preselectedService)
+                            store.commit('selectServiceWithId', { id: preselectedService })
                         }
 
                         store.commit('selectProviderWithId', preselectedProvider)
@@ -140,7 +140,7 @@ const store = new Vuex.Store({
                         return
                     }
 
-                    store.commit('selectServiceWithId', data.serviceId, data.serviceCount)
+                    store.commit('selectServiceWithId', { id: data.serviceId, count: data.serviceCount })
                     store.commit('selectProviderWithId', data.officeId)
 
                     const customer = {
