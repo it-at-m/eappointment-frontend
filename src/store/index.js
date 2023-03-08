@@ -98,7 +98,7 @@ const store = new Vuex.Store({
                         return
                     }
 
-                    store.commit('selectServiceWithId', data.serviceId)
+                    store.commit('selectServiceWithId', data.serviceId, data.serviceCount)
                     store.commit('selectProviderWithId', data.officeId)
 
                     const customer = {
@@ -116,6 +116,7 @@ const store = new Vuex.Store({
                         processId: data.processId,
                         authKey: data.authKey,
                         serviceId: data.serviceId,
+                        serviceCount: data.serviceCount,
                         ...customer
                     }
 
@@ -162,9 +163,10 @@ const store = new Vuex.Store({
         setAvailableDays(state, days) {
             state.days = days
         },
-        selectServiceWithId (state, id) {
+        selectServiceWithId (state, id, count = 1) {
             state.services.forEach((service) => {
                 if (service.id === id) {
+                    service.count = count
                     store.commit('data/setService', service)
                 }
             })
