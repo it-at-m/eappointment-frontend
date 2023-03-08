@@ -75,9 +75,9 @@ const store = new Vuex.Store({
                     })
             })
         },
-        confirmReservation(store, { process, authKey }) {
+        confirmReservation(store, { processId, authKey }) {
             return new Promise((resolve, reject) => {
-                store.dispatch('API/confirmReservation', { process, authKey })
+                store.dispatch('API/confirmReservation', { processId, authKey })
                     .then(data => {
                         console.log("API/confirmReservation", data);
                         return true;

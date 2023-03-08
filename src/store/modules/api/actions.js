@@ -1,17 +1,16 @@
 import moment from "moment";
 
 export default {
-    confirmReservation(store, { process, authKey }) {
+    confirmReservation(store, { processId, authKey }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "processId": process,
+                    "processId": processId,
                     "authKey": authKey
                 })
             };
-
             fetch(process.env.VUE_APP_ZMS_API_BASE + process.env.VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
