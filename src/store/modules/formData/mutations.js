@@ -22,7 +22,7 @@ export default {
     },
     setService (state, service) {
         state.appointmentCounts = {}
-        state.appointmentCount = service?.count ?? 1
+        state.appointmentCount = service.count !== undefined ? service.count : 1
 
         if (! service) {
             state.service = service
@@ -39,7 +39,7 @@ export default {
         }
 
         service.subServices.forEach((service) => {
-                state.appointmentCounts[service.id] = service?.count ?? 1
+                state.appointmentCounts[service.id] = service.count !== undefined ? service.count : 1
         })
 
         state.service = service
