@@ -77,11 +77,9 @@ const store = new Vuex.Store({
         },
         confirmReservation(store, { process, authKey }) {
             return new Promise((resolve, reject) => {
-                store.dispatch('API/confirmReservation')
                 this.$store.dispatch('API/confirmReservation', { process, authKey })
                     .then(data => {
                         console.log("API/confirmReservation", data);
-                        //store.commit('setProviders', data.offices)
                     })
             })
         },
