@@ -75,6 +75,14 @@ const store = new Vuex.Store({
                     })
             })
         },
+        confirmReservation(store, { preselectedService, preselectedProvider }) {
+            return new Promise((resolve, reject) => {
+                store.dispatch('API/confirmReservation')
+                    .then(data => {
+                        console.log("API/confirmReservation");
+                    })
+            })
+        },
         activateAppointment(store, { preselectedService, preselectedProvider }) {
             return new Promise((resolve, reject) => {
                 store.dispatch('API/fetchServicesAndProviders')
