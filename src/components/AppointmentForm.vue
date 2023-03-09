@@ -199,6 +199,14 @@
               </v-alert>
 
               <v-alert
+                  class="appointment-confirmation"
+                  v-if="confirmedAppointment !== null"
+                  :color="confirmedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
+              >
+                {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
+              </v-alert>
+
+              <v-alert
                   class="appointment-cancel"
                   v-if="appointmentCancelled !== null"
                   :color="appointmentCancelled ? $store.state.settings.theme.success : $store.state.settings.theme.error"
