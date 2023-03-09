@@ -333,7 +333,8 @@ export default {
     rebookDialog: false,
     cancelDialog: false,
     starOverDialog: false,
-    appointmentCancelled: null
+    appointmentCancelled: null,
+    activatedAppointment: false
   }),
   computed: {
     appointmentCanBeConfirmed() {
