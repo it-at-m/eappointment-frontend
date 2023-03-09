@@ -200,7 +200,7 @@
 
               <v-alert
                   class="appointment-activated"
-                  v-if="activatedAppointment !== null"
+                  v-if="!appointmentCancelled && confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null && activatedAppointment !== null"
                   :color="activatedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
                 {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
