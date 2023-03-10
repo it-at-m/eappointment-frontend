@@ -334,7 +334,7 @@ export default {
     cancelDialog: false,
     starOverDialog: false,
     appointmentCancelled: null,
-    activatedAppointment: false
+    activatedAppointment: null
   }),
   computed: {
     appointmentCanBeConfirmed() {
