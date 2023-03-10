@@ -76,9 +76,23 @@ const store = new Vuex.Store({
                     })
             })
         },
-        confirmReservation(store, { processId, authKey }) {
+        confirmReservation(store, { appointmentHash }) {
+            let appointmentData = null
+
+            try {
+                appointmentData = JSON.parse(window.atob(appointmentHash))
+
+                if (typeof appointmentData.processId === undefined || typeof appointmentData.authKey === undefined) {
+                    store.state.errorCode = 'appointmentDoesntExist'
+                    return
+                }
+            } catch (error) {
+                store.state.errorCode = 'appointmentDoesntExist'
+                return
+            }
+
             return new Promise((resolve, reject) => {
-                store.dispatch('API/confirmReservation', { processId, authKey })
+                store.dispatch('API/confirmReservation', { processId: appointmentData.processId, authKey: appointmentData.authKey })
                     .then(data => {
                         resolve(true)
                     }, error => {
