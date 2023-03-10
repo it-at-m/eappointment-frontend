@@ -203,7 +203,7 @@
                   v-if="activatedAppointment !== null"
                   :color="activatedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
-                {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
+                {{ activatedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
               </v-alert>
 
               <v-alert
@@ -333,8 +333,7 @@ export default {
     rebookDialog: false,
     cancelDialog: false,
     starOverDialog: false,
-    appointmentCancelled: null,
-    activatedAppointment: null
+    appointmentCancelled: null
   }),
   computed: {
     appointmentCanBeConfirmed() {
@@ -345,6 +344,9 @@ export default {
     },
     confirmedAppointment() {
       return this.$store.state.confirmedAppointment
+    },
+    activatedAppointment() {
+      return this.$store.state.activatedAppointment
     }
   },
   methods: {
