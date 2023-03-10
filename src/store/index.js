@@ -82,7 +82,7 @@ const store = new Vuex.Store({
             try {
                 appointmentData = JSON.parse(window.atob(appointmentHash))
 
-                if (typeof appointmentData.processId === undefined || typeof appointmentData.authKey === undefined) {
+                if (typeof appointmentData.id === undefined || typeof appointmentData.authKey === undefined) {
                     store.state.errorCode = 'appointmentDoesntExist'
                     return
                 }
@@ -92,7 +92,7 @@ const store = new Vuex.Store({
             }
 
             return new Promise((resolve, reject) => {
-                store.dispatch('API/confirmReservation', { processId: appointmentData.processId, authKey: appointmentData.authKey })
+                store.dispatch('API/confirmReservation', { processId: appointmentData.id, authKey: appointmentData.authKey })
                     .then(data => {
                         resolve(true)
                     }, error => {
