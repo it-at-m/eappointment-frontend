@@ -27,6 +27,7 @@ const store = new Vuex.Store({
                 accent: '#8c9eff',
                 success: '#90D19C',
                 error: '#b71c1c',
+                info: '#607D8B',
             }
         }
     },

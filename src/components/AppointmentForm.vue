@@ -195,7 +195,7 @@
                   v-if="!appointmentCancelled && confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
                   :color="confirmedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
-                {{ confirmedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
+                {{ confirmedAppointment ? $t('appointmentIsPreconfirmed') : $t('errorTryAgainLater') }}
               </v-alert>
 
               <v-alert
@@ -203,7 +203,15 @@
                   v-if="activatedAppointment !== null"
                   :color="activatedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
-                {{ activatedAppointment ? $t('appointmentIsConfirmed') : $t('errorTryAgainLater') }}
+                {{ activatedAppointment ? $t('appointmentIsConfirmed') : $t('activationLinkExpired') }}
+              </v-alert>
+
+              <v-alert
+                  class="appointment-confirmation"
+                  v-if="!appointmentCancelled && confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
+                  :color="confirmedAppointment ? $store.state.settings.theme.info : $store.state.settings.theme.error"
+              >
+                {{ confirmedAppointment ? $t('appointmentPreconfirmedNotice') : $t('errorTryAgainLater') }}
               </v-alert>
 
               <v-alert
