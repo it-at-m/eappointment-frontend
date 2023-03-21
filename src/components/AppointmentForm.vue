@@ -203,7 +203,7 @@
                   v-if="activatedAppointment !== null"
                   :color="activatedAppointment ? $store.state.settings.theme.success : $store.state.settings.theme.error"
               >
-                {{ activatedAppointment ? $t('appointmentIsConfirmed') : $t('activationLinkExpired') }}
+                {{ $t('appointmentIsConfirmed') }}
               </v-alert>
 
               <v-alert
