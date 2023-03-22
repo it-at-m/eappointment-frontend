@@ -33,13 +33,14 @@ export default {
             service.subServices = [
                 {
                     'id': service.id,
-                    'name': service.name
+                    'name': service.name,
+                    'count': service.count
                 }
             ]
         }
 
         service.subServices.forEach((service) => {
-                state.appointmentCounts[service.id] = service.count !== undefined ? service.count : 1
+            state.appointmentCounts[service.id] = service.count !== undefined ? service.count : 1
         })
 
         state.service = service
