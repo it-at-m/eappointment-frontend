@@ -14,6 +14,7 @@ const opts : ThemeOptions = {
             info: '#FF5252',
             success: '#4CAF50',
             warning: '#FFC107',
+            notice: '#607D8B',
         },
         dark: {
             primary: '#FF5252',
@@ -23,6 +24,7 @@ const opts : ThemeOptions = {
             info: '#2196F3',
             success: '#4CAF50',
             warning: '#FFC107',
+            notice: '#607D8B',
         }
     }
 }

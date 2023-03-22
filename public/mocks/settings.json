@@ -5,7 +5,8 @@
       "secondary": "#337BB2",
       "accent": "#FFE400",
       "success": "#90D19C",
-      "error": "#B71C1C"
+      "error": "#B71C1C",
+      "notice": "#607D8B"
     }
   }
 }
