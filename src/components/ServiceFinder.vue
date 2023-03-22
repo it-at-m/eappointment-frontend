@@ -181,7 +181,7 @@ export default {
   },
   mounted() {
     this.$store.commit('data/reset')
-    this.$store.commit('selectServiceWithId', { id: this.serviceId, count: 1 })
+    this.$store.commit('selectServiceWithId', { id: this.serviceId })
   }
 }
 </script>
