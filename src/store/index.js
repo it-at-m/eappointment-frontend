@@ -68,7 +68,7 @@ const store = new Vuex.Store({
 
                         if (typeof preselectedService !== undefined) {
                             store.commit('data/reset')
-                            store.commit('selectServiceWithId', { id: preselectedService })
+                            store.commit('selectServiceWithId', { id: preselectedService, count: 1 })
                         }
 
                         store.commit('selectProviderWithId', preselectedProvider)
@@ -189,7 +189,7 @@ const store = new Vuex.Store({
         setAvailableDays(state, days) {
             state.days = days
         },
-        selectServiceWithId (state, id, count = 1) {
+        selectServiceWithId (state, { id, count }) {
             state.services.forEach((service) => {
                 if (service.id === id) {
                     service.count = count
