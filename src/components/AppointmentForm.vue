@@ -197,10 +197,10 @@
               >
                 {{ confirmedAppointment ? $t('appointmentIsPreconfirmed') : $t('errorTryAgainLater') }}
               </v-alert>
-
+              <!-- True is confirmed. False is already confirmed. Else appointment is not found -->
               <v-alert
                   class="appointment-activated"
-                  v-if="activatedAppointment !== null && activatedAppointment !== undefined"
+                  v-if="activatedAppointment === true || activatedAppointment === false"
                   :color="$store.state.settings.theme.success"
               >
                 {{ $t('appointmentIsConfirmed') }}
