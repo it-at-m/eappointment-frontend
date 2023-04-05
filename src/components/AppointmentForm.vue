@@ -200,7 +200,7 @@
 
               <v-alert
                   class="appointment-activated"
-                  v-if="activatedAppointment !== null && activatedAppointment !== undefined"
+                  v-if="activatedAppointment !== null && activatedAppointment !== undefined && activatedAppointment !== false"
                   :color="$store.state.settings.theme.success"
               >
                 {{ $t('appointmentIsConfirmed') }}
