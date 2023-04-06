@@ -239,7 +239,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn
-                        v-if="appointmentCancelled === null"
+                        v-if="appointmentCancelled === null && $store.state.errorCode !== 'appointmentCanNotBeCanceled'"
                         class="button-submit"
                         elevation="2"
                         depressed
@@ -279,7 +279,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn
-                        v-if="appointmentCancelled === null"
+                        v-if="appointmentCancelled === null && $store.state.errorCode !== 'appointmentCanNotBeCanceled'"
                         class="button-submit"
                         elevation="2"
                         depressed
