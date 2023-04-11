@@ -22,12 +22,24 @@ const store = new Vuex.Store({
         errorMessage: null,
         settings: {
             theme: {
-                primary: '#ff9900',
-                secondary: '#b0bec5',
-                accent: '#8c9eff',
+                primary: '#005A9F',
+                secondary: '#337BB2',
+                accent: '#FFE400',
                 success: '#90D19C',
-                error: '#b71c1c',
-                notice: '#607D8B',
+                error: '#B71C1C',
+                notice: '#607D8B'
+            },
+            endpoints: {
+                'VUE_APP_ZMS_API_BASE': 'http://localhost:3001',
+                'VUE_APP_ZMS_API_PROVIDERS_AND_SERVICES_ENDPOINT': '/api/offices-and-services',
+                'VUE_APP_ZMS_API_CALENDAR_ENDPOINT': '/api/available-days',
+                'VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT': '/api/available-appointments',
+                'VUE_APP_ZMS_API_RESERVE_APPOINTMENT_ENDPOINT': '/api/reserve-appointment',
+                'VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT': '/api/appointment',
+                'VUE_APP_ZMS_API_UPDATE_APPOINTMENT_ENDPOINT': '/api/update-appointment',
+                'VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT': '/api/confirm-appointment',
+                'VUE_APP_ZMS_API_CANCEL_APPOINTMENT_ENDPOINT': '/api/cancel-appointment',
+                'VUE_APP_SETTINGS_ENDPOINT': '/mocks/settings.json'
             }
         }
     },

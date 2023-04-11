@@ -37,26 +37,22 @@ new Vue({
     }
   }),
   mounted () {
-    this.$store.dispatch('API/getSettings')
-      .then(data => {
-        this.$store.commit('setSettings', data.settings)
-        this.$vuetify.theme.themes.light = data.settings.theme
-      })
+    this.$vuetify.theme.themes.light = this.$store.state.settings.theme
 
+    if (this.$route.params.appointmentHash) {
+      this.$store.state.openedPanel = 3
+      this.$store.state.confirmedAppointment = true
+    }
+
+    this.$store.dispatch('setUpServicesAndProviders', {
+      preselectedService: this.$route.params.serviceId,
+      preselectedProvider: this.$route.params.locationId
+    }).then(() => {
       if (this.$route.params.appointmentHash) {
-        this.$store.state.openedPanel = 3
-        this.$store.state.confirmedAppointment = true
+        this.$store.dispatch('setUpAppointment', {
+          appointmentHash: this.$route.params.appointmentHash
+        })
       }
-
-      this.$store.dispatch('setUpServicesAndProviders', {
-        preselectedService: this.$route.params.serviceId,
-        preselectedProvider: this.$route.params.locationId
-      }).then(() => {
-        if (this.$route.params.appointmentHash) {
-          this.$store.dispatch('setUpAppointment', {
-            appointmentHash: this.$route.params.appointmentHash
-          })
-        }
-      })
+    })
   }
 })
