@@ -11,7 +11,7 @@ export default {
                     "authKey": authKey
                 })
             };
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT, requestOptions)
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_CONFIRM_RESERVATION_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
                 })
@@ -33,7 +33,7 @@ export default {
                 })
             };
 
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_PRECONFIRM_RESERVATION_ENDPOINT, requestOptions)
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_PRECONFIRM_RESERVATION_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
                 })
@@ -55,7 +55,7 @@ export default {
                 })
             };
 
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_CANCEL_APPOINTMENT_ENDPOINT, requestOptions)
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_CANCEL_APPOINTMENT_ENDPOINT, requestOptions)
                 .then(response =>
                     response.json().then(data => ({
                         data: data.data,
@@ -69,9 +69,9 @@ export default {
                 })
         })
     },
-    getSettings() {
+    getSettings(store) {
         return new Promise((resolve, reject) => {
-            fetch(store.settings.endpoints.VUE_APP_SETTINGS_ENDPOINT)
+            fetch(store.state.endpoints.VUE_APP_SETTINGS_ENDPOINT)
                 .then((response) => {
                     return response.json();
                 })
@@ -82,7 +82,7 @@ export default {
                 })
         })
     },
-    fetchAvailableDays(state, { provider, serviceId, count }) {
+    fetchAvailableDays(store, { provider, serviceId, count }) {
         return new Promise((resolve, reject) => {
             const dateIn6Months = moment().add(6, 'M')
             const params = {
@@ -93,7 +93,7 @@ export default {
                 'serviceCount': count,
             }
 
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
                 + '?' + new URLSearchParams(params).toString())
                 .then((response) => {
                     return response.json();
@@ -105,10 +105,10 @@ export default {
                 })
         })
     },
-    fetchServicesAndProviders() {
+    fetchServicesAndProviders(store) {
         return new Promise((resolve, reject) => {
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE
-                + store.settings.endpoints.VUE_APP_ZMS_API_PROVIDERS_AND_SERVICES_ENDPOINT
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE
+                + store.state.endpoints.VUE_APP_ZMS_API_PROVIDERS_AND_SERVICES_ENDPOINT
             )
                 .then((response) => {
                     return response.json();
@@ -120,14 +120,14 @@ export default {
                 })
         })
     },
-    fetchAppointment(state, { processId, authKey }) {
+    fetchAppointment(store, { processId, authKey }) {
         const params = {
             'processId': processId,
             'authKey': authKey
         }
 
         return new Promise((resolve, reject) => {
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_APPOINTMENT_ENDPOINT
                 + '?' + new URLSearchParams(params).toString())
                 .then((response) => {
                     return response.json();
@@ -148,7 +148,7 @@ export default {
                 'serviceCount': count
             }
 
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT
                 + '?' + new URLSearchParams(params).toString())
                 .then((response) => {
                     return response.json();
@@ -173,7 +173,7 @@ export default {
                 })
             };
 
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_UPDATE_APPOINTMENT_ENDPOINT
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_UPDATE_APPOINTMENT_ENDPOINT
                 .replace('{appointmentId}', appointment.processId)
                 .replace('{authKey}', appointment.authKey),
                 requestOptions
@@ -201,7 +201,7 @@ export default {
                 })
             };
 
-            fetch(store.settings.endpoints.VUE_APP_ZMS_API_BASE + store.settings.endpoints.VUE_APP_ZMS_API_RESERVE_APPOINTMENT_ENDPOINT, requestOptions)
+            fetch(store.state.endpoints.VUE_APP_ZMS_API_BASE + store.state.endpoints.VUE_APP_ZMS_API_RESERVE_APPOINTMENT_ENDPOINT, requestOptions)
                 .then((response) => {
                     return response.json();
                 })
