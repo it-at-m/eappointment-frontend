@@ -54,6 +54,7 @@
     </v-alert>
 
     <v-dialog
+        :attach="$parent.$el"
         v-model="timeDialog"
         width="500"
     >
