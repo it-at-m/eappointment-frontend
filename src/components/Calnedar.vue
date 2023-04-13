@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-container" data-app>
+  <div class="calendar-container">
     <v-container>
       <v-row>
         <v-col
@@ -56,6 +56,7 @@
     <v-dialog
         v-model="timeDialog"
         width="500"
+        :attach="$parent.$el"
     >
       <v-card>
         <v-card-title class="text-h5 grey lighten-2">
