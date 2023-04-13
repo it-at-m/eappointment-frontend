@@ -55,8 +55,8 @@
 
     <v-dialog
         v-model="timeDialog"
+        activator="parent"
         width="500"
-        :attach="$parent.$el"
     >
       <v-card>
         <v-card-title class="text-h5 grey lighten-2">
