@@ -54,11 +54,12 @@
     </v-alert>
 
     <v-dialog
-        :attach="$parent.$el"
         v-model="timeDialog"
         width="500"
     >
-      <v-card>
+      <v-card
+          :attach="$parent.$el"
+      >
         <v-card-title class="text-h5 grey lighten-2">
           {{ $t('choseOneAppointment', { date: formatDay(date) }) }}
         </v-card-title>
