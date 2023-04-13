@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar-container">
+  <div class="calendar-container" data-app>
     <v-container>
       <v-row>
         <v-col
@@ -57,9 +57,7 @@
         v-model="timeDialog"
         width="500"
     >
-      <v-card
-          :attach="$parent.$el"
-      >
+      <v-card>
         <v-card-title class="text-h5 grey lighten-2">
           {{ $t('choseOneAppointment', { date: formatDay(date) }) }}
         </v-card-title>
