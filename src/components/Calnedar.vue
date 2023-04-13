@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-container">
-    <v-container>
+    <v-container data-app>
       <v-row>
         <v-col
           class="col-sm-12 col-lg-2 pl-0"
