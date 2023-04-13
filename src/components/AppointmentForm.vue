@@ -56,7 +56,7 @@
                   {{ $t('services') }}
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <ServiceFinder @next="openPanel(2)" @changed="openPanel(1)" :serviceId="serviceId" />
+                  <ServiceFinder @next="openPanel(2)" @changed="openPanel(1)" />
                 </v-expansion-panel-content>
               </v-expansion-panel>
 
@@ -341,8 +341,7 @@ export default {
     rebookDialog: false,
     cancelDialog: false,
     starOverDialog: false,
-    appointmentCancelled: null,
-    serviceId: null
+    appointmentCancelled: null
   }),
   computed: {
     appointmentCanBeConfirmed() {
@@ -467,13 +466,6 @@ export default {
       this.$store.commit('selectServiceWithId', { id: id })
       this.openPanel(1)
       this.$store.state.confirmedAppointment = null
-    }
-  },
-  watch: {
-    serviceId(newServiceId, oldServiceId) {
-      if (newServiceId !== oldServiceId) {
-        this.preselectService(newServiceId)
-      }
     }
   }
 }
