@@ -1,6 +1,6 @@
 <template>
-  <div class="calendar-container">
-    <v-container data-app>
+  <v-app class="calendar-container">
+    <v-container>
       <v-row>
         <v-col
           class="col-sm-12 col-lg-2 pl-0"
@@ -94,7 +94,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </div>
+  </v-app>
 </template>
 <script>
 import moment from 'moment'
