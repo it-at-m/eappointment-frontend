@@ -16,6 +16,7 @@ const store = new Vuex.Store({
         activatedAppointment: null,
         isRebooking: false,
         preselectedProvider: null,
+        preselectedService: null,
         preselectedAppointment: null,
         providers: [],
         error: null,
@@ -208,6 +209,7 @@ const store = new Vuex.Store({
                         service.count = count
                     }
 
+                    state.preselectedService = id
                     store.commit('data/setService', service)
                 }
             })

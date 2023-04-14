@@ -3,6 +3,7 @@
     <v-autocomplete
         class="align-content-start"
         v-model="$store.state.data.service"
+        v-if="! $store.state.preselectedService"
         :attach="$parent.$el"
         :items="services"
         :item-text="'name'"
