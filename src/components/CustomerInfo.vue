@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <v-text-field
         v-model="firstName"
         :error-messages="firstNameErrors"
@@ -62,16 +61,28 @@
 </template>
 <script>
 import { validationMixin } from "vuelidate";
-import { required, email } from "vuelidate/lib/validators";
+import { required, email, maxLength } from "vuelidate/lib/validators";
 
 export default {
   name: 'CustomerInfo',
   mixins: [validationMixin],
   validations: {
-    firstName: { required },
-    lastName: { required },
-    email: { required, email },
-    dataProtection: { required }
+    firstName: {
+      required,
+      maxLength: maxLength(200)
+    },
+    lastName: {
+      required,
+      maxLength: maxLength(200)
+    },
+    email: {
+      required,
+      email,
+      maxLength: maxLength(200)
+    },
+    dataProtection: {
+      required
+    }
   },
   computed: {
     firstName: {
@@ -110,20 +121,24 @@ export default {
       const errors = [];
       if (!this.$v.firstName.$dirty) return errors;
       !this.$v.firstName.required && errors.push(this.$t('firstName') + ' ' + this.$t('isRequired'));
+      ! this.$v.firstName.maxLength && errors.push(this.$t('textLengthExceeded'));
       return errors;
     },
     lastNameErrors() {
       const errors = [];
       if (!this.$v.lastName.$dirty) return errors;
       ! this.$v.lastName.required && errors.push(this.$t('lastName') + ' ' + this.$t('isRequired'));
+      ! this.$v.lastName.maxLength && errors.push(this.$t('textLengthExceeded'));
 
       return errors;
     },
     emailErrors() {
       const errors = [];
       if (!this.$v.email.$dirty) return errors;
+      console.log(this.$v.email)
       ! this.$v.email.email && errors.push(this.$t('mustBeValidEmail'));
       ! this.$v.email.required && errors.push(this.$t('email') + ' ' + this.$t('isRequired'));
+      ! this.$v.email.maxLength && errors.push(this.$t('textLengthExceeded'));
 
       return errors;
     },

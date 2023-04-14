@@ -18,6 +18,7 @@ export default {
   appointmentNotAvailable: "Appointment that you chose is not available anymore",
   appointmentPreconfirmedNotice: "Your appointment was initially reserved. To complete the reservation, you will immediately receive an email with an activation link. Please note that the reservation will expire if you do not confirm the appointment with this link.",
   appointment: "Appointment",
+  textLengthExceeded: "The maximum text length is exceeded",
   noServiceFound: "No service found",
   contactData: "Contact data",
   choseOneAppointment: "Please choose one Appointment on {date}",
