@@ -49,8 +49,7 @@ export default {
         state.appointment = appointment
     },
     setCustomerData (state, customer) {
-        state.customer.firstName = customer ? customer.firstName : null
-        state.customer.lastName = customer ? customer.lastName : null
+        state.customer.name = customer ? customer.name : null
         state.customer.email = customer ? customer.email : null
         state.customer.dataProtection = customer ? customer.dataProtection : null
     }

@@ -112,8 +112,8 @@
                               v-if="! open"
                               key="1"
                           >
-                            <span v-if="$store.state.data.customer.firstName">
-                              <b>{{ $store.state.data.customer.firstName }} {{ $store.state.data.customer.lastName }} ({{ $store.state.data.customer.email }})</b>
+                            <span v-if="$store.state.data.customer.name">
+                              <b>{{ $store.state.data.customer.name }} ({{ $store.state.data.customer.email }})</b>
                             </span>
                           </span>
                         </v-fade-transition>

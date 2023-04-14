@@ -1,29 +1,19 @@
 <template>
   <div>
     <v-text-field
-        v-model="firstName"
-        :error-messages="firstNameErrors"
-        @input="$v.firstName.$touch()"
-        @blur="$v.firstName.$touch()"
-        counter="200"
-        filled
-        :label="$t('firstName')"
-    ></v-text-field>
-
-    <v-text-field
-        v-model="lastName"
-        :error-messages="lastNameErrors"
-        @input="$v.lastName.$touch()"
-        @blur="$v.lastName.$touch()"
+        v-model="name"
+        :error-messages="nameErrors"
+        @input="$v.name.$touch()"
+        @blur="$v.name.$touch()"
         @change="changed"
-        counter="200"
+        counter="50"
         filled
-        :label="$t('lastName')"
+        :label="$t('name')"
     ></v-text-field>
 
     <v-text-field
         v-model="email"
-        counter="200"
+        counter="50"
         filled
         :error-messages="emailErrors"
         @input="$v.email.$touch()"
@@ -67,38 +57,26 @@ export default {
   name: 'CustomerInfo',
   mixins: [validationMixin],
   validations: {
-    firstName: {
+    name: {
       required,
-      maxLength: maxLength(200)
-    },
-    lastName: {
-      required,
-      maxLength: maxLength(200)
+      maxLength: maxLength(50)
     },
     email: {
       required,
       email,
-      maxLength: maxLength(200)
+      maxLength: maxLength(50)
     },
     dataProtection: {
       required
     }
   },
   computed: {
-    firstName: {
+    name: {
       get() {
-        return this.$store.state.data.customer.firstName
+        return this.$store.state.data.customer.name
       },
       set(newValue) {
-        return this.$store.state.data.customer.firstName = newValue
-      }
-    },
-    lastName: {
-      get() {
-        return this.$store.state.data.customer.lastName
-      },
-      set(newValue) {
-        return this.$store.state.data.customer.lastName = newValue
+        return this.$store.state.data.customer.name = newValue
       }
     },
     email: {
@@ -117,18 +95,11 @@ export default {
         return this.$store.state.data.customer.dataProtection = newValue
       }
     },
-    firstNameErrors() {
+    nameErrors() {
       const errors = [];
-      if (!this.$v.firstName.$dirty) return errors;
-      !this.$v.firstName.required && errors.push(this.$t('firstName') + ' ' + this.$t('isRequired'));
-      ! this.$v.firstName.maxLength && errors.push(this.$t('textLengthExceeded'));
-      return errors;
-    },
-    lastNameErrors() {
-      const errors = [];
-      if (!this.$v.lastName.$dirty) return errors;
-      ! this.$v.lastName.required && errors.push(this.$t('lastName') + ' ' + this.$t('isRequired'));
-      ! this.$v.lastName.maxLength && errors.push(this.$t('textLengthExceeded'));
+      if (!this.$v.name.$dirty) return errors;
+      ! this.$v.name.required && errors.push(this.$t('name') + ' ' + this.$t('isRequired'));
+      ! this.$v.name.maxLength && errors.push(this.$t('textLengthExceeded'));
 
       return errors;
     },
@@ -157,13 +128,12 @@ export default {
     saveCustomer() {
       this.$v.$touch()
 
-      if (this.emailErrors.length || this.firstNameErrors.length || this.lastNameErrors.length || this.dataProtectionErrors.length) {
+      if (this.emailErrors.length || this.nameErrors.length || this.dataProtectionErrors.length) {
         return
       }
 
       let customer = {
-        firstName: this.firstName,
-        lastName: this.lastName,
+        name: this.name,
         email: this.email
       }
 

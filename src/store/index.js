@@ -48,7 +48,7 @@ const store = new Vuex.Store({
         updateAppointmentData(store, appointment) {
             let storedAppointment = store.state.data.appointment
 
-            storedAppointment.familyName = appointment.client.firstName + ' ' + appointment.client.lastName
+            storedAppointment.familyName = appointment.client.name
             storedAppointment.email = appointment.client.email
 
             store.dispatch('API/updateAppointmentData', storedAppointment)
@@ -141,8 +141,7 @@ const store = new Vuex.Store({
                     store.commit('selectProviderWithId', data.officeId)
 
                     const customer = {
-                        firstName: data.familyName.split(' ')[0],
-                        lastName: data.familyName.split(' ')[1],
+                        name: data.familyName,
                         email: data.email,
                         dataProtection: true
                     }

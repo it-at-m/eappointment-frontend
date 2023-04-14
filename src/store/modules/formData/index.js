@@ -8,8 +8,7 @@ const state = {
     appointmentCounts: {},
     appointmentCount: 1,
     customer: {
-        firstName: null,
-        lastName: null,
+        name: null,
         email: null,
         dataProtection: null
     }
