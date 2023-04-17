@@ -124,9 +124,7 @@ export default {
     },
     allowedDates: function(val) {
       const currentDate = moment(val, 'YYYY-MM-DD')
-      return currentDate.day() !== 0
-          && currentDate.day() !== 6
-          && currentDate < this.maxDate
+      return currentDate < this.maxDate
           && this.selectableDates.includes(currentDate.format('YYYY-MM-DD'))
     },
     shouldShowProvider: function(provider) {
