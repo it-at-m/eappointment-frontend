@@ -1,29 +1,36 @@
 <template>
   <div>
-    <v-text-field
-        v-model="name"
-        :error-messages="nameErrors"
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
-        @change="changed"
-        counter="50"
-        filled
-        :label="$t('name')"
-    ></v-text-field>
+    <div id="customer-name-section">
+      <v-text-field
+          v-model="name"
+          id="customer-name"
+          :error-messages="nameErrors"
+          @input="$v.name.$touch()"
+          @blur="$v.name.$touch()"
+          @change="changed"
+          counter="50"
+          filled
+          :label="$t('name')"
+      ></v-text-field>
+    </div>
 
-    <v-text-field
-        v-model="email"
-        counter="50"
-        filled
-        :error-messages="emailErrors"
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-        @change="changed"
-        required
-        :label="$t('email')"
-    ></v-text-field>
+    <div id="customer-email-section">
+      <v-text-field
+          v-model="email"
+          id="customer-email"
+          counter="50"
+          filled
+          :error-messages="emailErrors"
+          @input="$v.email.$touch()"
+          @blur="$v.email.$touch()"
+          @change="changed"
+          required
+          :label="$t('email')"
+      ></v-text-field>
+    </div>
 
     <v-checkbox
+        id="customer-data-protection"
         v-model="dataProtection"
         label=""
         :error-messages="dataProtectionErrors"
@@ -41,6 +48,7 @@
     </v-checkbox>
 
     <v-btn
+        id="customer-submit-button"
         class="button-next"
         elevation="2"
         depressed
@@ -106,7 +114,6 @@ export default {
     emailErrors() {
       const errors = [];
       if (!this.$v.email.$dirty) return errors;
-      console.log(this.$v.email)
       ! this.$v.email.email && errors.push(this.$t('mustBeValidEmail'));
       ! this.$v.email.required && errors.push(this.$t('email') + ' ' + this.$t('isRequired'));
       ! this.$v.email.maxLength && errors.push(this.$t('textLengthExceeded'));
