@@ -96,10 +96,10 @@ describe('Customer info', () => {
         await wrapper.vm.$nextTick()
 
         expect(wrapper.emitted().next).toBeDefined()
-        expect(store.state.data.appointment.client.name).toBe('Max')
-        expect(store.state.data.appointment.client.email).toBe('max@test.de')
         expect(dispatch).toHaveBeenCalledTimes(1)
-        expect(dispatch.mock.calls[0][0]).toBe('updateAppointmentData')
-        expect(dispatch.mock.calls[0]).toContainEqual({"client": {"email": "max@test.de", "name": "Max"}})
+        expect(dispatch.mock.calls[0]).toStrictEqual([
+            'updateAppointmentData',
+            {"client": {"dataProtection": true, "email": "max@test.de", "name": "Max"}}
+        ])
     })
 })

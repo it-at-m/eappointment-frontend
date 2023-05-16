@@ -13,7 +13,8 @@
           <v-tabs
               v-if="$store.state.data.service && $store.state.data.service.providers.length > 0"
               color="primary"
-              :show-arrows="true"
+              show-arrows="mobile"
+              id="location-tabs"
               ref="locationTabs"
           >
             <v-tab

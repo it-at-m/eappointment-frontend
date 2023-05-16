@@ -48,6 +48,7 @@ const store = new Vuex.Store({
         updateAppointmentData(store, appointment) {
             let storedAppointment = store.state.data.appointment
 
+            store.commit('data/setCustomerData', appointment.client)
             storedAppointment.familyName = appointment.client.name
             storedAppointment.email = appointment.client.email
 
