@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-  name: 'SwitchLocale',
+  name: 'SwitchLanguage',
   data() {
     return { langs: ['de', 'en'] }
   }
