@@ -38,4 +38,16 @@ describe('SwitchLanguage', () => {
         expect(wrapper.html()).toContain('Englisch')
         expect(wrapper.html()).toContain('Sprache:')
     })
+
+    it('english is shown', async () => {
+        wrapper.vm.$i18n.locale = 'en'
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.html()).toContain('option value="de"')
+        expect(wrapper.html()).toContain('German')
+        expect(wrapper.html()).toContain('option value="en"')
+        expect(wrapper.html()).toContain('English')
+        expect(wrapper.html()).toContain('Language:')
+    })
 })
