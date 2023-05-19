@@ -325,7 +325,7 @@
 <script>
 import SwitchLanguage from './SwitchLanguage.vue'
 import ServiceFinder from './ServiceFinder.vue'
-import Calendar from './Calnedar.vue'
+import Calendar from './Calendar.vue'
 import CustomerInfo from './CustomerInfo.vue'
 import moment from "moment";
 

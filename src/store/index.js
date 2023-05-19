@@ -199,9 +199,6 @@ const store = new Vuex.Store({
         goToStep(state, step) {
             state.step = step
         },
-        setAvailableDays(state, days) {
-            state.days = days
-        },
         selectServiceWithId (state, { id, count }) {
             state.services.forEach((service) => {
                 if (service.id === id) {

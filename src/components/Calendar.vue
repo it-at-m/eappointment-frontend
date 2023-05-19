@@ -117,9 +117,6 @@ export default {
     missingSlotsInARow: false
   }),
   methods: {
-    showForProvider: function(provider) {
-      this.show(provider)
-    },
     formatDay: function(date) {
       return moment(date).format('DD.MM.YYYY')
     },
@@ -138,6 +135,7 @@ export default {
     getAppointmentsOfDay: function(date) {
       this.timeSlotError = false
       this.dateError = false
+      this.timeDialog = false
       this.timeSlots = []
       const momentDate = moment(date, 'YYYY-MM-DD')
 
@@ -159,17 +157,11 @@ export default {
 
             this.timeSlots = this.timeSlots.map((time) => moment.unix(time))
 
-            console.log(this.timeSlots)
-
             this.timeDialog = true
           })
     },
     chooseAppointment: function(timeSlot) {
       this.timeSlotError = false
-
-      if (this.$store.state.data.appointment && ! this.$store.state.isRebooking) {
-        this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.data.appointment })
-      }
 
       this.$store.dispatch('API/reserveAppointment', { timeSlot, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id, providerId: this.provider.id })
           .then(data => {
@@ -189,11 +181,16 @@ export default {
           }, error => {
             this.timeSlotError = this.$t('appointmentNotAvailable')
           })
+
+      if (! this.timeSlotError && this.$store.state.data.appointment && ! this.$store.state.isRebooking) {
+        this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.data.appointment })
+      }
     },
-    show: function(provider) {
+    showForProvider: function(provider) {
       this.dateError = false
       this.timeSlotError = false
       this.provider = provider
+
       this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceId: this.$store.state.data.service.id, count: this.$store.state.data.appointmentCount })
           .then(data => {
             let availableDays = data.availableDays ?? []
@@ -201,20 +198,19 @@ export default {
               this.dateError = data.errorMessage
             }
 
-            this.$store.commit('setAvailableDays', availableDays)
             this.selectableDates = availableDays
           })
     }
   },
   mounted: function() {
     if (this.$store.state.preselectedProvider) {
-      this.show(this.$store.state.preselectedProvider)
+      this.showForProvider(this.$store.state.preselectedProvider)
 
       return
     }
 
     if (this.$store.state.data.service) {
-      this.show(this.$store.state.data.service.providers[0])
+      this.showForProvider(this.$store.state.data.service.providers[0])
     }
   }
 }
