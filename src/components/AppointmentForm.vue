@@ -196,8 +196,7 @@
                   </v-card>
                 </v-dialog>
               </span>
-ßßßßßß
-              {{ $store.state.data.appointment }}
+
               <v-alert
                   class="appointment-confirmation"
                   v-if="!appointmentCancelled && confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
