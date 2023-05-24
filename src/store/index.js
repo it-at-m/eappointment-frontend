@@ -59,7 +59,7 @@ const store = new Vuex.Store({
                 })
         },
         setUpServicesAndProviders(store, { preselectedService, preselectedProvider }) {
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 store.dispatch('API/fetchServicesAndProviders')
                     .then(data => {
                         store.commit('setProviders', data.offices)
@@ -106,11 +106,11 @@ const store = new Vuex.Store({
                 return
             }
 
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 store.dispatch('API/confirmReservation', { processId: appointmentData.id, authKey: appointmentData.authKey })
-                    .then(data => {
+                    .then(() => {
                         resolve(true)
-                    }, error => {
+                    }, () => {
                         resolve(false)
                     })
             })

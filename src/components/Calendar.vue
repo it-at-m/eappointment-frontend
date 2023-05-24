@@ -178,7 +178,7 @@ export default {
             this.$store.commit('data/setAppointment', appointment)
             this.timeDialog = false
             this.$emit('next')
-          }, error => {
+          }, () => {
             this.timeSlotError = this.$t('appointmentNotAvailable')
           })
 
