@@ -28,6 +28,7 @@
                 accordion
             >
               <v-expansion-panel
+                  id="panel1"
                   :disabled="confirmedAppointment || $store.state.isRebooking"
               >
                 <v-expansion-panel-header>
@@ -61,7 +62,12 @@
               </v-expansion-panel>
 
               <v-expansion-panel
-                  :disabled="$store.state.step < 2 || ! $store.state.data.service || $store.state.data.appointmentCount === 0 || this.confirmedAppointment"
+                  id="panel2"
+                  :disabled="$store.state.step < 2
+                    || ! $store.state.data.service
+                    || $store.state.data.appointmentCount === 0
+                    || this.confirmedAppointment
+                  "
               >
                 <v-expansion-panel-header>
                   <template v-slot:default="{ open }">
@@ -94,6 +100,7 @@
               </v-expansion-panel>
 
               <v-expansion-panel
+                  id="panel3"
                   :disabled="$store.state.step < 3 || this.confirmedAppointment"
               >
                 <v-expansion-panel-header>
@@ -189,7 +196,8 @@
                   </v-card>
                 </v-dialog>
               </span>
-
+ßßßßßß
+              {{ $store.state.data.appointment }}
               <v-alert
                   class="appointment-confirmation"
                   v-if="!appointmentCancelled && confirmedAppointment !== null && $store.state.preselectedAppointment === null && $store.state.data.appointment !== null"
@@ -345,10 +353,10 @@ export default {
   }),
   computed: {
     appointmentCanBeConfirmed() {
-      return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
+      return this.$store.state.step === 4 && this.confirmedAppointment === null
     },
     appointmentCanBeStartedOver() {
-      return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
+      return this.$store.state.step === 4 && this.confirmedAppointment === null
     },
     confirmedAppointment() {
       return this.$store.state.confirmedAppointment
@@ -371,14 +379,10 @@ export default {
             this.$store.commit('preselectAppointment', null)
             this.appointmentCancelled = byRebooking === true ? null : true
 
-            console.log('appointmentCancelled')
-            console.log(this.appointmentCancelled)
-
             if (byRebooking) {
               this.$store.state.isRebooking = false
             }
-          })
-          .catch(() => {
+          }, error => {
             this.appointmentCancelled = false
           })
     },
@@ -410,15 +414,12 @@ export default {
       this.$store.dispatch('API/preconfirmReservation', { appointmentData: this.$store.state.data.appointment })
           .then(() => {
             if (this.$store.state.isRebooking) {
-              console.log('is rebooking')
-              console.log(this.$store.state.isRebooking)
               this.cancelAppointment(true)
             }
           })
           .then(() => {
             this.$store.state.confirmedAppointment = true
-          })
-          .catch(() => {
+          }, error => {
             this.desabled = false
             this.$store.state.confirmedAppointment = false
           })
