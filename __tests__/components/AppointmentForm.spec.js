@@ -426,25 +426,6 @@ describe('AppointmentForm', () => {
         expect(selectedAppointment).toBe('')
     })
 
-    it('getSelectedAppointment returns selected appointment', async () => {
-        const realGetProviderName = wrapper.vm.getProviderName
-        wrapper.vm.getProviderName = jest.fn(() => {
-            return 'Service Name 1'
-        })
-
-        wrapper.vm.$store.state.data.appointment = {
-            timestamp: 1684830081,
-            locationId: 1
-        }
-
-        const selectedAppointment = wrapper.vm.getSelectedAppointment()
-        await wrapper.vm.$nextTick()
-
-        expect(selectedAppointment).toBe('23.05.2023 10:21 Service Name 1')
-
-        wrapper.vm.getProviderName = realGetProviderName
-    })
-
     it('getProviderName returns empty string because there is provider with id', async () => {
         wrapper.vm.$store.state.providers = [
             {
@@ -453,7 +434,7 @@ describe('AppointmentForm', () => {
             }
         ]
 
-        const providerName = wrapper.vm.getProviderName(2)
+        const providerName = wrapper.vm.getProviderName(999)
         await wrapper.vm.$nextTick()
 
         expect(providerName).toBe('')
@@ -471,6 +452,26 @@ describe('AppointmentForm', () => {
         await wrapper.vm.$nextTick()
 
         expect(providerName).toBe('Service 1')
+    })
+
+    it('getSelectedAppointment returns selected appointment', async () => {
+        const realGetProviderName = wrapper.vm.getProviderName
+        wrapper.vm.getProviderName = jest.fn(() => {
+            return 'Service Name 1'
+        })
+        const time = moment.unix(1684830081)
+
+        wrapper.vm.$store.state.data.appointment = {
+            timestamp: time.unix(),
+            locationId: 1
+        }
+
+        const selectedAppointment = wrapper.vm.getSelectedAppointment()
+        await wrapper.vm.$nextTick()
+
+        expect(selectedAppointment).toBe(time.format('DD.MM.YYYY H:mm') + ' Service Name 1')
+
+        wrapper.vm.getProviderName = realGetProviderName
     })
 
     it('preselectService set up service and reset other data', async () => {

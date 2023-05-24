@@ -7,6 +7,7 @@ import VueI18n from 'vue-i18n'
 import translations from './../../src/translations'
 import store from './../../src/store'
 import Vue from 'vue'
+import moment from "moment";
 
 Vue.use(VueI18n)
 Vue.use(Vuetify)
@@ -194,13 +195,16 @@ describe('Calendar', () => {
 
     it('getAppointmentsOfDay shows dialog with time slots', async () => {
         document.body.setAttribute('data-app', true)
+        const moment1 = moment.unix(1684386000)
+        const moment2 = moment.unix(1684386900)
+        const moment3 = moment.unix(1684387800)
         const mockCallback = jest.fn(() => {
             return new Promise((resolve, reject) => {
                 resolve({
                     "appointmentTimestamps": [
-                        1684386000,
-                        1684386900,
-                        1684387800
+                        moment1.unix(),
+                        moment2.unix(),
+                        moment3.unix()
                     ]
                 })
             })
@@ -213,9 +217,9 @@ describe('Calendar', () => {
 
         expect(mockCallback).toHaveBeenCalledTimes(1)
         expect(wrapper.vm.timeSlots.length).toBe(3)
-        expect(wrapper.vm.timeSlots[0].format('HH:mm')).toBe('07:00')
-        expect(wrapper.vm.timeSlots[1].format('HH:mm')).toBe('07:15')
-        expect(wrapper.vm.timeSlots[2].format('HH:mm')).toBe('07:30')
+        expect(wrapper.vm.timeSlots[0].format('HH:mm')).toBe(moment1.format('HH:mm'))
+        expect(wrapper.vm.timeSlots[1].format('HH:mm')).toBe(moment2.format('HH:mm'))
+        expect(wrapper.vm.timeSlots[2].format('HH:mm')).toBe(moment3.format('HH:mm'))
         expect(wrapper.vm.timeDialog).toBeTruthy()
     })
 
