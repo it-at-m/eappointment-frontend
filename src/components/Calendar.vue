@@ -183,7 +183,7 @@ export default {
           })
 
       if (! this.timeSlotError && this.$store.state.data.appointment && ! this.$store.state.isRebooking) {
-        this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.data.appointment })
+        this.$store.dispatch('API/cancelAppointment', this.$store.state.data.appointment)
       }
     },
     showForProvider: function(provider) {

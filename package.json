@@ -62,6 +62,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "jest": "^29.5.0",
+    "jest-fetch-mock": "^3.0.3",
     "minimist": "^1.2.5",
     "postcss": "^8.4.6",
     "rimraf": "^3.0.2",
@@ -106,6 +107,13 @@
       "js",
       "json",
       "vue"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/translations",
+      "<rootDir>/src/store/modules/api/index.js",
+      "<rootDir>/src/store/modules/formData/index.js",
+      "<rootDir>/src/store/modules/formData/actions.js",
+      "/node_modules/"
     ],
     "transform": {
       "^[^.]+.vue$": "@vue/vue2-jest",

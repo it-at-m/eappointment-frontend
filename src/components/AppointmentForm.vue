@@ -373,7 +373,7 @@ export default {
 
       this.cancelDialog = false;
 
-      this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
+      this.$store.dispatch('API/cancelAppointment', this.$store.state.preselectedAppointment)
           .then(() => {
             this.$store.commit('preselectAppointment', null)
             this.appointmentCancelled = byRebooking === true ? null : true
@@ -410,7 +410,7 @@ export default {
     },
     submit() {
       this.desabled = true
-      this.$store.dispatch('API/preconfirmReservation', { appointmentData: this.$store.state.data.appointment })
+      this.$store.dispatch('API/preconfirmReservation', this.$store.state.data.appointment)
           .then(() => {
             if (this.$store.state.isRebooking) {
               this.cancelAppointment(true)
