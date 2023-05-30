@@ -12,19 +12,15 @@ export default {
             state.appointmentCount--
         }
     },
-    // eslint-disable-next-line no-unused-vars
     reset (state) {
-        // eslint-disable-next-line no-unused-vars
-        state = {
-            service: null,
-            appointment: null,
-            appointmentCounts: {},
-            appointmentCount: 1
-        }
+        state.service = null
+        state.appointment = null
+        state.appointmentCounts = {}
+        state.appointmentCount = 1
     },
     setService (state, service) {
         state.appointmentCounts = {}
-        state.appointmentCount = service.count !== undefined ? service.count : 1
+        state.appointmentCount = service && service.count !== undefined ? service.count : 1
 
         if (! service) {
             state.service = service

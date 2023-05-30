@@ -22,14 +22,14 @@ export default {
                 })
         })
     },
-    preconfirmReservation(store, { appointmentData }) {
+    preconfirmReservation(store, { processId, authKey }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "processId": appointmentData.processId,
-                    "authKey": appointmentData.authKey
+                    "processId": processId,
+                    "authKey": authKey
                 })
             };
 
@@ -44,14 +44,14 @@ export default {
                 })
         })
     },
-    cancelAppointment(store, { appointmentData }) {
+    cancelAppointment(store, { processId, authKey }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "processId": appointmentData.processId,
-                    "authKey": appointmentData.authKey
+                    "processId": processId,
+                    "authKey": authKey
                 })
             };
 
