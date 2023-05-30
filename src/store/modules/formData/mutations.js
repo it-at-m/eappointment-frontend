@@ -12,7 +12,9 @@ export default {
             state.appointmentCount--
         }
     },
+    // eslint-disable-next-line no-unused-vars
     reset (state) {
+        // eslint-disable-next-line no-unused-vars
         state = {
             service: null,
             appointment: null,

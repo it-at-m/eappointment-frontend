@@ -48,6 +48,7 @@ const store = new Vuex.Store({
         updateAppointmentData(store, appointment) {
             let storedAppointment = store.state.data.appointment
 
+            store.commit('data/setCustomerData', appointment.client)
             storedAppointment.familyName = appointment.client.name
             storedAppointment.email = appointment.client.email
 
@@ -58,7 +59,7 @@ const store = new Vuex.Store({
                 })
         },
         setUpServicesAndProviders(store, { preselectedService, preselectedProvider }) {
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 store.dispatch('API/fetchServicesAndProviders')
                     .then(data => {
                         store.commit('setProviders', data.offices)
@@ -105,11 +106,11 @@ const store = new Vuex.Store({
                 return
             }
 
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 store.dispatch('API/confirmReservation', { processId: appointmentData.id, authKey: appointmentData.authKey })
-                    .then(data => {
+                    .then(() => {
                         resolve(true)
-                    }, error => {
+                    }, () => {
                         resolve(false)
                     })
             })
@@ -197,9 +198,6 @@ const store = new Vuex.Store({
         },
         goToStep(state, step) {
             state.step = step
-        },
-        setAvailableDays(state, days) {
-            state.days = days
         },
         selectServiceWithId (state, { id, count }) {
             state.services.forEach((service) => {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-autocomplete
-        class="align-content-start"
+        class="align-content-start service-finder-select"
         v-model="$store.state.data.service"
         v-if="! $store.state.preselectedService"
         :attach="$parent.$el"
@@ -67,13 +67,13 @@
             <v-list-item :key="subService.id + ' ' + appointmentCountTriggered">
               <v-card-actions>
                 <div>
-                  <v-btn class="appointment-count-button" fab @click="decreaseAppointments(subService)">
+                  <v-btn ref="buttonDown" class="appointment-count-button button-down" fab @click="decreaseAppointments(subService)">
                     <v-icon >{{ minusSvg }}</v-icon>
                   </v-btn>
                 </div>
                 <h3 class="appointment-count" :key="appointmentCounts[subService.id]">{{ appointmentCounts[subService.id] }}</h3>
                 <div>
-                  <v-btn class="appointment-count-button" fab @click="increaseAppointments(subService)">
+                  <v-btn id="button-up" ref="buttonUp" class="appointment-count-button" fab @click="increaseAppointments(subService)">
                     <v-icon>{{ plusSvg }}</v-icon>
                   </v-btn>
                 </div>
@@ -162,7 +162,6 @@ export default {
         return
       }
 
-      this.$store.commit('data/setService', null)
       this.filteredServices = this.$store.state.services.filter(item => {
         const containsService = item.name.toLowerCase().includes(event.target.value.toLowerCase())
         let containsSubService = false

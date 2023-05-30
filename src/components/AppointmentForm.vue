@@ -28,6 +28,7 @@
                 accordion
             >
               <v-expansion-panel
+                  id="panel1"
                   :disabled="confirmedAppointment || $store.state.isRebooking"
               >
                 <v-expansion-panel-header>
@@ -61,7 +62,12 @@
               </v-expansion-panel>
 
               <v-expansion-panel
-                  :disabled="$store.state.step < 2 || ! $store.state.data.service || $store.state.data.appointmentCount === 0 || this.confirmedAppointment"
+                  id="panel2"
+                  :disabled="$store.state.step < 2
+                    || ! $store.state.data.service
+                    || $store.state.data.appointmentCount === 0
+                    || this.confirmedAppointment
+                  "
               >
                 <v-expansion-panel-header>
                   <template v-slot:default="{ open }">
@@ -94,6 +100,7 @@
               </v-expansion-panel>
 
               <v-expansion-panel
+                  id="panel3"
                   :disabled="$store.state.step < 3 || this.confirmedAppointment"
               >
                 <v-expansion-panel-header>
@@ -325,7 +332,7 @@
 <script>
 import SwitchLanguage from './SwitchLanguage.vue'
 import ServiceFinder from './ServiceFinder.vue'
-import Calendar from './Calnedar.vue'
+import Calendar from './Calendar.vue'
 import CustomerInfo from './CustomerInfo.vue'
 import moment from "moment";
 
@@ -345,10 +352,10 @@ export default {
   }),
   computed: {
     appointmentCanBeConfirmed() {
-      return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
+      return this.$store.state.step === 4 && this.confirmedAppointment === null
     },
     appointmentCanBeStartedOver() {
-      return this.$store.state.step === 4 && this.$store.state.confirmedAppointment === null
+      return this.$store.state.step === 4 && this.confirmedAppointment === null
     },
     confirmedAppointment() {
       return this.$store.state.confirmedAppointment
@@ -367,18 +374,14 @@ export default {
       this.cancelDialog = false;
 
       this.$store.dispatch('API/cancelAppointment', { appointmentData: this.$store.state.preselectedAppointment })
-          .then((data) => {
+          .then(() => {
             this.$store.commit('preselectAppointment', null)
             this.appointmentCancelled = byRebooking === true ? null : true
-
-            console.log('appointmentCancelled')
-            console.log(this.appointmentCancelled)
 
             if (byRebooking) {
               this.$store.state.isRebooking = false
             }
-          })
-          .catch(() => {
+          }, () => {
             this.appointmentCancelled = false
           })
     },
@@ -410,15 +413,12 @@ export default {
       this.$store.dispatch('API/preconfirmReservation', { appointmentData: this.$store.state.data.appointment })
           .then(() => {
             if (this.$store.state.isRebooking) {
-              console.log('is rebooking')
-              console.log(this.$store.state.isRebooking)
               this.cancelAppointment(true)
             }
           })
           .then(() => {
             this.$store.state.confirmedAppointment = true
-          })
-          .catch(() => {
+          }, () => {
             this.desabled = false
             this.$store.state.confirmedAppointment = false
           })

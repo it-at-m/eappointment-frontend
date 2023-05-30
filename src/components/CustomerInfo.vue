@@ -1,30 +1,37 @@
 <template>
   <div>
-    <v-text-field
-        v-model="name"
-        :error-messages="nameErrors"
-        @input="$v.name.$touch()"
-        @blur="$v.name.$touch()"
-        @change="changed"
-        counter="50"
-        filled
-        :label="$t('name')"
-    ></v-text-field>
+    <div id="customer-name-section">
+      <v-text-field
+          v-model="customer.name"
+          id="customer-name"
+          :error-messages="nameErrors"
+          @input="$v.name.$touch()"
+          @blur="$v.name.$touch()"
+          @change="changed"
+          counter="50"
+          filled
+          :label="$t('name')"
+      ></v-text-field>
+    </div>
 
-    <v-text-field
-        v-model="email"
-        counter="50"
-        filled
-        :error-messages="emailErrors"
-        @input="$v.email.$touch()"
-        @blur="$v.email.$touch()"
-        @change="changed"
-        required
-        :label="$t('email')"
-    ></v-text-field>
+    <div id="customer-email-section">
+      <v-text-field
+          v-model="customer.email"
+          id="customer-email"
+          counter="50"
+          filled
+          :error-messages="emailErrors"
+          @input="$v.email.$touch()"
+          @blur="$v.email.$touch()"
+          @change="changed"
+          required
+          :label="$t('email')"
+      ></v-text-field>
+    </div>
 
     <v-checkbox
-        v-model="dataProtection"
+        id="customer-data-protection"
+        v-model="customer.dataProtection"
         label=""
         :error-messages="dataProtectionErrors"
         required
@@ -41,6 +48,7 @@
     </v-checkbox>
 
     <v-btn
+        id="customer-submit-button"
         class="button-next"
         elevation="2"
         depressed
@@ -70,29 +78,34 @@ export default {
       required
     }
   },
+  data() {
+    return {
+      customer: {}
+    };
+  },
   computed: {
     name: {
       get() {
-        return this.$store.state.data.customer.name
+        return this.customer.name
       },
       set(newValue) {
-        return this.$store.state.data.customer.name = newValue
+        return this.customer.name = newValue
       }
     },
     email: {
       get() {
-        return this.$store.state.data.customer.email
+        return this.customer.email
       },
       set(newValue) {
-        return this.$store.state.data.customer.email = newValue
+        return this.customer.email = newValue
       }
     },
     dataProtection: {
       get() {
-        return this.$store.state.data.customer.dataProtection
+        return this.customer.dataProtection
       },
       set(newValue) {
-        return this.$store.state.data.customer.dataProtection = newValue
+        return this.customer.dataProtection = newValue
       }
     },
     nameErrors() {
@@ -106,7 +119,6 @@ export default {
     emailErrors() {
       const errors = [];
       if (!this.$v.email.$dirty) return errors;
-      console.log(this.$v.email)
       ! this.$v.email.email && errors.push(this.$t('mustBeValidEmail'));
       ! this.$v.email.required && errors.push(this.$t('email') + ' ' + this.$t('isRequired'));
       ! this.$v.email.maxLength && errors.push(this.$t('textLengthExceeded'));
@@ -116,7 +128,7 @@ export default {
     dataProtectionErrors() {
       const errors = [];
       if (!this.$v.dataProtection.$dirty) return errors;
-      ! this.dataProtection && errors.push(this.$t('acceptPrivacyPolicy'));
+      ! this.customer.dataProtection && errors.push(this.$t('acceptPrivacyPolicy'));
 
       return errors;
     }
@@ -132,15 +144,10 @@ export default {
         return
       }
 
-      let customer = {
-        name: this.name,
-        email: this.email
-      }
-
-      let appointment = this.$store.state.data.appointment
-      appointment.client = customer
-
-      this.$store.dispatch('updateAppointmentData', appointment)
+      this.$store.dispatch('updateAppointmentData', {
+        ...this.$store.state.data.appointment,
+        ...{ client: this.customer }
+      })
       this.$emit('next')
       this.$v.$reset()
     }
