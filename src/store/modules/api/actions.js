@@ -69,15 +69,15 @@ export default {
                 })
         })
     },
-    fetchAvailableDays(store, { provider, serviceId, count }) {
+    fetchAvailableDays(store, { provider, serviceIds, serviceCounts }) {
         return new Promise((resolve, reject) => {
             const dateIn6Months = moment().add(6, 'M')
             const params = {
                 'startDate': moment().format('YYYY-M-D'),
                 'endDate': dateIn6Months.format('YYYY-M-D'),
                 'officeId': provider.id,
-                'serviceId': serviceId,
-                'serviceCount': count,
+                'serviceId': serviceIds,
+                'serviceCount': serviceCounts,
             }
 
             fetch(store.rootState.settings.endpoints.VUE_APP_ZMS_API_BASE + store.rootState.settings.endpoints.VUE_APP_ZMS_API_CALENDAR_ENDPOINT
@@ -126,13 +126,13 @@ export default {
                 })
         })
     },
-    fetchAvailableTimeSlots(store, { date, provider, count, serviceId }) {
+    fetchAvailableTimeSlots(store, { date, provider, serviceIds, serviceCounts }) {
         return new Promise((resolve, reject) => {
             const params = {
                 'date': moment(date).format('YYYY-M-D'),
                 'officeId': provider.id,
-                'serviceId': serviceId,
-                'serviceCount': count
+                'serviceId': serviceIds,
+                'serviceCount': serviceCounts
             }
 
             fetch(store.rootState.settings.endpoints.VUE_APP_ZMS_API_BASE + store.rootState.settings.endpoints.VUE_APP_ZMS_API_AVAILABLE_TIME_SLOTS_ENDPOINT
@@ -175,16 +175,16 @@ export default {
             })
         })
     },
-    reserveAppointment(store, { timeSlot, count, serviceId, providerId }) {
+    reserveAppointment(store, { timeSlot, serviceIds, serviceCounts, providerId }) {
         return new Promise((resolve, reject) => {
             const requestOptions = {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     "timestamp": timeSlot.unix(),
-                    "serviceCount": count,
+                    "serviceCount": serviceCounts,
                     "officeId": providerId,
-                    "serviceId": serviceId
+                    "serviceId": serviceIds
                 })
             };
 

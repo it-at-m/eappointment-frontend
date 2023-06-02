@@ -138,8 +138,15 @@ export default {
       this.timeDialog = false
       this.timeSlots = []
       const momentDate = moment(date, 'YYYY-MM-DD')
+      const selectedServices = {}
 
-      this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id })
+      Object.keys(this.$store.state.data.appointmentCounts).forEach((serviceId) => {
+        if (this.$store.state.data.appointmentCounts[serviceId] > 0) {
+          selectedServices[serviceId] = this.$store.state.data.appointmentCounts[serviceId]
+        }
+      })
+
+      this.$store.dispatch('API/fetchAvailableTimeSlots', { date: momentDate, provider: {...this.provider, slots: 1}, serviceIds: Object.keys(selectedServices), serviceCounts: Object.values(selectedServices) })
           .then(data => {
             if (data.errorMessage) {
               this.selectableDates = this.selectableDates.filter(selectableDate => {
@@ -162,8 +169,15 @@ export default {
     },
     chooseAppointment: function(timeSlot) {
       this.timeSlotError = false
+      const selectedServices = {}
 
-      this.$store.dispatch('API/reserveAppointment', { timeSlot, count: this.$store.state.data.appointmentCount, serviceId: this.$store.state.data.service.id, providerId: this.provider.id })
+      Object.keys(this.$store.state.data.appointmentCounts).forEach((serviceId) => {
+        if (this.$store.state.data.appointmentCounts[serviceId] > 0) {
+          selectedServices[serviceId] = this.$store.state.data.appointmentCounts[serviceId]
+        }
+      })
+
+      this.$store.dispatch('API/reserveAppointment', { timeSlot, serviceIds: Object.keys(selectedServices), serviceCounts: Object.values(selectedServices), providerId: this.provider.id })
           .then(data => {
             if (data.errorMessage) {
               this.timeSlotError = data.errorMessage
@@ -190,8 +204,15 @@ export default {
       this.dateError = false
       this.timeSlotError = false
       this.provider = provider
+      const selectedServices = {}
 
-      this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceId: this.$store.state.data.service.id, count: this.$store.state.data.appointmentCount })
+      Object.keys(this.$store.state.data.appointmentCounts).forEach((serviceId) => {
+        if (this.$store.state.data.appointmentCounts[serviceId] > 0) {
+          selectedServices[serviceId] = this.$store.state.data.appointmentCounts[serviceId]
+        }
+      })
+
+      this.$store.dispatch('API/fetchAvailableDays', { provider: provider, serviceIds: Object.keys(selectedServices), serviceCounts: Object.values(selectedServices) })
           .then(data => {
             let availableDays = data.availableDays ?? []
             if (data.errorMessage) {

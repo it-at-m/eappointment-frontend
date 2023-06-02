@@ -1,6 +1,10 @@
 export default {
     setServices (state, services) {
         state.services = services
+
+        services.forEach((service) => {
+            state.servicesById[service.id] = service
+        })
     },
     setProviders (state, providers) {
         state.providers = providers

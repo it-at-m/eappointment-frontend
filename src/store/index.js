@@ -10,6 +10,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         services: [],
+        servicesById: {},
         locale: 'de',
         step: 1,
         openedPanel: 0,

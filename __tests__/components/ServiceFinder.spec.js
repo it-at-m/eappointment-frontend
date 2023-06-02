@@ -70,9 +70,28 @@ describe('Service Finder', () => {
     })
 
     it('Selected service is shown', async () => {
-        await wrapper.vm.$nextTick()
-        expect(wrapper.find('.appointment-count').text()).toContain('1')
-        expect(wrapper.html()).toContain('Meldebescheinigung')
+        wrapperWithServiceId.vm.$store.state.services = [
+            {
+                id: 1,
+                name: "Meldebescheinigung",
+                maxQuantity: 3
+            },
+            {
+                id: 2,
+                name: "Haushaltsbescheinigung",
+                maxQuantity: 2
+            },
+            {
+                id: 3,
+                name: "Fahrzeug wieder anmelden",
+                maxQuantity: 2
+            }
+        ]
+
+        await wrapperWithServiceId.vm.$nextTick()
+
+        expect(wrapperWithServiceId.find('.appointment-count').text()).toContain('1')
+        expect(wrapperWithServiceId.html()).toContain('Meldebescheinigung')
     })
 
     it('Service dropdown not visible if service is preselected', async () => {

@@ -64,12 +64,12 @@ describe('API actions', () => {
                 id: 111,
                 name: 'Provider name'
             },
-            serviceId: 222,
-            count: 2
+            serviceIds: [111, 222],
+            serviceCounts: [1, 2]
         })
 
         expect(fetch.mock.calls.length).toEqual(1);
-        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-days?startDate=2020-5-13&endDate=2020-11-13&officeId=111&serviceId=222&serviceCount=2')
+        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-days?startDate=2020-5-13&endDate=2020-11-13&officeId=111&serviceId=111%2C222&serviceCount=1%2C2')
     })
 
     it('fetchServicesAndProviders calls API to fetch services and providers', async () => {
@@ -93,12 +93,12 @@ describe('API actions', () => {
                 id: 111,
                 name: 'Provider name'
             },
-            serviceId: 222,
-            count: 2
+            serviceIds: [222, 333],
+            serviceCounts: [2,3]
         })
 
         expect(fetch.mock.calls.length).toEqual(1);
-        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-appointments?date=2023-3-1&officeId=111&serviceId=222&serviceCount=2')
+        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-appointments?date=2023-3-1&officeId=111&serviceId=222%2C333&serviceCount=2%2C3')
     })
 
     it('updateAppointmentData calls API to update appointment data', async () => {
@@ -122,18 +122,18 @@ describe('API actions', () => {
     it('reserveAppointment calls API to reserve appointment', async () => {
         const res = await actions.reserveAppointment(store, {
             timeSlot: moment(),
-            count: 2,
+            serviceCounts: [2],
             providerId: 111,
-            serviceId: 222
+            serviceIds: [222]
         })
 
         expect(fetch.mock.calls.length).toEqual(1);
         expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/reserve-appointment')
         expect(fetch.mock.calls[0][1].body).toBe(JSON.stringify({
             "timestamp": 1589373217,
-            "serviceCount": 2,
+            "serviceCount": [2],
             "officeId": 111,
-            "serviceId": 222
+            "serviceId": [222]
         }))
     })
 })
