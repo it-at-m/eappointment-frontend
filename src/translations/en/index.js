@@ -36,5 +36,6 @@ export default {
   languages: {
     de: 'German',
     en: 'English',
-  }
+  },
+  oftenBookedTogether: 'Often booked together'
 }

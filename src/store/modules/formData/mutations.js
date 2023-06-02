@@ -21,20 +21,32 @@ export default {
     setService (state, service) {
         state.appointmentCounts = {}
         state.appointmentCount = service && service.count !== undefined ? service.count : 1
+        state.service = service
 
         if (! service) {
-            state.service = service
             return
         }
 
+        state.appointmentCounts[service.id] = state.appointmentCount
+
+        if (service.combinable === undefined) {
+            service.combinable = []
+
+            return
+        }
+
+        let combinable = service.combinable
+        if (combinable.indexOf(parseInt(service.id) !== -1)) {
+            combinable.splice(combinable.indexOf(parseInt(service.id)), 1)
+        }
+
         if (! service.subServices) {
-            service.subServices = [
-                {
-                    'id': service.id,
-                    'name': service.name,
-                    'count': service.count
+            service.subServices = combinable.map((subservice) => {
+                return {
+                    'id': subservice,
+                    count: 0
                 }
-            ]
+            })
         }
 
         service.subServices.forEach((service) => {

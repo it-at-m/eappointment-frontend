@@ -395,18 +395,35 @@ describe('AppointmentForm', () => {
 
     it('getSelectedServices returns comma separated services', async () => {
         wrapper.vm.$store.state.data.appointmentCounts = {
+            111: 2,
             333: 2,
             444: 1
         }
+        wrapper.vm.$store.state.servicesById = {
+            111: {
+                id: 111,
+                name: 'Service 1'
+            },
+            333: {
+                id: 333,
+                name: 'Service 3'
+            },
+            444: {
+                id: 444,
+                name: 'Service 4'
+            }
+        }
         wrapper.vm.$store.state.data.service = {
+            id: 111,
+            name: "Service 1",
             subServices: [
                 {
                     id: 333,
-                    name: 'Service 1'
+                    name: 'Service 3'
                 },
                 {
                     id: 444,
-                    name: 'Service 2'
+                    name: 'Service 4'
                 }
             ]
         }
@@ -414,7 +431,7 @@ describe('AppointmentForm', () => {
         const selectedServices = wrapper.vm.getSelectedServices()
         await wrapper.vm.$nextTick()
 
-        expect(selectedServices).toBe('2 x Service 1, 1 x Service 2')
+        expect(selectedServices).toBe('2 x Service 1, 2 x Service 3, 1 x Service 4')
     })
 
     it('getSelectedAppointment returns empty string because there is no appointment selected', async () => {

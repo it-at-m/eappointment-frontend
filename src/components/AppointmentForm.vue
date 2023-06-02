@@ -434,9 +434,11 @@ export default {
         return ''
       }
 
+      services.push(this.$store.state.data.appointmentCounts[this.$store.state.data.service.id] + ' x ' + this.$store.state.servicesById[this.$store.state.data.service.id].name)
+
       this.$store.state.data.service.subServices.forEach((subService) => {
         if (this.$store.state.data.appointmentCounts[subService.id]) {
-          services.push(this.$store.state.data.appointmentCounts[subService.id] + ' x ' + subService.name)
+          services.push(this.$store.state.data.appointmentCounts[subService.id] + ' x ' + this.$store.state.servicesById[subService.id].name)
         }
       })
 
