@@ -53,16 +53,35 @@
       </template>
     </v-list>
 
-
     <v-container v-if="$store.state.data.service">
       <h2>{{ $store.state.data.service.name }}</h2>
       <div
           v-if="$store.state.data.service.content"
           v-html="$store.state.data.service.content">
       </div>
-      <template v-if="$store.state.data.service.subServices">
-        <h3>{{ $t('services') }}</h3>
-        <v-list two-line class="subservices">
+
+      <h3>{{ $t('services') }}</h3>
+      <v-list two-line class="subservices">
+        <v-list-item :key="$store.state.data.service.id + ' ' + appointmentCountTriggered">
+          <v-card-actions>
+            <div>
+              <v-btn ref="buttonDown" class="appointment-count-button button-down" fab @click="decreaseAppointments($store.state.data.service)">
+                <v-icon >{{ minusSvg }}</v-icon>
+              </v-btn>
+            </div>
+            <h3 class="appointment-count" :key="appointmentCounts[$store.state.data.service.id]">{{ appointmentCounts[$store.state.data.service.id] }}</h3>
+            <div>
+              <v-btn id="button-up" ref="buttonUp" class="appointment-count-button" fab @click="increaseAppointments($store.state.data.service)">
+                <v-icon>{{ plusSvg }}</v-icon>
+              </v-btn>
+            </div>
+          </v-card-actions>
+          {{ $store.state.data.service.name }}
+        </v-list-item>
+
+        <template v-if="$store.state.data.service.subServices">
+          <h3 v-if="$store.state.data.service.subServices.length">{{ $t('oftenBookedTogether') }}</h3>
+
           <template v-for="(subService) in $store.state.data.service.subServices">
             <v-list-item :key="subService.id + ' ' + appointmentCountTriggered">
               <v-card-actions>
@@ -78,11 +97,12 @@
                   </v-btn>
                 </div>
               </v-card-actions>
-              {{ subService.name }}
+              {{ getServiceName(subService.id) }}
             </v-list-item>
           </template>
-        </v-list>
-      </template>
+        </template>
+      </v-list>
+
       <div>
         <v-btn
             class="button-next"
@@ -156,6 +176,9 @@ export default {
       this.$store.commit('data/setService', value)
       this.filteredServices = null
       this.$emit('changed')
+    },
+    getServiceName(serviceId) {
+      return this.$store.state.servicesById[serviceId].name
     },
     suggest(event) {
       if (!event.target.value) {
