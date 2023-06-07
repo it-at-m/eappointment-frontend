@@ -60,7 +60,7 @@ export default {
         return new Promise((resolve) => {
             store.dispatch('API/confirmReservation', { processId: appointmentData.id, authKey: appointmentData.authKey })
                 .then((data) => {
-                    this.setAppointmentFromResponse(store, data)
+                    store.dispatch('setAppointmentFromResponse', data)
 
                     resolve(true)
                 }, () => {
@@ -91,7 +91,7 @@ export default {
                     return
                 }
 
-                this.setAppointmentFromResponse(store, data)
+                store.dispatch('setAppointmentFromResponse', data)
 
                 if (data.timestamp < moment().unix()) {
                     store.state.errorCode = 'appointmentCanNotBeCanceled'
