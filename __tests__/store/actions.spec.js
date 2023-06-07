@@ -34,7 +34,9 @@ describe('Actions', () => {
             },
             data: {
                 'test': 'test'
-            }
+            },
+            familyName: 'Max',
+            email: 'max@gmail.com'
         }])
     })
 
