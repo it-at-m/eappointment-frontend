@@ -2,6 +2,9 @@ import moment from "moment";
 
 export default {
     updateAppointmentData(store, appointment) {
+        appointment.familyName = appointment.client.name
+        appointment.email = appointment.client.email
+
         store.dispatch('API/updateAppointmentData', appointment)
             .then((data) => {
                 appointment.data = data
