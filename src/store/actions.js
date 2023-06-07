@@ -62,7 +62,9 @@ export default {
 
         return new Promise((resolve) => {
             store.dispatch('API/confirmReservation', { processId: appointmentData.id, authKey: appointmentData.authKey })
-                .then(() => {
+                .then((data) => {
+                    this.setAppointmentFromResponse(store, data)
+
                     resolve(true)
                 }, () => {
                     resolve(false)
@@ -92,35 +94,38 @@ export default {
                     return
                 }
 
-                store.commit('selectServiceWithId', { id: data.serviceId, count: data.serviceCount })
-                store.commit('selectProviderWithId', data.officeId)
-
-                const customer = {
-                    name: data.familyName,
-                    email: data.email,
-                    dataProtection: true
-                }
-
-                const appointment = {
-                    timestamp: data.timestamp,
-                    dateFrom: moment.unix(data.timestamp),
-                    locationId: data.officeId,
-                    location: data.officeName,
-                    processId: data.processId,
-                    authKey: data.authKey,
-                    serviceId: data.serviceId,
-                    serviceCount: data.serviceCount,
-                    ...customer
-                }
-
-                store.commit('data/setCustomerData', customer)
-                store.commit('preselectAppointment', appointment)
-                store.commit('data/setAppointment', appointment)
+                this.setAppointmentFromResponse(store, data)
 
                 if (data.timestamp < moment().unix()) {
                     store.state.errorCode = 'appointmentCanNotBeCanceled'
                 }
             })
+    },
+    setAppointmentFromResponse (store, appointmentData) {
+        store.commit('selectServiceWithId', { id: appointmentData.serviceId, count: appointmentData.serviceCount })
+        store.commit('selectProviderWithId', appointmentData.officeId)
+
+        const customer = {
+            name: appointmentData.familyName,
+            email: appointmentData.email,
+            dataProtection: true
+        }
+
+        const appointment = {
+            timestamp: appointmentData.timestamp,
+            dateFrom: moment.unix(appointmentData.timestamp),
+            locationId: appointmentData.officeId,
+            location: appointmentData.officeName,
+            processId: appointmentData.processId,
+            authKey: appointmentData.authKey,
+            serviceId: appointmentData.serviceId,
+            serviceCount: appointmentData.serviceCount,
+            ...customer
+        }
+
+        store.commit('data/setCustomerData', customer)
+        store.commit('preselectAppointment', appointment)
+        store.commit('data/setAppointment', appointment)
     },
     startRebooking (store) {
         store.state.isRebooking = true
