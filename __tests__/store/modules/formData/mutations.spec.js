@@ -9,8 +9,12 @@ describe('Form data mutations', () => {
         }
         state.appointmentCount = 2
 
-        state.service = {
-            maxQuantity: 4
+        state.servicesById = {
+            1: {
+                id: 1,
+                name: 'Service 1',
+                maxQuantity: 4
+            }
         }
 
         mutations.increaseAppointmentCount(state, 1)
@@ -25,8 +29,12 @@ describe('Form data mutations', () => {
         }
         state.appointmentCount = 2
 
-        state.service = {
-            maxQuantity: 2
+        state.servicesById = {
+            1: {
+                id: 1,
+                name: 'Service 1',
+                maxQuantity: 2
+            }
         }
 
         mutations.increaseAppointmentCount(state, 1)
