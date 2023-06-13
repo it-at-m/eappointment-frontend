@@ -1,6 +1,6 @@
 export default {
     increaseAppointmentCount (state, serviceId) {
-        if (state.appointmentCounts[serviceId] < state.service.maxQuantity)
+        if (state.appointmentCounts[serviceId] < state.servicesById[serviceId].maxQuantity)
         {
             state.appointmentCounts[serviceId]++
             state.appointmentCount++
