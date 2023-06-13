@@ -179,7 +179,7 @@ describe('Actions', () => {
         })
 
         expect(result).toBeTruthy()
-        expect(mockMethods).toHaveBeenCalledTimes(1)
+        expect(mockMethods).toHaveBeenCalledTimes(2)
         expect(mockMethods.mock.calls[0]).toStrictEqual(['API/confirmReservation', {"processId": 12345,"authKey": "bbbb"}])
     })
 
@@ -208,24 +208,8 @@ describe('Actions', () => {
         expect(store.state.errorMessage).toBe('Not valid appointment')
     })
 
-    it('setUpAppointment fetch appointment from API and set up in store', async () => {
+    it('setAppointmentFromResponse set up appointment in store', async () => {
         const commitMethods = jest.fn()
-        const mockMethods = jest.fn(() => {
-            return new Promise((resolve) => {
-                resolve({
-                    serviceId: 1,
-                    serviceCount: 2,
-                    officeId: 1111,
-                    officeName: 'Office name',
-                    familyName: 'Max',
-                    email: 'max@gmail.com',
-                    timestamp: 1589373217,
-                    processId: 111,
-                    authKey: 'abc'
-                })
-            })
-        })
-        store.dispatch = mockMethods
         store.commit = commitMethods
         const expectedAppointment = {
             timestamp: 1589373217,
@@ -241,8 +225,16 @@ describe('Actions', () => {
             dataProtection: true
         }
 
-        await actions.setUpAppointment(store, {
-            appointmentHash: 'eyJpZCI6IDEyMzQ1LCJhdXRoS2V5IjogImJiYmIifQ=='
+        await actions.setAppointmentFromResponse(store, {
+            serviceId: 1,
+            serviceCount: 2,
+            officeId: 1111,
+            officeName: 'Office name',
+            familyName: 'Max',
+            email: 'max@gmail.com',
+            timestamp: 1589373217,
+            processId: 111,
+            authKey: 'abc'
         })
 
         expect(commitMethods).toHaveBeenCalledTimes(5)
@@ -258,7 +250,6 @@ describe('Actions', () => {
         }])
         expect(commitMethods.mock.calls[3]).toStrictEqual(['preselectAppointment', expectedAppointment])
         expect(commitMethods.mock.calls[4]).toStrictEqual(['data/setAppointment', expectedAppointment])
-        expect(store.state.errorCode).toBe('appointmentCanNotBeCanceled')
     })
 
     it('startRebooking starts rebooking', async () => {
