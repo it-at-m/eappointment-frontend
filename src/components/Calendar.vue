@@ -177,6 +177,8 @@ export default {
         }
       })
 
+      const oldAppointment = this.$store.state.data.appointment
+
       this.$store.dispatch('API/reserveAppointment', { timeSlot, serviceIds: Object.keys(selectedServices), serviceCounts: Object.values(selectedServices), providerId: this.provider.id })
           .then(data => {
             if (data.errorMessage) {
@@ -196,8 +198,8 @@ export default {
             this.timeSlotError = this.$t('appointmentNotAvailable')
           })
 
-      if (! this.timeSlotError && this.$store.state.data.appointment && ! this.$store.state.isRebooking) {
-        this.$store.dispatch('API/cancelAppointment', this.$store.state.data.appointment)
+      if (! this.timeSlotError && oldAppointment && ! this.$store.state.isRebooking) {
+        this.$store.dispatch('API/cancelAppointment', oldAppointment)
       }
     },
     showForProvider: function(provider) {
