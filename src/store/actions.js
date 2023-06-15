@@ -133,6 +133,7 @@ export default {
         store.state.step = 2
         store.state.openedPanel = 1
         store.state.confirmedAppointment = null
+        store.state.activatedAppointment = null
     },
     stopRebooking (store) {
         store.state.isRebooking = false
