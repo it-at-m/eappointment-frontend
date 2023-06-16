@@ -228,6 +228,12 @@ describe('Actions', () => {
         await actions.setAppointmentFromResponse(store, {
             serviceId: 1,
             serviceCount: 2,
+            subRequestCounts: [
+                {
+                    id: 2,
+                    count: 1
+                }
+            ],
             officeId: 1111,
             officeName: 'Office name',
             familyName: 'Max',
@@ -240,7 +246,13 @@ describe('Actions', () => {
         expect(commitMethods).toHaveBeenCalledTimes(5)
         expect(commitMethods.mock.calls[0]).toStrictEqual(['selectServiceWithId', {
             id: 1,
-            count: 2
+            count: 2,
+            subServiceCounts: [
+                {
+                    id: 2,
+                    count: 1
+                }
+            ]
         }])
         expect(commitMethods.mock.calls[1]).toStrictEqual(['selectProviderWithId', 1111])
         expect(commitMethods.mock.calls[2]).toStrictEqual(['data/setCustomerData', {

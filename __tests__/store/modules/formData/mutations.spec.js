@@ -156,12 +156,15 @@ describe('Form data mutations', () => {
                 1,
                 2,
                 3
-            ]
+            ],
+            subServiceCounts: {
+                2: 1
+            }
         })
 
         expect(state.appointmentCounts).toStrictEqual({
             1: 2,
-            2: 0,
+            2: 1,
             3: 0
         })
         expect(state.appointmentCount).toBe(2)
@@ -173,10 +176,13 @@ describe('Form data mutations', () => {
                 2,
                 3
             ],
+            subServiceCounts: {
+                2: 1
+            },
             subServices: [
                 {
                     id: 2,
-                    count: 0
+                    count: 1
                 },
                 {
                     id: 3,
