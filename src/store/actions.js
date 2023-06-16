@@ -105,7 +105,7 @@ export default {
         store.commit('selectServiceWithId', {
             id: appointmentData.serviceId,
             count: appointmentData.serviceCount,
-            subRequestCounts: appointmentData.subRequestCounts
+            subServiceCounts: appointmentData.subRequestCounts
         })
         store.commit('selectProviderWithId', appointmentData.officeId)
 
