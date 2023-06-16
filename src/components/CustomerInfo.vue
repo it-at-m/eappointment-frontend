@@ -151,6 +151,9 @@ export default {
       this.$emit('next')
       this.$v.$reset()
     }
+  },
+  mounted() {
+    this.customer = this.$store.state.data.customer
   }
 }
 </script>
