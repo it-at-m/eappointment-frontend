@@ -17,7 +17,13 @@ export default {
     goToStep(state, step) {
         state.step = step
     },
-    selectServiceWithId (state, { id, count }) {
+    selectServiceWithId (state, { id, count, subServiceCounts = null }) {
+        const subServiceCountsById = {}
+
+        subServiceCounts.forEach(subService => {
+            subServiceCountsById[subService.id] = subServiceCountsById.count
+        })
+
         state.services.forEach((service) => {
             if (service.id === id) {
                 if (count) {
@@ -25,6 +31,7 @@ export default {
                 }
 
                 state.preselectedService = id
+                service.subServiceCounts = subServiceCounts
                 this.commit('data/setService', service)
             }
         })

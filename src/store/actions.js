@@ -102,7 +102,11 @@ export default {
             })
     },
     setAppointmentFromResponse (store, appointmentData) {
-        store.commit('selectServiceWithId', { id: appointmentData.serviceId, count: appointmentData.serviceCount })
+        store.commit('selectServiceWithId', {
+            id: appointmentData.serviceId,
+            count: appointmentData.serviceCount,
+            subRequestCounts: appointmentData.subRequestCounts
+        })
         store.commit('selectProviderWithId', appointmentData.officeId)
 
         const customer = {

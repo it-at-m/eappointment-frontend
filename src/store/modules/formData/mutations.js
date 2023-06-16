@@ -44,13 +44,15 @@ export default {
             service.subServices = combinable.map((subservice) => {
                 return {
                     'id': subservice,
-                    count: 0
+                    count: service.subServiceCounts && service.subServiceCounts[subservice.id]
+                        ? service.subServiceCounts[subservice.id]
+                        : 0
                 }
             })
         }
 
         service.subServices.forEach((service) => {
-            state.appointmentCounts[service.id] = service.count !== undefined ? service.count : 1
+            state.appointmentCounts[service.id] = service.count
         })
 
         state.service = service
