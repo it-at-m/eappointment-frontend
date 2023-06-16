@@ -41,11 +41,11 @@ export default {
         }
 
         if (! service.subServices) {
-            service.subServices = combinable.map((subservice) => {
+            service.subServices = combinable.map((subServiceId) => {
                 return {
-                    'id': subservice,
-                    count: service.subServiceCounts && service.subServiceCounts[subservice.id]
-                        ? service.subServiceCounts[subservice.id]
+                    id: subServiceId,
+                    count: service.subServiceCounts && service.subServiceCounts[subServiceId]
+                        ? service.subServiceCounts[subServiceId]
                         : 0
                 }
             })
