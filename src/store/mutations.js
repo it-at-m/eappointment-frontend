@@ -20,8 +20,8 @@ export default {
     selectServiceWithId (state, { id, count, subServiceCounts = [] }) {
         const subServiceCountsById = {}
 
-        subServiceCounts.forEach(subService => {
-            subServiceCountsById[subService.id] = subServiceCountsById.count
+        subServiceCounts.forEach((subService) => {
+            subServiceCountsById[subService.id] = subService.count
         })
 
         state.services.forEach((service) => {
