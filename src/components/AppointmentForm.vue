@@ -2,7 +2,7 @@
   <div id="app">
     <v-app>
       <v-container>
-        <v-row class="content">
+        <v-row class="content" v-if="showLanguageSwitch">
           <v-col cols="12">
             <SwitchLanguage />
           </v-col>
@@ -348,7 +348,8 @@ export default {
     rebookDialog: false,
     cancelDialog: false,
     starOverDialog: false,
-    appointmentCancelled: null
+    appointmentCancelled: null,
+    showLanguageSwitch: false
   }),
   computed: {
     appointmentCanBeConfirmed() {
