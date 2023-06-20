@@ -44,6 +44,19 @@ describe('AppointmentForm', () => {
         expect(panel3.html()).not.toContain('v-expansion-panel--active')
     })
 
+    it('Switch language is not shown', async () => {
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.html()).not.toContain('language-switch')
+    })
+
+    it('Switch language is shown', async () => {
+        wrapper.vm.showLanguageSwitch = true
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.html()).toContain('language-switch')
+    })
+
     it('First panel is disabled', async () => {
         wrapper.vm.$store.state.confirmedAppointment = true
 
