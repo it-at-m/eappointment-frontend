@@ -16,7 +16,7 @@ export default {
   activationLinkExpired: "Ihr Aktivierungslink ist abgelaufen",
   errorTryAgainLater: "Etwas ist schief gelaufen. Bitte versuchen Sie es mit einem anderen Termin",
   appointmentNotAvailable: "Der von Ihnen gewählte Termin ist leider nicht mehr verfügbar",
-  appointmentPreconfirmedNotice: "Ihr Termin wurde zunächst vorgemerkt. Um die Reservierung abzuschließen, erhalten Sie sofort eine E-Mail mit einem Aktivierungslink. Bitte beachten Sie, dass die Reservierung verfällt, wenn Sie den Termin nicht mit diesem Link bestätigen.",
+  appointmentPreconfirmedNotice: "Ihr Termin wurde zunächst vorgemerkt. Um die Reservierung abzuschließen, erhalten Sie sofort eine E-Mail mit einem Aktivierungslink. Bitte beachten Sie, dass die Reservierung verfällt, wenn Sie den Termin nicht innerhalb einer Stunde mit diesem Link bestätigen.",
   appointment: "Termin",
   textLengthExceeded: "Die maximale Textlänge wird überschritten",
   noServiceFound: "Keine Dienstleistung gefunden",
