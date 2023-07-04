@@ -65,18 +65,35 @@
         <v-list-item :key="$store.state.data.service.id + ' ' + appointmentCountTriggered">
           <v-card-actions>
             <div>
-              <v-btn ref="buttonDown" class="appointment-count-button button-down" fab @click="decreaseAppointments($store.state.data.service)">
+              <v-btn
+                  ref="buttonDown"
+                  class="appointment-count-button button-down"
+                  aria-label="Anzahl der Dienstleistung verringern"
+                  aria-describedby="appointment-count-name-{{ $store.state.data.service.id }}"
+                  fab
+                  @click="decreaseAppointments($store.state.data.service)"
+              >
                 <v-icon >{{ minusSvg }}</v-icon>
               </v-btn>
             </div>
             <h3 class="appointment-count" :key="appointmentCounts[$store.state.data.service.id]">{{ appointmentCounts[$store.state.data.service.id] }}</h3>
             <div>
-              <v-btn id="button-up" ref="buttonUp" class="appointment-count-button" fab @click="increaseAppointments($store.state.data.service)">
+              <v-btn
+                  id="button-up"
+                  ref="buttonUp"
+                  class="appointment-count-button"
+                  aria-label="Anzahl der Dienstleistung erhöhen"
+                  aria-describedby="appointment-count-name-{{ $store.state.data.service.id }}"
+                  fab
+                  @click="increaseAppointments($store.state.data.service)"
+              >
                 <v-icon>{{ plusSvg }}</v-icon>
               </v-btn>
             </div>
           </v-card-actions>
-          {{ $store.state.data.service.name }}
+          <span id="appointment-count-name-{{ $store.state.data.service.id }}">
+            {{ $store.state.data.service.name }}
+          </span>
         </v-list-item>
 
         <template v-if="$store.state.data.service.subServices">
