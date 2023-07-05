@@ -145,7 +145,7 @@
             color="primary"
             @click="nextStep"
             :disabled="! $store.state.data.service || $store.state.data.appointmentCount === 0"
-        >{{ $t('next') }}</v-btn>
+        >{{ $t('nextToAppointment') }}</v-btn>
       </div>
     </v-container>
   </div>

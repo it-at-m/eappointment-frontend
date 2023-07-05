@@ -54,7 +54,7 @@
         depressed
         color="primary"
         @click="saveCustomer()"
-    >{{ $t('next') }}</v-btn>
+    >{{ $t('nextToReservation') }}</v-btn>
   </div>
 </template>
 <script>
