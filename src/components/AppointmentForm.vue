@@ -35,7 +35,7 @@
                   <template v-slot:default="{ open }">
                     <v-row no-gutters>
                       <v-col cols="12" md="2">
-                        {{ $t('services') }}
+                        {{ $t('stepFrom').replace('{step}', 1).replace('{stepTotal}', 3) }}: {{ $t('chooseService') }}
                       </v-col>
                       <v-col
                           cols="12"
@@ -73,7 +73,7 @@
                   <template v-slot:default="{ open }">
                     <v-row no-gutters>
                       <v-col cols="12" md="2">
-                        {{ $t('appointment') }}
+                        {{ $t('stepFrom').replace('{step}', 2).replace('{stepTotal}', 3) }}: {{ $t('chooseAppointment') }}
                       </v-col>
                       <v-col
                           cols="12"
@@ -107,7 +107,7 @@
                   <template v-slot:default="{ open }">
                     <v-row no-gutters>
                       <v-col cols="12" md="2">
-                        {{ $t('contactData') }}
+                        {{ $t('stepFrom').replace('{step}', 3).replace('{stepTotal}', 3) }}: {{ $t('typeContactData') }}
                       </v-col>
                       <v-col
                           cols="12"
