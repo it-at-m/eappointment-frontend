@@ -69,7 +69,7 @@ describe('API actions', () => {
         })
 
         expect(fetch.mock.calls.length).toEqual(1);
-        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-days?startDate=2020-5-13&endDate=2020-11-13&officeId=111&serviceId=111%2C222&serviceCount=1%2C2')
+        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-days?startDate=2020-05-13&endDate=2020-11-13&officeId=111&serviceId=111%2C222&serviceCount=1%2C2')
     })
 
     it('fetchServicesAndProviders calls API to fetch services and providers', async () => {
@@ -98,7 +98,7 @@ describe('API actions', () => {
         })
 
         expect(fetch.mock.calls.length).toEqual(1);
-        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-appointments?date=2023-3-1&officeId=111&serviceId=222%2C333&serviceCount=2%2C3')
+        expect(fetch.mock.calls[0][0]).toBe('http://localhost:3001/api/available-appointments?date=2023-03-01&officeId=111&serviceId=222%2C333&serviceCount=2%2C3')
     })
 
     it('updateAppointmentData calls API to update appointment data', async () => {

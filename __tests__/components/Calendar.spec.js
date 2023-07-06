@@ -132,7 +132,6 @@ describe('Calendar', () => {
         await wrapper.vm.$nextTick()
         const weeks = wrapper.findAll('tbody tr')
 
-        expect(wrapper.html()).toContain('So., 2. Apr.')
         expect(weeks.at(0).text()).toContain('12')
         expect(weeks.at(1).text()).toContain('3456789')
         expect(weeks.at(2).text()).toContain('10111213141516')
@@ -156,7 +155,7 @@ describe('Calendar', () => {
     })
 
     it('formatDay returns date in right format', async () => {
-        expect(wrapper.vm.formatDay(new Date('2023-05-15T01:00:00'))).toBe('15.05.2023')
+        expect(wrapper.vm.formatDay(new Date('2023-05-15T01:00:00'))).toBe('Montag, 15.05.2023')
     })
 
     it('shouldShowProvider returns true if there is no preselected provider', async () => {
@@ -282,7 +281,7 @@ describe('Calendar', () => {
 
         await wrapper.vm.$nextTick()
 
-        expect(mockCallback).toHaveBeenCalledTimes(1)
+        expect(mockCallback).toHaveBeenCalledTimes(2)
         expect(wrapper.vm.selectableDates).toEqual([
             '2023-05-10',
             '2023-05-11',
@@ -307,7 +306,7 @@ describe('Calendar', () => {
 
         await wrapper.vm.$nextTick()
 
-        expect(mockCallback).toHaveBeenCalledTimes(1)
+        expect(mockCallback).toHaveBeenCalledTimes(2)
         expect(wrapper.vm.selectableDates).toEqual([])
         expect(wrapper.vm.dateError).toBe('Ooops. Something went wrong')
     })
@@ -349,7 +348,7 @@ describe('Calendar', () => {
         await wrapper.vm.$nextTick()
 
         expect(mockCallback).toHaveBeenCalledTimes(1)
-        expect(wrapper.vm.timeSlotError).toBe('Der von Ihnen gewählte Termin ist leider nicht mehr verfügbar')
+        expect(wrapper.vm.timeSlotError).toBe('Der von Ihnen gewählte Termin ist leider nicht mehr verfügbar.')
         expect(wrapper.emitted().next).not.toBeDefined()
     })
 

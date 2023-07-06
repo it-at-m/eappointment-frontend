@@ -44,6 +44,7 @@
         :min="currentDate"
         :first-day-of-week="1"
         :locale="$i18n.locale"
+        :no-title="true"
         @click:date="getAppointmentsOfDay(date)"
     ></v-date-picker>
 
@@ -54,47 +55,55 @@
       {{ dateError }}
     </v-alert>
 
-    <v-dialog
-        v-model="timeDialog"
-        activator="parent"
-        width="500"
+    <div id="appointments"
+      tabindex="0"
     >
-      <v-card>
-        <v-card-title class="text-h5 grey lighten-2">
-          {{ $t('choseOneAppointment', { date: formatDay(date) }) }}
-        </v-card-title>
+      <div
+          v-if="timeDialog"
+          class="appointment-container"
+          activator="parent"
+          width="500"
+      >
+        <div>
+          <div class="appointment-container-title">
+            <h2 tabindex="0">{{ $t('availableTimes') }}</h2>
+          </div>
 
-        <v-card-text>
-          <v-alert
-              v-if="timeSlotError"
-              :color="$store.state.settings.theme.error"
-          >
-            {{ timeSlotError }}
-          </v-alert>
+          <div class="appointment-container-subtitle grey lighten-2">
+            <h4 tabindex="0">{{ formatDay(date) }}</h4>
+          </div>
+
+          <div>
+            <v-alert
+                v-if="timeSlotError"
+                :color="$store.state.settings.theme.error"
+            >
+              {{ timeSlotError }}
+            </v-alert>
+          </div>
 
           <div
-              class="select-appointment"
-              v-for="timeSlot in timeSlots" :key="timeSlot.unix()"
-              @click="chooseAppointment(timeSlot)"
+              v-for="times in timeSlotsInHours()"
           >
-            {{ timeSlot.format('H:mm') }}
+            <div class="appointments-in-hours">
+              <div class="time-hour" tabindex="0">
+                {{ times[0].format('H') }}:00-{{ times[0].format('H') }}:59
+              </div>
+              <div
+                  class="select-appointment"
+                  tabindex="0"
+                  v-for="timeSlot in times" :key="timeSlot.unix()"
+                  v-on:keyup.enter="chooseAppointment(timeSlot)"
+                  v-on:keyup.space="chooseAppointment(timeSlot)"
+                  @click="chooseAppointment(timeSlot)"
+              >
+                {{ timeSlot.format('H:mm') }}
+              </div>
+            </div>
           </div>
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-              color="primary"
-              text
-              @click="timeDialog = false"
-          >
-            {{ $t('cancel') }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+        </div>
+      </div>
+    </div>
   </v-app>
 </template>
 <script>
@@ -118,7 +127,20 @@ export default {
   }),
   methods: {
     formatDay: function(date) {
-      return moment(date).format('DD.MM.YYYY')
+      return moment(date).format('dddd, DD.MM.YYYY')
+    },
+    timeSlotsInHours: function() {
+      const timesByHours = {}
+
+      this.timeSlots.forEach((time) => {
+        if (!timesByHours.hasOwnProperty(time.format('H'))) {
+          timesByHours[time.format('H')] = [];
+        }
+
+        timesByHours[time.format('H')].push(time)
+      })
+
+      return timesByHours
     },
     allowedDates: function(val) {
       const currentDate = moment(val, 'YYYY-MM-DD')
@@ -132,7 +154,7 @@ export default {
 
       return provider.id === this.$store.state.preselectedProvider.id
     },
-    getAppointmentsOfDay: function(date) {
+    getAppointmentsOfDay: function(date, focus = true) {
       this.timeSlotError = false
       this.dateError = false
       this.timeDialog = false
@@ -165,6 +187,10 @@ export default {
             this.timeSlots = this.timeSlots.map((time) => moment.unix(time))
 
             this.timeDialog = true
+
+            if (focus) {
+              window.location.hash = '#appointments'
+            }
           })
     },
     chooseAppointment: function(timeSlot) {
@@ -222,10 +248,14 @@ export default {
             }
 
             this.selectableDates = availableDays
+
+            this.getAppointmentsOfDay(availableDays[0], false)
           })
     }
   },
   mounted: function() {
+    moment.locale('de')
+
     if (this.$store.state.preselectedProvider) {
       this.showForProvider(this.$store.state.preselectedProvider)
 
@@ -261,15 +291,18 @@ export default {
   max-height: 12rem;
 }
 .select-appointment {
-  padding: 0.5rem 0;
+  border: #1b98d5 solid 1px;
+  color: #1b98d5;
+  padding: 4px 6px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  float: left;
 }
 
 .v-picker {
   margin-top: 0 !important;
 }
-.select-appointment:hover {
-  background: #cccccc;
-}
+
 .preselected-appointment, .select-appointment {
   cursor: pointer;
 }
@@ -281,5 +314,37 @@ export default {
 
 .p-0 {
   padding: 0;
+}
+
+.appointment-container {
+  padding: 12px;
+}
+
+.appointment-container-title {
+  padding: 12px 0;
+}
+
+.appointment-container-subtitle {
+  padding: 6px;
+  margin-bottom: 12px;
+}
+
+.time-hour {
+  position: absolute;
+  left: 12px;
+  font-size: 14px;
+  line-height: 34px;
+}
+
+@media only screen and (max-width: 600px) {
+  .time-hour {
+    font-size: 12px;
+  }
+}
+
+.appointments-in-hours {
+  width: 100%;
+  padding-left: 22%;
+  float: left;
 }
 </style>
