@@ -21,7 +21,6 @@ export default {
   textLengthExceeded: "The maximum text length is exceeded",
   noServiceFound: "No service found",
   contactData: "Contact data",
-  choseOneAppointment: "Please choose one Appointment on {date}",
   pleaseCheckOnceAgain: "Please check your data once again and reserve appointment",
   name: "Name",
   email: "E-mail",

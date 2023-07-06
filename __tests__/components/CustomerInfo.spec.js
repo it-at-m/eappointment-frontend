@@ -77,7 +77,7 @@ describe('Customer info', () => {
         const emailErrorMessage = wrapper.find('#customer-email-section .v-messages__message')
 
         expect(wrapper.emitted().next).toBeUndefined()
-        expect(emailErrorMessage.text()).toBe('Muss eine gültige E-Mail-Adresse sein')
+        expect(emailErrorMessage.text()).toBe('Muss eine gültige E-Mail-Adresse sein.')
         expect(store.state.data.appointment.client).toBeUndefined()
         expect(dispatch).toHaveBeenCalledTimes(0)
     })

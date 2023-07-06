@@ -73,8 +73,8 @@ export default {
         return new Promise((resolve, reject) => {
             const dateIn6Months = moment().add(6, 'M')
             const params = {
-                'startDate': moment().format('YYYY-M-D'),
-                'endDate': dateIn6Months.format('YYYY-M-D'),
+                'startDate': moment().format('YYYY-MM-DD'),
+                'endDate': dateIn6Months.format('YYYY-MM-DD'),
                 'officeId': provider.id,
                 'serviceId': serviceIds,
                 'serviceCount': serviceCounts,
@@ -129,7 +129,7 @@ export default {
     fetchAvailableTimeSlots(store, { date, provider, serviceIds, serviceCounts }) {
         return new Promise((resolve, reject) => {
             const params = {
-                'date': moment(date).format('YYYY-M-D'),
+                'date': moment(date).format('YYYY-MM-DD'),
                 'officeId': provider.id,
                 'serviceId': serviceIds,
                 'serviceCount': serviceCounts
