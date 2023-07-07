@@ -187,6 +187,7 @@ export default {
             this.timeSlots = this.timeSlots.map((time) => moment.unix(time))
 
             this.timeDialog = true
+            this.date = date
 
             if (focus) {
               window.location.hash = '#appointments'
