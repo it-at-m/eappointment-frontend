@@ -69,7 +69,7 @@
             <h2 tabindex="0">{{ $t('availableTimes') }}</h2>
           </div>
 
-          <div class="appointment-container-subtitle grey lighten-2">
+          <div class="appointment-container-subtitle lighten-2">
             <h4 tabindex="0">{{ formatDay(date) }}</h4>
           </div>
 
