@@ -107,6 +107,8 @@
 </template>
 <script>
 import moment from 'moment'
+import 'moment/locale/de'
+import 'moment/dist/locale/de'
 import { mdiCalendarClock } from '@mdi/js';
 
 export default {
@@ -126,7 +128,7 @@ export default {
   }),
   methods: {
     formatDay: function(date) {
-      return moment(date).locale('de').format('dddd, DD.MM.YYYY')
+      return moment(date).lang('de').format('dddd, DD.MM.YYYY')
     },
     timeSlotsInHours: function() {
       const timesByHours = {}
