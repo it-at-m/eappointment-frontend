@@ -44,6 +44,7 @@
         :first-day-of-week="1"
         :locale="$i18n.locale"
         :no-title="true"
+        :weekday-format="getWeekday"
         @click:date="getAppointmentsOfDay(date)"
     ></v-date-picker>
 
@@ -153,6 +154,9 @@ export default {
       }
 
       return provider.id === this.$store.state.preselectedProvider.id
+    },
+    getWeekday: function(date) {
+      return moment(date).format('dddd').slice(0, 2)
     },
     getAppointmentsOfDay: function(date, focus = true) {
       this.timeSlotError = false
