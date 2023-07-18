@@ -37,7 +37,6 @@
     </v-container>
 
     <v-date-picker
-        full-width
         v-model="date"
         :allowed-dates="allowedDates"
         class="mt-0"
@@ -127,7 +126,7 @@ export default {
   }),
   methods: {
     formatDay: function(date) {
-      return moment(date).format('dddd, DD.MM.YYYY')
+      return moment(date).locale('de').format('dddd, DD.MM.YYYY')
     },
     timeSlotsInHours: function() {
       const timesByHours = {}
