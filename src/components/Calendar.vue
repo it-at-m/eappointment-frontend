@@ -255,8 +255,6 @@ export default {
     }
   },
   mounted: function() {
-    moment.locale('de')
-
     if (this.$store.state.preselectedProvider) {
       this.showForProvider(this.$store.state.preselectedProvider)
 

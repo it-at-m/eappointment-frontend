@@ -334,7 +334,8 @@ import SwitchLanguage from './SwitchLanguage.vue'
 import ServiceFinder from './ServiceFinder.vue'
 import Calendar from './Calendar.vue'
 import CustomerInfo from './CustomerInfo.vue'
-import moment from "moment";
+import moment from "moment"
+moment.locale('de')
 
 export default {
   name: 'AppointmentForm',
